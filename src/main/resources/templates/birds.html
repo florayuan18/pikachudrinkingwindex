@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/headfile :: head">
+    <title>Nighthawk Coding | Birds</title>
+</head>
+<body>
+    <div th:replace="fragments/header :: header"></div>
+
+    <<div class="row justify-content-end" style="padding: 2%;">
+        <div class="col-2" style="text-align: right;">
+
+            <!-- notice jinja style variables used in href's -->
+            <a><h5>Nighthawk Coding</h5></a>
+            <a href=https://github.com/nighthawkcoders target="_blank"><i class="fa fa-github"></i></a>
+            <a href=https://www.youtube.com/channel/UClIKOsDS5dsfzFA3zveDT3Q?view_as=subscriber target="_blank"><i class="fa fa-youtube-play"></i></a>
+            <a href=https://twitter.com/NighthawkCoding target="_blank"><i class="fa fa-twitter"></i></a>
+
+        </div>
+    </div>
+
+    <div class="product" style="margin-top: 2%;">
+        <div class="row" style="padding: 10%; padding-top: 0%; padding-bottom: 5%;">
+
+            <div class="col-8" >
+                <h1>Portfolio Project</h1>
+            </div>
+
+        </div>
+
+        <div class="row" style="padding-left: 10%;">
+
+            <div class="col-3">
+                <a href="https://nighthawkcodingsociety.com/projectsearch/details/Flask%20Portfolio%20Starter" class="btn">Overview</a>
+            </div>
+
+            <div class="col-3">
+                <a href="https://github.com/nighthawkcoders/spring_portfolio/" class="btn">Repository</a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div th:replace="fragments/footer :: footer"></div>
+</body>
+<script src="/static/three.r119.min.js"></script>
+<script src="/static/vanta.birds.min.js"></script>
+<script>
+    VANTA.NET({
+        el: "body",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00
+    })
+</script>
+</html>
