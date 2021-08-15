@@ -10,10 +10,5 @@ public class Birds {
     public String birds() {
         return "birds"; // returns HTML VIEW (greeting)
     }
-
-    @GetMapping("/birds_not")
-    public String birds_not() {
-            return "birds_not"; // Test running file with "no thymeleaf"
-        }
 }
 
