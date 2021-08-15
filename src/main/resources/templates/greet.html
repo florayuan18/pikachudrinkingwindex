@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/headfile :: head">
+  <title>Greeting Input</title>
+</head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+<div class="contact" style="height: 35vh;">
+  <div class="row justify-content-left" style="margin: 2%;">
+    <form action="/greet" method="GET" id="greetForm">
+      <div>
+        <label for="greetField">Type a greeting name?</label>
+        <input name="name" id="greetField">
+        <button>Greetings!</button>
+        <p th:text="'Greetings, ' + ${name} + '!'"></p>
+      </div>
+    </form>
+  </div>
+</div>
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>
