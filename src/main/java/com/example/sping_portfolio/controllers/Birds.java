@@ -8,12 +8,12 @@ public class Birds {
     @GetMapping("/birds")
     // CONTROLLER handles GET request for /greeting, maps it to greeting() and does variable bindings
     public String birds() {
-        return "birds";                     // returns HTML VIEW (greeting)
+        return "birds"; // returns HTML VIEW (greeting)
     }
 
     @GetMapping("/birds_not")
     public String birds_not() {
-            return "birds_not";     // Test running file with "no thymeleaf"
+            return "birds_not"; // Test running file with "no thymeleaf"
         }
 }
 
