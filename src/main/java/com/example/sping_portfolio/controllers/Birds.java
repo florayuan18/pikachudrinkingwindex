@@ -12,7 +12,7 @@ public class Birds {
     }
 
     @GetMapping("/birds_not")
-    public String birds_no() {
+    public String birds_not() {
             return "birds_not";     // Test running file with "no thymeleaf"
         }
 }
