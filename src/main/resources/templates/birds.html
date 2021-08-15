@@ -24,10 +24,10 @@
 
 <div layout:fragment="script" th:remove="tag">
     <!-- Start of custom script specific to page -->
-    <script src="three.r119.min.js"></script>
-    <script src="vanta.birds.min.js"></script>
+    <script src="/static/vanta/three.r119.min.js" th:src="@{/vanta/three.r119.min.js}"></script>
+    <script src="/static/vanta/vanta.birds.min.js" th:src="@{/vanta/vanta.birds.min.js}"></script>
     <script>
-        VANTA.NET({
+        VANTA.BIRDS({
             el: "body",
             mouseControls: true,
             touchControls: true,
