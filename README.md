@@ -3,12 +3,12 @@ Runtime link: TBD https://jportfolio.nighthawkcodingsociety.com/
 ### Idea
 Starter code should be fun and practical.
 ### Visual thoughts
-#### Organize with Bootstrap menu 
-#### Add some color and fun through VANTA Visuals (birds, halo, solar, net)
-#### Show some practical and fun links (hrefs) like Twitter, Git, Youtube
-#### Show student project specific links (hrefs) per page
-#### Show student TPT ideas
-#### Show student About me pages
+#### * Organize with Bootstrap menu 
+#### * Add some color and fun through VANTA Visuals (birds, halo, solar, net)
+#### * Show some practical and fun links (hrefs) like Twitter, Git, Youtube
+#### * Show student project specific links (hrefs) per page
+#### * Show student TPT ideas
+#### * Show student About me pages
 
 ## Getting started
 #### Clone project to IntelliJ
