@@ -2,6 +2,7 @@
 Runtime link: TBD https://jportfolio.nighthawkcodingsociety.com/
 
 
+
 ## Visual thoughts
 #### * Starter code should be fun and practical
 #### * Organize with Bootstrap menu 
@@ -12,12 +13,14 @@ Runtime link: TBD https://jportfolio.nighthawkcodingsociety.com/
 #### * Show student About me pages
 
 
+
 ## Getting started
 #### * Clone project to IntelliJ
 #### * Verify Project Structure to use a good Java JDK (adopt-openJ9-15) 
 #### * Play or entry point is Main.java, look for play option in tray.  This file eanbles Spring to load
 #### * Java source (src/main/java) had Java files.  Find "controllers" path, these files enable HTTP route and HTML file relationship.  Note, html 
 #### * HTML source (src/main/resources) had templates and supporting files.  Find index.html as this file is launched by defaul in Spring.  Other HTML files are loaded by building a "@Controller"
+
 
 
 ## IDE management
