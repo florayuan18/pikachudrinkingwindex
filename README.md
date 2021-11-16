@@ -1,20 +1,20 @@
 ### Individul Grading:
 | Team Member            | Github ID   | Journal  | Scrum Board    | Commits   | Profile   |
 | ------------------- | ----------------- | ----------------- | ------------ | ------------ | ------------|
-| Flora Yuan |  | [journal]() | [scrum board]() | [commits]() | [profile]()
 | Calvin Cheah |  | [journal]() | [scrum board]() | [commits]() | [profile]()
 | Crystal Widjaja | crystalwidjaja | [journal]() | [scrum board]() | [commits]() | [profile](https://github.com/crystalwidjaja)
+| Flora Yuan |  | [journal]() | [scrum board]() | [commits]() | [profile]()
 | Kira Liao |  | [journal]() | [scrum board]() | [commits]() | [profile]()
 | Maggie Killada |  | [journal]() | [scrum board]() | [commits]() | [profile]()
 
 # Week 0 Issues
 | Team Member           | Issue(s)  | 
 | -------------------------- |-----------------------------| 
-| Flora Yuan| GitHub Admin|
 | Calvin Cheah  | Technical Officer| 
 | Crystal Widjaja | Scrum Leader | 
-| Maggie Killada | Deployment Manager |
+| Flora Yuan| GitHub Admin |
 | Kira Liao | Web Designer |
+| Maggie Killada | Deployment Manager |
 
 
 
