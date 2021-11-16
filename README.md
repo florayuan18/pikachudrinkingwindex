@@ -5,11 +5,16 @@
 | Calvin Cheah |  | [tasks]() | [scrum board]() | [commits]() | [profile]()
 | Crystal Widjaja | crystalwidjaja | [tasks]() | [scrum board]() | [commits]() | [profile](https://github.com/crystalwidjaja)
 | Kira Liao |  | [tasks]() | [scrum board]() | [commits]() | [profile]()
-| Maggie Killada | maggie3000 | [tasks]() | [scrum board]() | [commits]() | [profile](https://github.com/maggie3000)
+| Maggie Killada |  | [tasks]() | [scrum board]() | [commits]() | [profile]()
 
-
-## TBD [Spring Portfolio Starter](https://nighthawkcodingsociety.com/projectsearch/details/Spring%20Portfolio%20Starter)
-Runtime link: TBD https://jportfolio.nighthawkcodingsociety.com/
+# Week 0 Issues
+| Team Member           | Issue(s)  | 
+| -------------------------- |-----------------------------| 
+| Flora Yuan| GitHub Admin|
+| Calvin Cheah  | Technical Officer| 
+| Crystal Widjaja | Scrum Leader | 
+| Maggie Killada | Deployment Manager |
+| Kira Liao | Web Designer |
 
 
 
