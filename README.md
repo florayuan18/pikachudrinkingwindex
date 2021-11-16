@@ -1,3 +1,13 @@
+### Individul Grading:
+| Team Member            | Github ID   | Tasks      | Scrum Board    | Commits   | Profile   |
+| ------------------- | ----------------- | ----------------- | ------------ | ------------ | ------------|
+| Flora Yuan |  | [tasks]() | [scrum board]() | [commits]() | [profile]()
+| Calvin Cheah |  | [tasks]() | [scrum board]() | [commits]() | [profile]()
+| Crystal Widjaja | crystalwidjaja | [tasks]() | [scrum board]() | [commits]() | [profile](https://github.com/crystalwidjaja)
+| Kira Liao |  | [tasks]() | [scrum board]() | [commits]() | [profile]()
+| Maggie Killada |  | [tasks]() | [scrum board]() | [commits]() | [profile]()
+
+
 ## TBD [Spring Portfolio Starter](https://nighthawkcodingsociety.com/projectsearch/details/Spring%20Portfolio%20Starter)
 Runtime link: TBD https://jportfolio.nighthawkcodingsociety.com/
 
