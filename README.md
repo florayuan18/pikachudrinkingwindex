@@ -5,7 +5,7 @@
 | Calvin Cheah |  | [tasks]() | [scrum board]() | [commits]() | [profile]()
 | Crystal Widjaja | crystalwidjaja | [tasks]() | [scrum board]() | [commits]() | [profile](https://github.com/crystalwidjaja)
 | Kira Liao |  | [tasks]() | [scrum board]() | [commits]() | [profile]()
-| Maggie Killada |  | [tasks]() | [scrum board]() | [commits]() | [profile]()
+| Maggie Killada | maggie3000 | [tasks]() | [scrum board]() | [commits]() | [profile](https://github.com/maggie3000)
 
 
 ## TBD [Spring Portfolio Starter](https://nighthawkcodingsociety.com/projectsearch/details/Spring%20Portfolio%20Starter)
