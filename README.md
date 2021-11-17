@@ -1,7 +1,7 @@
 ### Individul Grading:
 | Team Member            | Github ID   | Journal  | Scrum Board    | Commits   | Profile   |
 | ------------------- | ----------------- | ----------------- | ------------ | ------------ | ------------|
-| Calvin Cheah |  | [journal]() | [scrum board]() | [commits]() | [profile]()
+| Calvin Cheah | QwikSP | [journal]() | [scrum board]() | [commits]() | [profile]()
 | Crystal Widjaja | crystalwidjaja | [journal]() | [scrum board]() | [commits]() | [profile](https://github.com/crystalwidjaja)
 | Flora Yuan | florayuan18 | [journal]() | [scrum board]() | [commits]() | [profile](https://github.com/florayuan18)
 | Kira Liao |  | [journal]() | [scrum board]() | [commits]() | [profile]()
