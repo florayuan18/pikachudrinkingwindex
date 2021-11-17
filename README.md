@@ -1,4 +1,4 @@
-### Individul Grading:
+### Individual Grading:
 | Team Member            | Github ID   | Journal  | Scrum Board    | Commits   | Profile   |
 | ------------------- | ----------------- | ----------------- | ------------ | ------------ | ------------|
 | Calvin Cheah | QwikSP | [journal]() | [scrum board]() | [commits]() | [profile](https://github.com/QwikSP)
