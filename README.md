@@ -5,7 +5,7 @@
 | Crystal Widjaja | crystalwidjaja | [journal]() | [scrum board]() | [commits]() | [profile](https://github.com/crystalwidjaja)
 | Flora Yuan | florayuan18 | [journal]() | [scrum board]() | [commits]() | [profile](https://github.com/florayuan18)
 | Kira Liao |  | [journal]() | [scrum board]() | [commits]() | [profile]()
-| Maggie Killada |  | [journal]() | [scrum board]() | [commits]() | [profile]()
+| Maggie Killada | maggie3000 | [journal]() | [scrum board]() | [commits]() | [profile](https://github.com/maggie3000)
 
 # Week 0 Issues
 | Team Member           | Roles | 
