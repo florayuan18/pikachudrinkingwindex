@@ -1,20 +1,20 @@
-### Individul Grading:
+### Individual Grading:
 | Team Member            | Github ID   | Journal  | Scrum Board    | Commits   | Profile   |
 | ------------------- | ----------------- | ----------------- | ------------ | ------------ | ------------|
-| Flora Yuan |  | [journal]() | [scrum board]() | [commits]() | [profile]()
-| Calvin Cheah |  | [journal]() | [scrum board]() | [commits]() | [profile]()
+| Calvin Cheah | QwikSP | [journal]() | [scrum board]() | [commits]() | [profile](https://github.com/QwikSP)
 | Crystal Widjaja | crystalwidjaja | [journal]() | [scrum board]() | [commits]() | [profile](https://github.com/crystalwidjaja)
+| Flora Yuan | florayuan18 | [journal]() | [scrum board]() | [commits]() | [profile](https://github.com/florayuan18)
 | Kira Liao |  | [journal]() | [scrum board]() | [commits]() | [profile]()
-| Maggie Killada |  | [journal]() | [scrum board]() | [commits]() | [profile]()
+| Maggie Killada | maggie3000 | [journal]() | [scrum board]() | [commits]() | [profile](https://github.com/maggie3000)
 
 # Week 0 Issues
-| Team Member           | Issue(s)  | 
+| Team Member           | Roles | 
 | -------------------------- |-----------------------------| 
-| Flora Yuan| GitHub Admin|
 | Calvin Cheah  | Technical Officer| 
 | Crystal Widjaja | Scrum Leader | 
-| Maggie Killada | Deployment Manager |
+| Flora Yuan| GitHub Admin |
 | Kira Liao | Web Designer |
+| Maggie Killada | Deployment Manager |
 
 
 
