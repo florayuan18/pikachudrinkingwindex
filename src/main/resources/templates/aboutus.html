@@ -1,0 +1,92 @@
+<!-- This page is illustrative and contains ideas about HTML formatting -->
+<!DOCTYPE HTML>
+<!-- Signals to the Layout Dialect which layout should be used to decorate this View -->
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layout}" lang="en">
+
+<head><div layout:fragment="metadata" th:remove="tag">
+    <title>About Us</title>
+    <script src="/static/vanta/three.r119.min.js" th:src="@{/vanta/three.r119.min.js}"></script>
+    <script src="/static/vanta/vanta.net.min.js" th:src="@{/vanta/vanta.net.min.js}"></script>
+    <script>
+        VANTA.NET({
+            el: "html",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x3fb3ff,
+            backgroundColor: 0x151e3c
+        })
+    </script>
+    <style>
+        html, body{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .block {
+            display: inline-block;
+            width: 20%;
+            height: 65px;
+            border: 2px solid white;
+            background-color: Transparent;
+            color: white;
+            padding: 14px 28px;
+            font-size: 20px;
+            cursor: pointer;
+            text-align: center;
+            margin: 10px;
+            position: relative;
+            top: 50%;
+            left: 49.2%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+        .block:hover {
+            background-color: #05c4c4;
+            border: 2px solid #05c4c4;
+            color: black;
+            width: 30%;
+            transition: all .4s cubic-bezier(0.65, 0, 0.076, 1);
+        }
+        .pageTitle{
+            color: white;
+            text-align: center;
+            margin: 20px;
+        }
+    </style>
+</div></head>
+<!-- layout::fragment="content" is heart of ThymeLeaf layout -->
+<body><div layout:fragment="content" th:remove="tag">
+    <!-- Start of body content specific to page -->
+    <div class="contact">
+        <h1 class="pageTitle">About Us</h1>
+        <button type="button" class="block" onclick="window.location.href='/';">
+            Crystal
+        </button>
+        <br>
+        <button type="button" class="block" onclick="window.location.href='/';">
+            Flora
+        </button>
+        <br>
+        <button type="button" class="block" onclick="window.location.href='/';">
+            Calvin
+        </button>
+        <br>
+        <button type="button" class="block" onclick="window.location.href='/';">
+            Kira
+        </button>
+        <br>
+        <button type="button" class="block" onclick="window.location.href='/';">
+            Maggie
+        </button>
+    </div>
+    <!-- End of body content specific to page -->
+</div></body>
+
+</html>
