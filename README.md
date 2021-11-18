@@ -1,11 +1,11 @@
 ### Individual Grading:
 | Team Member            | Github ID   | Journal  | Scrum Board    | Commits   | Profile   |
 | ------------------- | ----------------- | ----------------- | ------------ | ------------ | ------------|
-| Calvin Cheah | QwikSP | [journal](https://docs.google.com/document/d/1Z3TToryEbC6EhNMEnVD3aBqpBPHM4CEq_jDYc56mHU4/edit?usp=sharing) | [scrum board]() | [commits]() | [profile](https://github.com/QwikSP)
-| Crystal Widjaja | crystalwidjaja | [journal]() | [scrum board]() | [commits]() | [profile](https://github.com/crystalwidjaja)
-| Flora Yuan | florayuan18 | [journal]() | [scrum board]() | [commits]() | [profile](https://github.com/florayuan18)
-| Kira Liao | 4disease | [journal](https://docs.google.com/document/d/1Z3TToryEbC6EhNMEnVD3aBqpBPHM4CEq_jDYc56mHU4/edit?usp=sharing) | [scrum board]() | [commits]() | [profile](https://github.com/maggie3000)
-| Maggie Killada | maggie3000 | [journal](https://docs.google.com/document/d/1Z3TToryEbC6EhNMEnVD3aBqpBPHM4CEq_jDYc56mHU4/edit?usp=sharing) | [scrum board]() | [commits]() | [profile](https://github.com/maggie3000)
+| Calvin Cheah | QwikSP | [journal](https://docs.google.com/document/d/1Z3TToryEbC6EhNMEnVD3aBqpBPHM4CEq_jDYc56mHU4/edit?usp=sharing) | [scrum board]() | [commits](https://github.com/florayuan18/pikachudrinkingwindex/commits?author=QwikSP) | [profile](https://github.com/QwikSP)
+| Crystal Widjaja | crystalwidjaja | [journal]() | [scrum board]() | [commits](https://github.com/florayuan18/pikachudrinkingwindex/commits?author=crystalwidjaja) | [profile](https://github.com/crystalwidjaja)
+| Flora Yuan | florayuan18 | [journal]() | [scrum board]() | [commits](https://github.com/florayuan18/pikachudrinkingwindex/commits?author=florayuan18) | [profile](https://github.com/florayuan18)
+| Kira Liao | 4disease | [journal](https://docs.google.com/document/d/1Z3TToryEbC6EhNMEnVD3aBqpBPHM4CEq_jDYc56mHU4/edit?usp=sharing) | [scrum board]() | [commits](https://github.com/florayuan18/pikachudrinkingwindex/commits?author=4disease) | [profile](https://github.com/maggie3000)
+| Maggie Killada | maggie3000 | [journal](https://docs.google.com/document/d/1Z3TToryEbC6EhNMEnVD3aBqpBPHM4CEq_jDYc56mHU4/edit?usp=sharing) | [scrum board]() | [commits](https://github.com/florayuan18/pikachudrinkingwindex/commits?author=maggie3000) | [profile](https://github.com/maggie3000)
 
 # Week 0 Issues
 | Team Member           | Roles | 
