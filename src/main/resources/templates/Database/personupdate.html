@@ -1,0 +1,65 @@
+<!-- This page is illustrative and contains ideas about HTML formatting -->
+<!DOCTYPE HTML>
+<!-- Signals to the Layout Dialect which layout should be used to decorate this View -->
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layout}" lang="en">
+
+<head><div layout:fragment="metadata" th:remove="tag">
+  <title>Person Update</title>
+</div></head>
+<style>
+  .submissionfield { width: 90px; height: 390px; border: 1px solid #999999; padding: 5px; }
+</style>
+<!-- layout::fragment="content" is heart of ThymeLeaf layout -->
+<body><div layout:fragment="content" th:remove="tag">
+  <div style="margin: 2%;" >
+    <div class="row justify-content-md-center">
+      <h3 style="color:Black;">Update your rating!</h3>
+    </div>
+
+    <!-- ThymeLeaf allows person abject of the Class Person to be acted upon by the form
+     This is known as a “bean-backed form” or "form-backing bean".
+        th:object - the backend form object (bean object)
+     There are two fields in the Person bean,
+        th:field="*{name}"
+        th:field="*{age}".
+     Each field has supporting line for to show errors in validation
+        th:errors - form input errors added when validation errors occur
+     Reference
+        https://www.baeldung.com/spring-boot-crud-thymeleaf
+     .-->
+    <div class="row justify-content-md-center">
+      <form action="#" th:action="@{/Database/personupdate}" th:object="${person}" method="POST" class="submissionfield">
+        <table style="color:Black;">
+          <tr>
+            <td>ID:</td>
+            <td th:text="${person.id}">Person ID</td>
+            <!-- hidden field is CRITICAL else id will be null on action -->
+            <td><input type="hidden" th:field="*{id}" readonly="readonly" /></td>
+          </tr>
+          <tr>
+            <td>Email:</td>
+            <td th:text="${person.teacher_class}">EMail</td>
+            <td><input type="hidden" th:field="*{teacher_class}" readonly="readonly" /></td>
+          </tr>
+          <tr>
+            <td>Name:</td>
+            <td><input type="text" th:field="*{teacher_name}" /></td>
+            <td th:if="${#fields.hasErrors('teacher_name')}" th:errors="*{teacher_name}">Name Error</td>
+          </tr>
+          <tr>
+            <td>rating:</td>
+            <td><textarea type="text" th:field="*{rating}" rows="4" cols="50"/></td>
+            <td th:if="${#fields.hasErrors('rating')}" th:errors="*{rating}">Name Error</td>
+          </tr>
+          <tr>
+            <td><button type="submit">Save</button></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+
+  </div>
+</div></body>
+
+</html>

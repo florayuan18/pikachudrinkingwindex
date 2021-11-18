@@ -1,0 +1,53 @@
+<!-- This page is illustrative and contains ideas about HTML formatting -->
+<!DOCTYPE HTML>
+<!-- Signals to the Layout Dialect which layout should be used to decorate this View -->
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layout}" lang="en">
+
+<head><div layout:fragment="metadata" th:remove="tag">
+    <title>Person Form</title>
+</div></head>
+<style>
+    .submissionfield { width: 90px; height: 390px; border: 1px solid #999999; padding: 5px; }
+</style>
+<!-- layout::fragment="content" is heart of ThymeLeaf layout -->
+<body><div layout:fragment="content" th:remove="tag">
+    <div style="margin: 2%;">
+        <h3 style="color:Black;" class="row justify-content-md-center">Rate Your Teacher!</h3>
+        <!-- ThymeLeaf allows person abject of the Class Person to be acted upon by the form
+         This is known as a “bean-backed form” or "form-backing bean".
+            th:object - the backend form object (bean object)
+         There are fields in the Person bean,  Get started with dialiects in 5 minutes -- https://www.thymeleaf.org/doc/articles/standarddialect5minutes.html
+            th:field="*{name}"
+            th:field="*{age}"
+            th:field="*{dob}"
+         Each field has supporting line to show errors in validation
+            th:errors - form input errors added when validation errors occur
+         .-->
+        <form action="#" th:action="@{/Database/personcreate}" th:object="${person}"  method="POST" class="submissionfield">
+            <table style="color:Black;" class="row justify-content-md-center">
+                <tr style="color:Black;">
+                    <td>Class:</td>
+                    <td><input type="text" th:field="*{teacher_class}" /></td>
+                    <td th:if="${#fields.hasErrors('teacher_class')}" th:errors="*{teacher_class}">Class Error</td>
+                </tr>
+                <tr style="color:Black;">
+                    <td>Teacher:</td>
+                    <td><input type="text" th:field="*{teacher_name}" /></td>
+                    <td th:if="${#fields.hasErrors('teacher_name')}" th:errors="*{teacher_name}">Name Error</td>
+                </tr>
+                <tr style="color:Black;">
+                    <td>Rating:</td>
+                    <td><textarea type="text" th:field="*{rating}" rows="4" cols="50" /></td>
+                    <td th:if="${#fields.hasErrors('rating')}" th:errors="*{rating}">Rating Error</td>
+
+                </tr>
+                <tr class="row justify-content-md-center">
+                    <td><button type="submit">Add</button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div></body>
+
+</html>
