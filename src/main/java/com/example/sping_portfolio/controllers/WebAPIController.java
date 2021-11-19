@@ -1,4 +1,4 @@
-package com.nighthawk.csa.data;
+package com.example.sping_portfolio.controllers;
 
 import org.json.simple.parser.ParseException;
 import org.springframework.stereotype.Controller;
@@ -25,15 +25,15 @@ public class WebAPIController {
     // GET request, no parameters
     @GetMapping("/covid19")
     public String covid19(Model model) throws IOException, InterruptedException, ParseException {
-        // https://rapidapi.com/spamakashrajtech/api/corona-virus-world-and-india-data/
-        //rapidapi setup:
+//         https://rapidapi.com/spamakashrajtech/api/corona-virus-world-and-india-data/
+//        rapidapi setup:
 //        HttpRequest request = HttpRequest.newBuilder()
 //                .uri(URI.create("https://corona-virus-world-and-india-data.p.rapidapi.com/api"))
 //                .header("x-rapidapi-key", "dec069b877msh0d9d0827664078cp1a18fajsn2afac35ae063")
 //                .header("x-rapidapi-host", "corona-virus-world-and-india-data.p.rapidapi.com")
 //                .method("GET", HttpRequest.BodyPublishers.noBody())
 //                .build();
-//        //rapidapi call
+//
 //        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create("https://corona-virus-world-and-india-data.p.rapidapi.com/api"))
