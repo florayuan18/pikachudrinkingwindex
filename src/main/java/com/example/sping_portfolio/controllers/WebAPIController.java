@@ -36,8 +36,8 @@ public class WebAPIController {
 //
 //        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("https://corona-virus-world-and-india-data.p.rapidapi.com/api"))
-                .header("x-rapidapi-host", "corona-virus-world-and-india-data.p.rapidapi.com")
+                .uri(URI.create("https://rawg-video-games-database.p.rapidapi.com/games/%7Bgame_pk%7D"))
+                .header("x-rapidapi-host", "rawg-video-games-database.p.rapidapi.com")
                 .header("x-rapidapi-key", "e2ec6cd693msh31f1d4d692bd6b0p1dcb11jsn9ee520fd4398")
                 .method("GET", HttpRequest.BodyPublishers.noBody())
                 .build();
