@@ -9,12 +9,12 @@
 
 # Week 1 Issues
 | Team Member           | Roles |           Issues                              | 
-| -------------------------- |-----------------------------| 
-| Calvin Cheah  | Technical Officer| [Technicals]()
-| Crystal Widjaja | Scrum Leader | [Assignments]()
-| Flora Yuan | GitHub Admin | [Github Guide]()
-| Kira Liao | Web Designer | [Deployment Guide]()
-| Maggie Killada | Deployment Manager | [Design Guide]()
+| -------------------------- |-----------------------------|-----------------------------|  
+| Calvin Cheah  | Technical Officer| [Technicals]() |
+| Crystal Widjaja | Scrum Leader | [Assignments]() |
+| Flora Yuan | GitHub Admin | [Github Guide]() |
+| Kira Liao | Web Designer | [Deployment Guide]() |
+| Maggie Killada | Deployment Manager | [Design Guide]() |
 
 # Week 0 Issues
 | Team Member           | Roles | 
