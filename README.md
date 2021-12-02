@@ -13,8 +13,8 @@
 | Calvin Cheah  | Technical Officer| [Technicals](https://github.com/florayuan18/pikachudrinkingwindex/issues/29) |
 | Crystal Widjaja | Scrum Leader | [Assignments](https://github.com/florayuan18/pikachudrinkingwindex/issues/30) |
 | Flora Yuan | GitHub Admin | [Github Guide](https://github.com/florayuan18/pikachudrinkingwindex/issues/8) |
-| Kira Liao | Web Designer | [Deployment Guide](https://github.com/florayuan18/pikachudrinkingwindex/issues/9) |
-| Maggie Killada | Deployment Manager | [Design Guide](https://github.com/florayuan18/pikachudrinkingwindex/issues/28) |
+| Kira Liao | Web Designer | [Design Guide](https://github.com/florayuan18/pikachudrinkingwindex/issues/28) |
+| Maggie Killada | Deployment Manager | [Deployment Guide](https://github.com/florayuan18/pikachudrinkingwindex/issues/9) |
 
 # Week 0 Issues
 | Team Member           | Roles | 
