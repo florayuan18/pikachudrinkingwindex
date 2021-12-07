@@ -8,6 +8,11 @@
   <!-- End of head content specific to page -->
 </div></head>
 
-<body></body>
+<body>
+<input name="name" id="greetField">
+<button>Greetings!</button>
+<p th:text="'Greetings, ' + ${name} + '!'"></p>
+
+</body>
 
 </html>
