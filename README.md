@@ -1,11 +1,20 @@
 ### Individual Grading:
 | Team Member            | Github ID   | Journal  | Scrum Board    | Commits   | Profile   |
 | ------------------- | ----------------- | ----------------- | ------------ | ------------ | ------------|
-| Calvin Cheah | QwikSP | [journal](https://docs.google.com/document/d/1Z3TToryEbC6EhNMEnVD3aBqpBPHM4CEq_jDYc56mHU4/edit?usp=sharing) | [scrum board]() | [commits](https://github.com/florayuan18/pikachudrinkingwindex/commits?author=QwikSP) | [profile](https://github.com/QwikSP)
-| Crystal Widjaja | crystalwidjaja | [journal]() | [scrum board]() | [commits](https://github.com/florayuan18/pikachudrinkingwindex/commits?author=crystalwidjaja) | [profile](https://github.com/crystalwidjaja)
-| Flora Yuan | florayuan18 | [journal]() | [scrum board]() | [commits](https://github.com/florayuan18/pikachudrinkingwindex/commits?author=florayuan18) | [profile](https://github.com/florayuan18)
-| Kira Liao | 4disease | [journal](https://docs.google.com/document/d/1Z3TToryEbC6EhNMEnVD3aBqpBPHM4CEq_jDYc56mHU4/edit?usp=sharing) | [scrum board]() | [commits](https://github.com/florayuan18/pikachudrinkingwindex/commits?author=4disease) | [profile](https://github.com/4disease)
-| Maggie Killada | maggie3000 | [journal](https://docs.google.com/document/d/1Z3TToryEbC6EhNMEnVD3aBqpBPHM4CEq_jDYc56mHU4/edit?usp=sharing) | [scrum board]() | [commits](https://github.com/florayuan18/pikachudrinkingwindex/commits?author=maggie3000) | [profile](https://github.com/maggie3000)
+| Calvin Cheah | QwikSP | [Journal](https://docs.google.com/document/d/1Z3TToryEbC6EhNMEnVD3aBqpBPHM4CEq_jDYc56mHU4/edit?usp=sharing) | [Scrum Board](https://github.com/florayuan18/pikachudrinkingwindex/projects/1?card_filter_query=assignee%3Aqwiksp) | [Commits](https://github.com/florayuan18/pikachudrinkingwindex/commits?author=QwikSP) | [Profile](https://github.com/QwikSP)
+| Crystal Widjaja | crystalwidjaja | [Journal](https://docs.google.com/document/d/1eNAFiMXSAhTSycT7F8P9LFNIAcMdiNYvlRvJmdhxZr4/edit) | [Scrum Board](https://github.com/florayuan18/pikachudrinkingwindex/projects/1?card_filter_query=assignee%3Acrystalwidjaja) | [Commits](https://github.com/florayuan18/pikachudrinkingwindex/commits?author=crystalwidjaja) | [Profile](https://github.com/crystalwidjaja)
+| Flora Yuan | florayuan18 | [Journal](https://docs.google.com/document/d/1eNAFiMXSAhTSycT7F8P9LFNIAcMdiNYvlRvJmdhxZr4/edit) | [Scrum Board](https://github.com/florayuan18/pikachudrinkingwindex/projects/1?card_filter_query=assignee%3Aflorayuan18) | [Commits](https://github.com/florayuan18/pikachudrinkingwindex/commits?author=florayuan18) | [Profile](https://github.com/florayuan18)
+| Kira Liao | 4disease | [Journal](https://docs.google.com/document/d/1Z3TToryEbC6EhNMEnVD3aBqpBPHM4CEq_jDYc56mHU4/edit?usp=sharing) | [Scrum Board](https://github.com/florayuan18/pikachudrinkingwindex/projects/1?card_filter_query=assignee%3A4disease) | [Commits](https://github.com/florayuan18/pikachudrinkingwindex/commits?author=4disease) | [Profile](https://github.com/4disease)
+| Maggie Killada | maggie3000 | [Journal](https://docs.google.com/document/d/1Z3TToryEbC6EhNMEnVD3aBqpBPHM4CEq_jDYc56mHU4/edit?usp=sharing) | [Scrum Board](https://github.com/florayuan18/pikachudrinkingwindex/projects/1?card_filter_query=assignee%3Amaggie3000) | [Commits](https://github.com/florayuan18/pikachudrinkingwindex/commits?author=maggie3000) | [Profile](https://github.com/maggie3000)
+
+# Week 1 Issues
+| Team Member           | Roles |           Issues                              | 
+| -------------------------- |-----------------------------|-----------------------------|  
+| Calvin Cheah  | Technical Officer| [Technicals](https://github.com/florayuan18/pikachudrinkingwindex/issues/29) |
+| Crystal Widjaja | Scrum Leader | [Assignments](https://github.com/florayuan18/pikachudrinkingwindex/issues/30) |
+| Flora Yuan | GitHub Admin | [Github Guide](https://github.com/florayuan18/pikachudrinkingwindex/issues/8) |
+| Kira Liao | Web Designer | [Design Guide](https://github.com/florayuan18/pikachudrinkingwindex/issues/28) |
+| Maggie Killada | Deployment Manager | [Deployment Guide](https://github.com/florayuan18/pikachudrinkingwindex/issues/9) |
 
 # Week 0 Issues
 | Team Member           | Roles | 
