@@ -1,14 +1,58 @@
-<!DOCTYPE HTML>
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+
 <html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
       layout:decorate="~{layout}" lang="en">
 
-<head><div layout:fragment="metadata" th:remove="tag">
-  <!-- Start of head content specific to page -->
-  <title>About Crystal</title>
-  <!-- End of head content specific to page -->
-</div></head>
+<!-- <head> -->
+<div layout:fragment="metadata"  th:remove="tag">
+  <script>
+    const MSG_ON = "White Mask";
+    const IMAGE_ON = "/images/crystal1.png";
+    const MSG_OFF = "Black Mask";
+    const IMAGE_OFF = "/images/crystal2.png"
 
-<body></body>
+    // toggle selected bit and recalculate
+    function toggleBit(i) {
+      //alert("Digit action: " + i );
+      const dig = document.getElementById('digit' + i);
+      const image = document.getElementById('bulb' + i);
+      const butt = document.getElementById('butt' + i);
+      // Change digit and visual
+      if (image.src.match(IMAGE_ON)) {
+        dig.value = 0;
+        image.src = IMAGE_OFF;
+        butt.innerHTML = MSG_ON;
+      } else {
+        dig.value = 1;
+        image.src = IMAGE_ON;
+        butt.innerHTML = MSG_OFF;
+      }
 
+    }
+  </script>
+</div>
+<!-- </head> -->
+
+<!-- <body> -->
+<div layout:fragment="content" th:remove="tag">
+  <div class="container">
+
+      <div class="col-12">
+        <table class="table">
+
+          <tr>
+            <th:block th:each="i: ${#numbers.sequence(0, bits-1)}">
+              <td><img class="img-responsive py-3" th:id="'bulb' + ${i}" src="" th:src="@{'/images/closedfridge.png'}" alt="" width="40" height="Auto">
+                <button type="button" th:id="'butt' + ${i}" th:onclick="'javascript:toggleBit(' + ${i} + ')'">Open Fridge</button>
+              </td>
+            </th:block>
+          </tr>
+
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- </body> -->
 </html>
