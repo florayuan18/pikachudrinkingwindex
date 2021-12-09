@@ -35,14 +35,27 @@
   </script>
 </div>
 <div layout:fragment="content">
-        <div>
-          <img th:src="@{/images/crystal1.png}" id="getImage">
+    <div>
+        <img th:src="@{/images/crystal1.png}" id="getImage">
 
-        </div>
+    </div>
     <div>
       <input type="button" onclick="imagefun()" value="Change Image">
     </div>
-
+    <div class="contact">
+        <button type="button" class="block" onclick="window.location.href='https://docs.google.com/document/d/1eNAFiMXSAhTSycT7F8P9LFNIAcMdiNYvlRvJmdhxZr4/edit';">
+            Journal
+        </button>
+        <button type="button" class="block" onclick="window.location.href='https://github.com/florayuan18/pikachudrinkingwindex/projects/1?card_filter_query=assignee%3Acrystalwidjaja';">
+            Scrum Board
+        </button>
+        <button type="button" class="block" onclick="window.location.href='https://github.com/florayuan18/pikachudrinkingwindex/commits?author=crystalwidjaja';">
+            Commits
+        </button>
+        <button type="button" class="block" onclick="window.location.href='https://github.com/crystalwidjaja';">
+            Profile
+        </button>
+    </div>
 
 </div>
 </html>
