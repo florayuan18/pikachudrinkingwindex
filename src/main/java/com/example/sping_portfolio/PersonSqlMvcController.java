@@ -55,6 +55,30 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
         // Redirect to next step
         return "redirect:/Database/person";
     }
+    @GetMapping("/aboutcrystal")
+    public String aboutcrystal() {
+        return "aboutcrystal";
+    }
+
+    @GetMapping("/aboutflora")
+    public String aboutflora() {
+        return "aboutflora";
+    }
+
+    @GetMapping("/aboutkira")
+    public String aboutkira() {
+        return "aboutkira";
+    }
+
+    @GetMapping("/aboutcalvin")
+    public String aboutcalvin() {
+        return "aboutcalvin";
+    }
+
+    @GetMapping("/aboutmaggie")
+    public String aboutmaggie() {
+        return "aboutmaggie";
+    }
 
     @GetMapping("/Database/personupdate/{id}")
     public String personUpdate(@PathVariable("id") int id, Model model) {

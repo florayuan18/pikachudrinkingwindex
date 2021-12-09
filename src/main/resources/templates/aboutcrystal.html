@@ -3,12 +3,44 @@
 <html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
       layout:decorate="~{layout}" lang="en">
 
-<head><div layout:fragment="metadata" th:remove="tag">
-  <!-- Start of head content specific to page -->
-  <title>About Crystal</title>
-  <!-- End of head content specific to page -->
-</div></head>
+<head>
+  <title>About Crystal
+  </title>
+  <style type="text/css">
+    h2 {
+      text-align: center;
+      font-size: 30px;
+    }
+    img#getImage {
+      width: 300px;
+      height: auto;
+      border: 4px solid #a1a1a1;
+    }
+    div {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<div>
+  <h2>Change image onClick event here...</h2>
+  <img src="crystal1.png" id="getImage">
 
-<body></body>
+</div>
+<div>
+  <input type="button" onclick="imagefun()" value="Change Image">
+</div>
+<script>
+  function imagefun() {
+    var Image_Id = document.getElementById('getImage');
+    if (Image_Id.src.match("crystal1.png")) {
+      Image_Id.src = "crystal2.png";
+    }
+    else {
+      Image_Id.src = "crystal1.png";
+    }
+  }
+</script>
 
+</body>
 </html>
