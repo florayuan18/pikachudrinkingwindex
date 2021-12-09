@@ -14,7 +14,7 @@ This class has an instance of Java Persistence API (JPA)
 */
 @Service
 @Transactional
-public class PersonSqlRepository {
+public class    PersonSqlRepository {
 
     @Autowired
     private PersonJpaRepository jpa;

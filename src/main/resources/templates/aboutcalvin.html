@@ -1,14 +1,64 @@
 <!DOCTYPE HTML>
-<!DOCTYPE HTML>
 <html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
       layout:decorate="~{layout}" lang="en">
 
 <head><div layout:fragment="metadata" th:remove="tag">
   <!-- Start of head content specific to page -->
-  <title>About Calvin</title>
+  <title>About Calvinz</title>
+
   <!-- End of head content specific to page -->
 </div></head>
+<style type="text/css">
+  h2 {
+    text-align: center;
+    font-size: 30px;
+  }
+  img#getImage {
+    width: 300px;
+    height: auto;
+    border: 4px solid #a1a1a1;
+  }
+  div {
+    text-align: center;
+  }
+</style>
 
-<body></body>
+<body>
+<div layout:fragment="content" th:remove="tag">
+
+<th:block th:each="binary: ${binary}">
+  <div class="row justify-content-md-center">
+    <table class="table">
+      <tr id="binary">
+        <td th:text="${binary}"></td>
+        <!--          <td th:text="${schedule[1]}"></td>-->
+        <!--          <td th:text="${schedule[2]}"></td>-->
+      </tr>
+      <!--        <tr><td th:text="${schedule[3]}"></td></tr>-->
+      <!--        <tr><td th:text="${schedule[4]}"></td></tr>-->
+
+    </table>
+  </div>
+</th:block>
+
+  <h2>Change image onClick event here...</h2>
+  <input type="button" onclick="imagefun()" value="Change Image">
+    <img src="../images/sqToung.png" id="getImage">
+
+  </div>
+  </div>
+  <script>
+    function imagefun() {
+      var Image_Id = document.getElementById('getImage');
+      if (Image_Id.src.match("../images/sqToung.png")) {
+        Image_Id.src = "../images/sqToung.png";
+      }
+      else {
+        Image_Id.src = "../images/sqToungP2.png";
+      }
+    }
+  </script>
+</div>
+</body>
 
 </html>
