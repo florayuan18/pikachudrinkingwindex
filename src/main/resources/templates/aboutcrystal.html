@@ -1,58 +1,46 @@
-<!DOCTYPE html>
-
+<!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
       layout:decorate="~{layout}" lang="en">
 
-<!-- <head> -->
-<div layout:fragment="metadata"  th:remove="tag">
-  <script>
-    const MSG_ON = "White Mask";
-    const IMAGE_ON = "/images/crystal1.png";
-    const MSG_OFF = "Black Mask";
-    const IMAGE_OFF = "/images/crystal2.png"
-
-    // toggle selected bit and recalculate
-    function toggleBit(i) {
-      //alert("Digit action: " + i );
-      const dig = document.getElementById('digit' + i);
-      const image = document.getElementById('bulb' + i);
-      const butt = document.getElementById('butt' + i);
-      // Change digit and visual
-      if (image.src.match(IMAGE_ON)) {
-        dig.value = 0;
-        image.src = IMAGE_OFF;
-        butt.innerHTML = MSG_ON;
-      } else {
-        dig.value = 1;
-        image.src = IMAGE_ON;
-        butt.innerHTML = MSG_OFF;
-      }
-
+<head>
+  <title>javascript change image onclick event
+  </title>
+  <style type="text/css">
+    h2 {
+      text-align: center;
+      font-size: 30px;
     }
-  </script>
+    img#getImage {
+      width: 300px;
+      height: auto;
+      border: 4px solid #a1a1a1;
+    }
+    div {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<div>
+  <h2>Change image onClick event here...</h2>
+  <img src="crystal1.png" id="getImage">
+
 </div>
-<!-- </head> -->
-
-<!-- <body> -->
-<div layout:fragment="content" th:remove="tag">
-  <div class="container">
-
-      <div class="col-12">
-        <table class="table">
-
-          <tr>
-            <th:block th:each="i: ${#numbers.sequence(0, bits-1)}">
-              <td><img class="img-responsive py-3" th:id="'bulb' + ${i}" src="" th:src="@{'/images/closedfridge.png'}" alt="" width="40" height="Auto">
-                <button type="button" th:id="'butt' + ${i}" th:onclick="'javascript:toggleBit(' + ${i} + ')'">Open Fridge</button>
-              </td>
-            </th:block>
-          </tr>
-
-        </table>
-      </div>
-
-    </div>
-  </div>
+<div>
+  <input type="button" onclick="imagefun()" value="Change Image">
 </div>
-<!-- </body> -->
+<script>
+  function imagefun() {
+    var Image_Id = document.getElementById('getImage');
+    if (Image_Id.src.match("crystal1.png")) {
+      Image_Id.src = "crystal2.png";
+    }
+    else {
+      Image_Id.src = "crystal1.png";
+    }
+  }
+</script>
+
+</body>
 </html>
