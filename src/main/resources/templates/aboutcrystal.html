@@ -3,9 +3,11 @@
 <html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
       layout:decorate="~{layout}" lang="en">
 
-<head>
+<div layout:fragment="metadata">
+
   <title>About Crystal
   </title>
+
   <style type="text/css">
     h2 {
       text-align: center;
@@ -20,27 +22,27 @@
       text-align: center;
     }
   </style>
-</head>
-<body>
-<div>
-  <h2>Change image onClick event here...</h2>
-  <img src="crystal1.png" id="getImage">
+  <script>
+    function imagefun() {
+      var Image_Id = document.getElementById('getImage');
+      if (Image_Id.src.match("images/crystal1.png")) {
+        Image_Id.src = "images/crystal2.png";
+      }
+      else {
+        Image_Id.src = "images/crystal1.png";
+      }
+    }
+  </script>
+</div>
+<div layout:fragment="content">
+        <div>
+          <img th:src="@{/images/crystal1.png}" id="getImage">
+
+        </div>
+    <div>
+      <input type="button" onclick="imagefun()" value="Change Image">
+    </div>
+
 
 </div>
-<div>
-  <input type="button" onclick="imagefun()" value="Change Image">
-</div>
-<script>
-  function imagefun() {
-    var Image_Id = document.getElementById('getImage');
-    if (Image_Id.src.match("crystal1.png")) {
-      Image_Id.src = "crystal2.png";
-    }
-    else {
-      Image_Id.src = "crystal1.png";
-    }
-  }
-</script>
-
-</body>
 </html>
