@@ -10,10 +10,16 @@
   <!-- End of head content specific to page -->
   </div>
 </head>
+<!--<style>-->
+<!--  body {-->
+<!--    background-image: url("https://images.ctfassets.net/hrltx12pl8hq/7oQKmoi04ul0JsCUxkuHih/3fbf330101cffcce262c7ab54844009d/05-nature-backgrounds_1491895829.jpg?fit=fill&w=480&h=270");-->
+<!--    background-repeat: no-repeat;-->
+<!--    background-attachment: fixed;-->
+<!--  }-->
+<!--</style>-->
 
-
-<body>
-<div layout:fragment="content" th:remove="tag">
+<body style="background-image: url('https://blog.depositphotos.com/wp-content/uploads/2017/07/Soothing-nature-backgrounds-2.jpg.webp');">
+<div layout:fragment="content" th:remove="tag" style="color:white;">
 
 
   <script>
@@ -29,7 +35,7 @@
   </script>
 <!--Title-->
   <div class="row justify-content-md-center" >
-    <h1 class="text-center">Hey! I'm Calvin</h1>
+    <h1 class="text-center" style="color:white;">Hey! I'm Calvin</h1>
   </div>
 <!--Changing Picture-->
   <div class="row justify-content-md-center" >
@@ -53,29 +59,29 @@
     </button>
   </div>
 <!--Weather API-->
-  <table class="table">
-    <tr>
-      <th>Time</th>
-      <th>All-time Cases</th>
-      <th>Recorded Deaths</th>
-      <th>Active Cases</th>
-    </tr>
-    <tr>
-      <!-- Usage of Java HashMap and Thymeleaf -->
-      <td th:text="${weatherStats.statistic_taken_at}"></td>
-      <td th:text="${weatherStats.Address}"></td>
+<!--  <table class="table">-->
+<!--    <tr>-->
+<!--      <th>Time</th>-->
+<!--      <th>All-time Cases</th>-->
+<!--      <th>Recorded Deaths</th>-->
+<!--      <th>Active Cases</th>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      &lt;!&ndash; Usage of Java HashMap and Thymeleaf &ndash;&gt;-->
+<!--      <td th:text="${weatherStats.statistic_taken_at}"></td>-->
+<!--      <td th:text="${weatherStats.Address}"></td>-->
 <!--      <td th:text="${map.world_total.Direction}"></td>-->
 <!--      <td th:text="${map.world_total.Maximum_Temperature}"></td>-->
     </tr>
   </table>
 
 <!--FRQ UNIT 2-->
-  <div class="row justify-content-md-center" >
+  <div class="row justify-content-md-center" style="color:white;">
     <h3 class="text-center">FRQ UNIT 2</h3>
 
   </div>
-  <th:block th:each="binary: ${binary}">
-    <div class="row justify-content-md-center" >
+  <th:block th:each="binary: ${binary}" style="color:white;">
+    <div class="row justify-content-md-center" style="color:white;" >
       <form action="/AboutUs/aboutcalvin">
       <TABLE>
         <TD>
