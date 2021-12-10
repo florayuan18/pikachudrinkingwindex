@@ -57,29 +57,29 @@ public class AboutCalvinCTRL {
         return "/AboutUs/aboutcalvin";
     }
 
-    public String API(Model model) throws IOException, InterruptedException, ParseException {
-        // https://rapidapi.com/spamakashrajtech/api/corona-virus-world-and-india-data/
-        //rapidapi setup:
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("https://visual-crossing-weather.p.rapidapi.com/history?startDateTime=2019-01-01T00%3A00%3A00&aggregateHours=24&location=San%20Diego%2C%20California%2C%20USA&endDateTime=2019-01-03T00%3A00%3A00&unitGroup=us&dayStartTime=8%3A00%3A00&contentType=csv&dayEndTime=17%3A00%3A00&shortColumnNames=0"))
-                .header("x-rapidapi-host", "visual-crossing-weather.p.rapidapi.com")
-                .header("x-rapidapi-key", "e2ec6cd693msh31f1d4d692bd6b0p1dcb11jsn9ee520fd4398")
-                .method("GET", HttpRequest.BodyPublishers.noBody())
-                .build();
-        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-//        System.out.println(response.body());
-
-
-//        //alternative #1: convert response.body() to java hash map
-        var weatherStats = new ObjectMapper().readValue(response.body(), HashMap.class);
+//    public String API(Model model) throws IOException, InterruptedException, ParseException {
+//        // https://rapidapi.com/spamakashrajtech/api/corona-virus-world-and-india-data/
+//        //rapidapi setup:
+//        HttpRequest request = HttpRequest.newBuilder()
+//                .uri(URI.create("https://visual-crossing-weather.p.rapidapi.com/history?startDateTime=2019-01-01T00%3A00%3A00&aggregateHours=24&location=San%20Diego%2C%20California%2C%20USA&endDateTime=2019-01-03T00%3A00%3A00&unitGroup=us&dayStartTime=8%3A00%3A00&contentType=csv&dayEndTime=17%3A00%3A00&shortColumnNames=0"))
+//                .header("x-rapidapi-host", "visual-crossing-weather.p.rapidapi.com")
+//                .header("x-rapidapi-key", "e2ec6cd693msh31f1d4d692bd6b0p1dcb11jsn9ee520fd4398")
+//                .method("GET", HttpRequest.BodyPublishers.noBody())
+//                .build();
+//        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+////        System.out.println(response.body());
 //
-//        //pass stats to view
-        model.addAttribute("weatherStats", weatherStats);
-//        model.addAttribute("world_map", map.get("world_total")); //illustrative of map get
-
-
-        return "/AboutUs/aboutcalvin";
-    }
+//
+////        //alternative #1: convert response.body() to java hash map
+//        var weatherStats = new ObjectMapper().readValue(response.body(), HashMap.class);
+////
+////        //pass stats to view
+//        model.addAttribute("weatherStats", weatherStats);
+////        model.addAttribute("world_map", map.get("world_total")); //illustrative of map get
+//
+//
+//        return "/AboutUs/aboutcalvin";
+//    }
 
 }
 
