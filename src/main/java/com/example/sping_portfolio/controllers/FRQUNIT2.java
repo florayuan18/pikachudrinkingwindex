@@ -5,22 +5,50 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller
 public class FRQUNIT2 {
     @GetMapping("/AboutUs/aboutcalvin")
-    public String FRQUNIT2(@RequestParam(name="input", required=false, defaultValue="" ) String input, Model model)
+    public String TableCTRL(@RequestParam(name="seq", required=false, defaultValue= "") String seq,
+                            @RequestParam(name="changeSeq", required=false, defaultValue= "") String changeSeq,
+                            @RequestParam(name="insertSeq", required=false, defaultValue="") String insertSeq,
+                            @RequestParam(name="insertSeqLoc", required=false, defaultValue="0") int insertSeqLoc,
+                            @RequestParam(name="removeSeq", required=false, defaultValue="") String removeSeq,
+                            @RequestParam(name="xDist", required=false, defaultValue="0") int xDist,
+                            @RequestParam(name="yDist", required=false, defaultValue="0") int yDist,
+                            Model model)
     {
-        String binary = "";
-        LightSequence gradShow = new LightSequence("0101 0101 0101");
-        gradShow.changeSequence("0011 0011 0011");
-        gradShow.insertSegment("1111 1111", 4);
-        gradShow.insertSegment("111", 0);
-        gradShow.removeSegment("1111 0011");
 
+        String binary = "";
+        String binaryC = "";
+        String binaryI = "";
+        String binaryR = "";
+        Double distXY = 0.0;
+        LightSequence gradShow = new LightSequence(seq);
         binary = gradShow.displayRet();
 
+        if (binaryC.equals("")) {
+            binaryC = binary;
+        }
+        else{
+            binaryC = gradShow.changeSequence(changeSeq);
+        }
+
+        binaryI = gradShow.insertSegment(insertSeq, insertSeqLoc);
+        binaryR = gradShow.removeSegment(removeSeq);
+        distXY = gradShow.distCalc(xDist,yDist);
+
+
+
         model.addAttribute("binary", binary);
-        return "/aboutcalvin";
+        model.addAttribute("binaryC", binaryC);
+        model.addAttribute("binaryI", binaryI);
+        model.addAttribute("binaryR", binaryR);
+        model.addAttribute("distXY", distXY);
+
+        return "/AboutUs/aboutcalvin";
     }
 }
 

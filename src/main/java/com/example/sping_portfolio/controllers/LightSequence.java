@@ -18,44 +18,49 @@ public class LightSequence
      this.seq = seq;
     }
 //inserts "segment" into position "ind"
-    public void insertSegment(String segment, int ind)
+    public String insertSegment(String segment, int ind)
     {
         resultSeq = seq.substring(0,ind) + segment + seq.substring(ind);
-        seq = resultSeq;
+        this.seq = resultSeq;
+        return(resultSeq);
     }
 //removes first instance of segment
 //seggy is the substring
-    public void removeSegment(String seggy) {
-        i = 0;
-        while (i < seq.length()-seggy.length())
-        {
-            subby = seq.substring(i, i + seggy.length());
+    public String removeSegment(String seggy) {
+//        i = 0;
+        return(seq.replace(seggy,""));
+//        while (i < seq.length()-seggy.length())
+//        {
+//            subby = seq.substring(i, i + seggy.length());
+//
+//            if(seggy.equals(subby))
+//            {
+//
+//
+//                w1 = seq.substring(0,i);
+//
+//                w2 = seq.substring(i + seggy.length()-1);
+//
+//                newSeq = w1 + w2;
+////                i = seq.length();
+//                return(newSeq);
+//            }
+//            else
+//            {
+//                i++;
+//            }
+//        }
 
-            if(seggy.equals(subby))
-            {
-                w1 = seq.substring(0,i);
-                w2 = seq.substring(i + seggy.length());
-                newSeq = w1 + w2;
-                seq = newSeq;
-                i = seq.length();
-            }
-            else
-            {
-                i++;
-            }
-        }
+//        return("DNE");
     }
 //changes the sequence, kinda redundant with LightSequence
-    public void changeSequence(String seq)
+    public String changeSequence(String seq)
     {
         this.seq = seq;
+        return(seq);
 
     }
-//removes spaces
-    public void removeSpace()
-    {
-        seq = seq.replaceAll(" ","");
-    }
+
 //Displays binary
     public void display()
     {
@@ -66,10 +71,11 @@ public class LightSequence
     {
         return(seq);
     }
-    public void distCalc(int xDist, int yDist)
+
+    public Double distCalc(int xDist, int yDist)
     {
         distance = (Double) Math.sqrt(Math.pow(xDist, 2) + Math.pow(yDist, 2));
-        System.out.println(distance);
+        return(distance);
     }
 //lets me run the code and calls the methods
     public static void main(String [] args)
@@ -81,7 +87,6 @@ public class LightSequence
         gradShow.display();
         gradShow.removeSegment("gay");
         gradShow.display();
-        gradShow.removeSpace();
         gradShow.display();
 
         gradShow.distCalc(1,7);

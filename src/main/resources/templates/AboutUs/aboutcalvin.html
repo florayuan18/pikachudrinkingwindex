@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layout}" lang="en">
+
+<head>
+  <div layout:fragment="metadata" th:remove="tag">
+  <!-- Start of head content specific to page -->
+  <title>About Calvin</title>
+
+  <!-- End of head content specific to page -->
+  </div>
+</head>
+
+
+<body>
+<div layout:fragment="content" th:remove="tag">
+
+
+  <script>
+    function imagefun() {
+      var Image_Id = document.getElementById('getImage');
+      if (Image_Id.src.match("../images/CalvinA.jpg")) {
+        Image_Id.src = "../images/CalvinB.jpg";
+      }
+      else {
+        Image_Id.src = "../images/CalvinA.jpg";
+      }
+    }
+  </script>
+  <div style=" left: auto; top: 40px;">
+    <img th:src="@{/images/CalvinA.jpg}" width="auto" height="200" onclick="imagefun()" id="getImage"; />
+  </div>
+  <th:block th:each="binary: ${binary}">
+    <div class="row justify-content-md-center" >
+      <form action="/AboutUs/aboutcalvin">
+      <TABLE>
+        <TD>
+      <label for="seq">What sequence?</label>
+        <input name="seq" id="seq">
+        <p th:text="${binary}"></p>
+        </TD>
+        <TD>
+      <label for="changeSeq">Change the sequence?</label>
+        <input name="changeSeq" id="changeSeq">
+        <p th:text="${binaryC}"></p>
+        </TD>
+        <TD>
+      <label for="insertSeq">Insert Sequence and where?</label>
+        <input name="insertSeq" id="insertSeq">
+          <input name="insertSeqLoc" id="insertSeqLoc">
+      <p  th:text="${binaryI}"></p>
+
+        </TD>
+        <TD>
+
+      <label for="removeSeq">Remove sequence?</label>
+        <input name="removeSeq" id="removeSeq">
+        <p  th:text="${binaryR}"></p>
+        </TD>
+        <TD>
+      <label for="xDist">Calculate Distance? X and Y distance</label>
+        <input name="xDist" id="xDist">
+        <input name="yDist" id="yDist">
+        <p  th:text="${distXY}"></p>
+        </TD>
+        <TD>
+          <input type="submit" value="Submit">
+
+        </TD>
+      </TABLE>
+      </form>
+
+
+
+
+
+    </div>
+  </th:block>
+
+
+
+
+
+  </div>
+  </div>
+
+</div>
+</body>
+
+</html>
