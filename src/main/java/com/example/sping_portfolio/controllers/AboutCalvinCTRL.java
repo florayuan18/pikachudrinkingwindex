@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-public class FRQUNIT2 {
+public class AboutCalvinCTRL {
     @GetMapping("/AboutUs/aboutcalvin")
     public String TableCTRL(@RequestParam(name="seq", required=false, defaultValue= "") String seq,
                             @RequestParam(name="changeSeq", required=false, defaultValue= "") String changeSeq,
@@ -26,7 +26,7 @@ public class FRQUNIT2 {
         LightSequence gradShow = new LightSequence(seq);
         String binary = gradShow.displayRet();
 
-        if (binaryC.equals("")) {
+        if (changeSeq.equals("")) {
             binaryC = binary;
         }
         else{
