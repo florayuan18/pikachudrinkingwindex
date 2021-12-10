@@ -2,6 +2,7 @@ package com.example.sping_portfolio;
 
 
 import com.example.sping_portfolio.SQL.*;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,6 +13,13 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import javax.validation.Valid;
+import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.text.ParseException;
+import java.util.HashMap;
 import java.util.List;
 
 // Built using article: https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/mvc.html
@@ -59,9 +67,30 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
         return "aboutflora";
     }
 
+    public static String makeurl(){
+        String makeurl = "https://billboard-api2.p.rapidapi.com/billboard-200?range=1-10&date=" + java.time.LocalDate.now();
+        return makeurl;
+    }
     @GetMapping("/aboutkira")
-    public String aboutkira() {
-        return "aboutkira";
+    public String quotes(Model model) throws IOException, InterruptedException, ParseException {
+        //rapidapi setup:
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(makeurl()))
+                .header("x-rapidapi-host", "billboard-api2.p.rapidapi.com")
+                .header("x-rapidapi-key", "f4e47a0331msh068fd5299f4fe60p13031ejsn3acdd247ddd3")
+                .method("GET", HttpRequest.BodyPublishers.noBody())
+                .build();
+        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+
+        //convert response.body() to java hash map
+        var aboutkira = new ObjectMapper().readValue(response.body(), HashMap.class);
+
+
+        //pass stats to view
+        model.addAttribute("aboutkira", aboutkira);
+
+
+        return "AboutUs/aboutkira";
     }
 
     @GetMapping("/aboutmaggie")

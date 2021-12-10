@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layout}" lang="en">
+
+<head><div layout:fragment="metadata" th:remove="tag">
+  <!-- Start of head content specific to page -->
+  <title>About Kira</title>
+  <!-- End of head content specific to page -->
+
+  <script>
+    function imagefun() {
+      var Image_Id = document.getElementById('getImage');
+      if (Image_Id.src.match("../images/kira.png")) {
+        Image_Id.src = "../images/kira_greywater.png";
+      }
+      else {
+        Image_Id.src = "../images/kira.png";
+      }
+    }
+  </script>
+</div></head>
+
+<body><div layout:fragment="content" th:remove="tag">
+  <td th:text="${aboutkira.content}">Rank</td>
+
+  <div style=" left: auto; top: 40px;">
+    <img th:src="@{/images/kira.png}" width="auto" height="200" onclick="imagefun()" id="getImage"; />
+  </div>
+
+  <div class="contact row justify-content-md-center">
+    <button type="button" class="block" onclick="window.location.href='https://docs.google.com/document/d/1Z3TToryEbC6EhNMEnVD3aBqpBPHM4CEq_jDYc56mHU4/edit?usp=sharing';">
+      Journal
+    </button>
+    <button type="button" class="block" onclick="window.location.href='https://github.com/florayuan18/pikachudrinkingwindex/projects/1?card_filter_query=assignee%3Acrystalwidjaja';">
+      Scrum Board
+    </button>
+    <button type="button" class="block" onclick="window.location.href='https://github.com/florayuan18/pikachudrinkingwindex/graphs/contributors';">
+      Commits
+    </button>
+    <button type="button" class="block" onclick="window.location.href='https://github.com/4disease';">
+      Profile
+    </button>
+  </div>
+</div>
+</body>
+
+</html>
