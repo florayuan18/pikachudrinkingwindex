@@ -53,10 +53,6 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
         // Redirect to next step
         return "redirect:/Database/person";
     }
-    @GetMapping("/aboutcrystal")
-    public String aboutcrystal() {
-        return "aboutcrystal";
-    }
 
     @GetMapping("/aboutflora")
     public String aboutflora() {
@@ -66,11 +62,6 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
     @GetMapping("/aboutkira")
     public String aboutkira() {
         return "aboutkira";
-    }
-
-    @GetMapping("/aboutcalvin")
-    public String aboutcalvin() {
-        return "aboutcalvin";
     }
 
     @GetMapping("/aboutmaggie")

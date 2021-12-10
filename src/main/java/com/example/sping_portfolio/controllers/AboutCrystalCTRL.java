@@ -19,8 +19,8 @@ import java.util.HashMap;
 import java.util.List;
 
 @Controller
-public class AboutCalvinCTRL {
-    @GetMapping("/AboutUs/aboutcalvin")
+public class AboutCrystalCTRL {
+    @GetMapping("/aboutcrystal")
     public String TableCTRL(@RequestParam(name="seq", required=false, defaultValue= "") String seq,
                             @RequestParam(name="changeSeq", required=false, defaultValue= "") String changeSeq,
                             @RequestParam(name="insertSeq", required=false, defaultValue="") String insertSeq,
@@ -54,7 +54,7 @@ public class AboutCalvinCTRL {
         model.addAttribute("distXY", distXY);
 
 
-        return "/AboutUs/aboutcalvin";
+        return "/aboutcrystal";
     }
 
 //    public String API(Model model) throws IOException, InterruptedException, ParseException {

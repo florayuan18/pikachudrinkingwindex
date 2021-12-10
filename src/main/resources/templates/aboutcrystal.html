@@ -1,49 +1,49 @@
 <!DOCTYPE HTML>
-
 <html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
       layout:decorate="~{layout}" lang="en">
 
-<div layout:fragment="metadata">
+<head>
+    <div layout:fragment="metadata" th:remove="tag">
+        <!-- Start of head content specific to page -->
+        <title>About Crystal</title>
 
-  <title>About Crystal
-  </title>
-
-  <style type="text/css">
-    h2 {
-      text-align: center;
-      font-size: 30px;
-    }
-    img#getImage {
-      width: 300px;
-      height: auto;
-      border: 4px solid #a1a1a1;
-    }
-    div {
-      text-align: center;
-    }
-  </style>
-  <script>
-    function imagefun() {
-      var Image_Id = document.getElementById('getImage');
-      if (Image_Id.src.match("images/crystal1.png")) {
-        Image_Id.src = "images/crystal2.png";
-      }
-      else {
-        Image_Id.src = "images/crystal1.png";
-      }
-    }
-  </script>
-</div>
-<div layout:fragment="content">
-    <div>
-        <img th:src="@{/images/crystal1.png}" id="getImage">
-
+        <!-- End of head content specific to page -->
     </div>
-    <div>
-      <input type="button" onclick="imagefun()" value="Change Image">
+</head>
+<!--<style>-->
+<!--  body {-->
+<!--    background-repeat: no-repeat;-->
+<!--    background-attachment: fixed;-->
+<!--  }-->
+<!--</style>-->
+
+<body>
+<div layout:fragment="content" th:remove="tag" style="color:white;">
+
+
+    <script>
+        function imagefun() {
+            var Image_Id = document.getElementById('getImage');
+            if (Image_Id.src.match("../images/crystal1.png")) {
+                Image_Id.src = "../images/crystal2.png";
+            }
+            else {
+                Image_Id.src = "../images/crystal1.png";
+            }
+        }
+    </script>
+    <!--Title-->
+    <div class="row justify-content-md-center" >
     </div>
-    <div class="contact">
-        <button type="button" class="block" onclick="window.location.href='https://docs.google.com/document/d/1eNAFiMXSAhTSycT7F8P9LFNIAcMdiNYvlRvJmdhxZr4/edit';">
+    <!--Changing Picture-->
+    <div class="row justify-content-md-center" >
+        <div style=" left: auto; top: 40px;">
+            <img th:src="@{/images/crystal1.png}" width="auto" height="200" onclick="imagefun()" id="getImage"; />
+        </div>
+    </div>
+    <!--Links-->
+    <div class="contact row justify-content-md-center">
+        <button type="button" class="block" onclick="window.location.href='https://docs.google.com/document/d/1eNAFiMXSAhTSycT7F8P9LFNIAcMdiNYvlRvJmdhxZr4/edit#heading=h.8u2g70w2xzdu';">
             Journal
         </button>
         <button type="button" class="block" onclick="window.location.href='https://github.com/florayuan18/pikachudrinkingwindex/projects/1?card_filter_query=assignee%3Acrystalwidjaja';">
@@ -57,5 +57,71 @@
         </button>
     </div>
 
+    </tr>
+    </table>
+
+    <!--FRQ UNIT 2-->
+    <div class="row justify-content-md-center" style="color:white;">
+        <h3 class="text-center">FRQ UNIT 2</h3>
+
+    </div>
+    <th:block th:each="binary: ${binary}" style="color:white;">
+        <div class="row justify-content-md-center" style="color:white;" >
+            <form action="/aboutcrystal">
+                <TABLE>
+                    <TD>
+                        <label for="seq">What sequence?</label>
+                        <input name="seq" id="seq">
+                        <p th:text="${binary}"></p>
+                    </TD>
+                    <TD>
+                        <label for="changeSeq">Change the sequence?</label>
+                        <input name="changeSeq" id="changeSeq">
+                        <p th:text="${binaryC}"></p>
+                    </TD>
+                    <TD>
+                        <label for="insertSeq">Insert Sequence and where?</label>
+                        <input name="insertSeq" id="insertSeq">
+                        <input name="insertSeqLoc" id="insertSeqLoc">
+                        <p  th:text="${binaryI}"></p>
+
+                    </TD>
+                    <TD>
+
+                        <label for="removeSeq">Remove sequence?</label>
+                        <input name="removeSeq" id="removeSeq">
+                        <p  th:text="${binaryR}"></p>
+                    </TD>
+                    <TD>
+                        <label for="xDist">Calculate Distance? X and Y distance</label>
+                        <input name="xDist" id="xDist">
+                        <input name="yDist" id="yDist">
+                        <p  th:text="${distXY}"></p>
+                    </TD>
+                </TABLE>
+                <div class="row justify-content-md-center" >
+                    <input type="submit" value="Submit">
+                </div>
+
+
+
+            </form>
+
+
+
+
+
+        </div>
+    </th:block>
+
+
+
+
+
 </div>
+</div>
+
+</div>
+</body>
+
 </html>
