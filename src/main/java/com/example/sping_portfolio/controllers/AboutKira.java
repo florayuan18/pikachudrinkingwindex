@@ -3,70 +3,63 @@ package com.example.sping_portfolio.controllers;
  * Web Content with Spring MVCSpring Example: https://spring.io/guides/gs/serving-web-con
  */
 
-import com.example.sping_portfolio.LightSequence;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+
+import org.springframework.ui.Model;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.text.ParseException;
+import java.util.HashMap;
+
+
+import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 
 @Controller  // HTTP requests are handled as a controller, using the @Controller annotation
 public class AboutKira {
-    @GetMapping("/aboutkira")    // CONTROLLER handles GET request for /greeting, maps it to greeting() and does variable bindings
-    public String greeting(@RequestParam(name="sequence", required=false, defaultValue="World") String name, Model model) {
-        // @RequestParam handles required and default values, name and model are class variables, model looking like JSON
-        model.addAttribute("sequence", sequence); // MODEL is passed to html
-        return "aboutkira"; // returns HTML VIEW (greeting)
+
+    public static String makeurl(){
+        String makeurl = "https://billboard-api2.p.rapidapi.com/billboard-200?range=1-10&date=" + java.time.LocalDate.now();
+        return makeurl;
     }
 
-    String sequence = "";
+/*
+    @GetMapping("/aboutkira")
+    public String quotes(Model model) throws IOException, InterruptedException, ParseException {
+        //rapidapi setup:
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(makeurl()))
+                .header("x-rapidapi-host", "billboard-api2.p.rapidapi.com")
+                .header("x-rapidapi-key", "f4e47a0331msh068fd5299f4fe60p13031ejsn3acdd247ddd3")
+                .method("GET", HttpRequest.BodyPublishers.noBody())
+                .build();
+        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
 
-    public AboutKira(String seq)
-    {
-        sequence = seq;
+        //convert response.body() to java hash map
+        var aboutkira = new ObjectMapper().readValue(response.body(), HashMap.class);
+
+
+        //pass stats to view
+        model.addAttribute("aboutkira", aboutkira);
+
+
+        return "AboutUs/aboutkira";
     }
+    */
 
-    public void display(){
-        System.out.println("The light sequence is " + this.sequence);
-    }
+//    public static void main(String[] args) {
+//        HttpRequest request = HttpRequest.newBuilder()
+//                .uri(URI.create(makeurl()))
+//                .header("x-rapidapi-host", "billboard-api2.p.rapidapi.com")
+//                .header("x-rapidapi-key", "f4e47a0331msh068fd5299f4fe60p13031ejsn3acdd247ddd3")
+//                .method("GET", HttpRequest.BodyPublishers.noBody())
+//                .build();
+//        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+//        System.out.println(response.body());
+//   }
 
-    public void changeSequence(String seq)
-    {
-        this.sequence = seq;
-    }
-
-    public String insertSegment(String segment, int ind)
-    {
-        String newSequence = this.sequence.substring(0, ind + 1)
-                + segment
-                + this.sequence.substring(ind + 1);
-
-        return newSequence;
-
-    }
-
-    public static String newSequence(String oldSeq, String segment){
-        int index = oldSeq.indexOf(segment);
-        String newSeq = oldSeq.substring(0, index) + oldSeq.substring(index + segment.length());
-
-        return newSeq;
-    }
-
-    public static int squareRoot(double a, double b){
-        double root = (Math.sqrt(a*a + b*b));
-        return (int)root;
-    }
-
-
-    public static void main(String args[])
-    {
-        AboutKira gradshow = new AboutKira("0101 0101 0101");
-        gradshow.display();
-
-        gradshow.changeSequence("0011 0011 0011");
-        gradshow.display();
-
-        System.out.println(gradshow.insertSegment("1111 1111", 4));
-        System.out.println(newSequence("1100000111", "11"));
-        System.out.println(squareRoot(4, 0));
-    }
 }
