@@ -27,15 +27,47 @@
       }
     }
   </script>
+<!--Title-->
   <div class="row justify-content-md-center" >
     <h1 class="text-center">Hey! I'm Calvin</h1>
   </div>
+<!--Changing Picture-->
   <div class="row justify-content-md-center" >
     <div style=" left: auto; top: 40px;">
       <img th:src="@{/images/CalvinA.jpg}" width="auto" height="200" onclick="imagefun()" id="getImage"; />
     </div>
   </div>
-
+<!--Links-->
+  <div class="contact row justify-content-md-center">
+    <button type="button" class="block" onclick="window.location.href='https://docs.google.com/document/d/1eNAFiMXSAhTSycT7F8P9LFNIAcMdiNYvlRvJmdhxZr4/edit';">
+      Journal
+    </button>
+    <button type="button" class="block" onclick="window.location.href='https://github.com/florayuan18/pikachudrinkingwindex/projects/1?card_filter_query=assignee%3Acrystalwidjaja';">
+      Scrum Board
+    </button>
+    <button type="button" class="block" onclick="window.location.href='https://github.com/florayuan18/pikachudrinkingwindex/graphs/contributors';">
+      Commits
+    </button>
+    <button type="button" class="block" onclick="window.location.href='https://github.com/QwikSP';">
+      Profile
+    </button>
+  </div>
+<!--Weather API-->
+  <table class="table">
+    <tr>
+      <th>Time</th>
+      <th>All-time Cases</th>
+      <th>Recorded Deaths</th>
+      <th>Active Cases</th>
+    </tr>
+    <tr>
+      <!-- Usage of Java HashMap and Thymeleaf -->
+      <td th:text="${weatherStats.statistic_taken_at}"></td>
+      <td th:text="${weatherStats.Address}"></td>
+<!--      <td th:text="${map.world_total.Direction}"></td>-->
+<!--      <td th:text="${map.world_total.Maximum_Temperature}"></td>-->
+    </tr>
+  </table>
 
 <!--FRQ UNIT 2-->
   <div class="row justify-content-md-center" >

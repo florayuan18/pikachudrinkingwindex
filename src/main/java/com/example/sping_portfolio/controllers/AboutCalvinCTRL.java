@@ -1,11 +1,21 @@
 package com.example.sping_portfolio.controllers;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.tomcat.util.json.JSONParser;
+import org.json.simple.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 @Controller
@@ -43,9 +53,33 @@ public class AboutCalvinCTRL {
         model.addAttribute("binaryR", binaryR);
         model.addAttribute("distXY", distXY);
 
+
         return "/AboutUs/aboutcalvin";
     }
+
+    public String API(Model model) throws IOException, InterruptedException, ParseException {
+        // https://rapidapi.com/spamakashrajtech/api/corona-virus-world-and-india-data/
+        //rapidapi setup:
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://visual-crossing-weather.p.rapidapi.com/history?startDateTime=2019-01-01T00%3A00%3A00&aggregateHours=24&location=San%20Diego%2C%20California%2C%20USA&endDateTime=2019-01-03T00%3A00%3A00&unitGroup=us&dayStartTime=8%3A00%3A00&contentType=csv&dayEndTime=17%3A00%3A00&shortColumnNames=0"))
+                .header("x-rapidapi-host", "visual-crossing-weather.p.rapidapi.com")
+                .header("x-rapidapi-key", "e2ec6cd693msh31f1d4d692bd6b0p1dcb11jsn9ee520fd4398")
+                .method("GET", HttpRequest.BodyPublishers.noBody())
+                .build();
+        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+//        System.out.println(response.body());
+
+
+//        //alternative #1: convert response.body() to java hash map
+        var weatherStats = new ObjectMapper().readValue(response.body(), HashMap.class);
+//
+//        //pass stats to view
+        model.addAttribute("weatherStats", weatherStats);
+//        model.addAttribute("world_map", map.get("world_total")); //illustrative of map get
+
+
+        return "/AboutUs/aboutcalvin";
+    }
+
 }
-
-
 
