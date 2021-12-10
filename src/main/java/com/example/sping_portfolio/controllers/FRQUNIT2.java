@@ -21,13 +21,10 @@ public class FRQUNIT2 {
                             Model model)
     {
 
-        String binary = "";
         String binaryC = "";
-        String binaryI = "";
-        String binaryR = "";
-        Double distXY = 0.0;
+
         LightSequence gradShow = new LightSequence(seq);
-        binary = gradShow.displayRet();
+        String binary = gradShow.displayRet();
 
         if (binaryC.equals("")) {
             binaryC = binary;
@@ -35,11 +32,9 @@ public class FRQUNIT2 {
         else{
             binaryC = gradShow.changeSequence(changeSeq);
         }
-
-        binaryI = gradShow.insertSegment(insertSeq, insertSeqLoc);
-        binaryR = gradShow.removeSegment(removeSeq);
-        distXY = gradShow.distCalc(xDist,yDist);
-
+        String binaryI = gradShow.insertSegment(insertSeq, insertSeqLoc);
+        String binaryR = gradShow.removeSegment(removeSeq);
+        Double distXY = gradShow.distCalc(xDist,yDist);
 
 
         model.addAttribute("binary", binary);

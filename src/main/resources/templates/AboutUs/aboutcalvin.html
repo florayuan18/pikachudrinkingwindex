@@ -27,9 +27,13 @@
       }
     }
   </script>
-  <div style=" left: auto; top: 40px;">
-    <img th:src="@{/images/CalvinA.jpg}" width="auto" height="200" onclick="imagefun()" id="getImage"; />
+  <div class="row justify-content-md-center" >
+    <h1 class="text-center">Hey! I'm Calvin</h1>
+    <div style=" left: auto; top: 40px;">
+      <img th:src="@{/images/CalvinA.jpg}" width="auto" height="200" onclick="imagefun()" id="getImage"; />
+    </div>
   </div>
+
   <th:block th:each="binary: ${binary}">
     <div class="row justify-content-md-center" >
       <form action="/AboutUs/aboutcalvin">
