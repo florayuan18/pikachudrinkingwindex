@@ -66,7 +66,7 @@
 <div layout:fragment="content">
   <div>
     <img th:src="@{/images/floramask.jpg}" id="getImage">
-
+    <h2> Flora Yuan </h2>
   </div>
   <div>
     <input type="button" onclick="imagefun()" value="Change Image">
@@ -84,7 +84,91 @@
     <button class="button button2" onclick="window.location.href='https://github.com/florayuan18';">
       Profile
     </button>
+
+    <p>API to find your coordinates</p>
+
+    <button onclick="getLocation()">Try It</button>
+
+    <p id="demo"></p>
+
+    <script>
+      var x = document.getElementById("demo");
+
+      function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+          x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+      }
+
+      function showPosition(position) {
+        x.innerHTML = "Latitude: " + position.coords.latitude +
+                "<br>Longitude: " + position.coords.longitude;
+      }
+    </script>
   </div>
 
+  <div class="row justify-content-md-center" style="color:white;">
+    <h3 class="text-center">FRQ UNIT 2</h3>
+
+  </div>
+  <th:block th:each="binary: ${binary}" style="color:white;">
+    <div class="row justify-content-md-center" style="color:white;" >
+      <form action="/aboutflora">
+        <TABLE>
+          <TD>
+            <label for="seq">What sequence?</label>
+            <input name="seq" id="seq">
+            <p th:text="${binary}"></p>
+          </TD>
+          <TD>
+            <label for="changeSeq">Change the sequence?</label>
+            <input name="changeSeq" id="changeSeq">
+            <p th:text="${binaryC}"></p>
+          </TD>
+          <TD>
+            <label for="insertSeq">Insert Sequence and where?</label>
+            <input name="insertSeq" id="insertSeq">
+            <input name="insertSeqLoc" id="insertSeqLoc">
+            <p  th:text="${binaryI}"></p>
+
+          </TD>
+          <TD>
+
+            <label for="removeSeq">Remove sequence?</label>
+            <input name="removeSeq" id="removeSeq">
+            <p  th:text="${binaryR}"></p>
+          </TD>
+          <TD>
+            <label for="xDist">Calculate Distance? X and Y distance</label>
+            <input name="xDist" id="xDist">
+            <input name="yDist" id="yDist">
+            <p  th:text="${distXY}"></p>
+          </TD>
+        </TABLE>
+        <div class="row justify-content-md-center" >
+          <input type="submit" value="Submit">
+        </div>
+
+
+
+      </form>
+
+
+
+
+
+    </div>
+  </th:block>
+
+
+
+
+
 </div>
+</div>
+
+</div>
+</body>
 </html>
