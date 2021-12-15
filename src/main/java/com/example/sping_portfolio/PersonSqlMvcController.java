@@ -21,7 +21,7 @@ import java.net.http.HttpResponse;
 import java.text.ParseException;
 import java.util.HashMap;
 import java.util.List;
-
+import com.example.sping_portfolio.controllers.KiraLightSequence;
 // Built using article: https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/mvc.html
 // or similar: https://asbnotebook.com/2020/04/11/spring-boot-thymeleaf-form-validation-example/
 @Controller
@@ -85,9 +85,25 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
         //convert response.body() to java hash map
         var aboutkira = new ObjectMapper().readValue(response.body(), HashMap.class);
 
+        KiraLightSequence gradshow = new KiraLightSequence("0101 0101 0101");
+        String returnString1 = gradshow.getSequence();
+
+        gradshow.changeSequence("0011 0011 0011");
+        String returnString2 = gradshow.getSequence();
+
+        String returnString3 = gradshow.insertSegment("1111 1111", 4);
+        String returnString4 = KiraLightSequence.newSequence("1100000111", "11");
+        int returnString5 = KiraLightSequence.squareRoot(4, 0);
+
+        String returnString = "a) " + returnString1 + "\n" +
+                "b) " + returnString2 + "\n" +
+                "c) " + returnString3 + "\n" +
+                "d) " + returnString4 + "\n" +
+                "e) " + returnString5;
 
         //pass stats to view
         model.addAttribute("aboutkira", aboutkira);
+        model.addAttribute("returnString", returnString);
 
 
         return "AboutUs/aboutkira";
