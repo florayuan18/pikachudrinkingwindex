@@ -10,13 +10,6 @@
   <!-- End of head content specific to page -->
   </div>
 </head>
-<!--<style>-->
-<!--  body {-->
-<!--    background-image: url("https://images.ctfassets.net/hrltx12pl8hq/7oQKmoi04ul0JsCUxkuHih/3fbf330101cffcce262c7ab54844009d/05-nature-backgrounds_1491895829.jpg?fit=fill&w=480&h=270");-->
-<!--    background-repeat: no-repeat;-->
-<!--    background-attachment: fixed;-->
-<!--  }-->
-<!--</style>-->
 
 <body style="background-image: url('https://blog.depositphotos.com/wp-content/uploads/2017/07/Soothing-nature-backgrounds-2.jpg.webp');">
 <div layout:fragment="content" th:remove="tag" style="color:white;">
@@ -58,25 +51,61 @@
       Profile
     </button>
   </div>
+<!-- Database -->
+<!--  <div align="center">-->
+<!--    <h1 style="color:Black;" class="row justify-content-md-center">Rate your teacher!</h1>-->
+<!--    <a href="/Database/personcreate/" class="row justify-content-md-center">Add Rating</a>-->
+<!--    <br/><br/>-->
+
+<!--    <table border="1" cellpadding="10" class="center">-->
+<!--      <thead>-->
+<!--      <tr style="color:Black;">-->
+<!--        <th>Class</th>-->
+<!--        <th>Teacher</th>-->
+<!--        <th>Rating</th>-->
+<!--        <th>Action</th>-->
+<!--      </tr>-->
+<!--      </thead>-->
+<!--      <tbody style="color:Black;">-->
+<!--      <tr th:each="person : ${list}">-->
+<!--        <td th:text="${person.teacher_class}" >Class</td>-->
+<!--        <td th:text="${person.teacher_name}" >Name</td>-->
+<!--        <td th:text="${person.rating}" >Rating</td>-->
+
+<!--        <td style="color:Black;" >-->
+<!--          <a th:href="@{/Database/personupdate/{id}(id = ${person.id})}">Update</a>-->
+<!--          <a th:href="@{/Database/persondelete/{id}(id = ${person.id})}">Delete</a>-->
+<!--        </td>-->
+<!--      </tr>-->
+<!--      </tbody>-->
+<!--    </table>-->
+
+<!--  </div>-->
 <!--Weather API-->
-<!--  <table class="table">-->
-<!--    <tr>-->
-<!--      <th>Time</th>-->
-<!--      <th>All-time Cases</th>-->
-<!--      <th>Recorded Deaths</th>-->
-<!--      <th>Active Cases</th>-->
-<!--    </tr>-->
-<!--    <tr>-->
-<!--      &lt;!&ndash; Usage of Java HashMap and Thymeleaf &ndash;&gt;-->
-<!--      <td th:text="${weatherStats.statistic_taken_at}"></td>-->
-<!--      <td th:text="${weatherStats.Address}"></td>-->
-<!--      <td th:text="${map.world_total.Direction}"></td>-->
-<!--      <td th:text="${map.world_total.Maximum_Temperature}"></td>-->
+  <div class="contact row justify-content-md-center">
+<!--  <th:block th:each="weatherStats: ${weatherStats}" style="color:white;">-->
+
+  <table class="table" style="color:white;">
+    <tr>
+      <h3 class="text-center" style="color:white;">San Diego Weather API</h3>
+      <th>Temp</th>
+      <th>Weather</th>
+
+    </tr>
+    <tr>
+      <!-- Usage of Java HashMap and Thymeleaf -->
+      <td th:text="${weatherStats.current.temp_c}"></td>
+      <td th:text="${weatherStats.current.condition.text}"></td>
+
     </tr>
   </table>
+<!--  </th:block>-->
+    </div>
+
 
 <!--FRQ UNIT 2-->
   <div class="row justify-content-md-center" style="color:white;">
+
     <h3 class="text-center">FRQ UNIT 2</h3>
 
   </div>
@@ -117,25 +146,15 @@
         <div class="row justify-content-md-center" >
           <input type="submit" value="Submit">
         </div>
-
-
-
       </form>
-
-
-
-
-
     </div>
   </th:block>
 
-
-
-
-
-  </div>
   </div>
 
+  </div>
+
+</div>
 </div>
 </body>
 

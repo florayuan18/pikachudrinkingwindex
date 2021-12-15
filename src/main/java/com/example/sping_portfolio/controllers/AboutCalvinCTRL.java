@@ -1,8 +1,11 @@
 package com.example.sping_portfolio.controllers;
 
+import com.example.sping_portfolio.SQL.Person;
+import com.example.sping_portfolio.SQL.PersonSqlRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.tomcat.util.json.JSONParser;
 import org.json.simple.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,8 +31,7 @@ public class AboutCalvinCTRL {
                             @RequestParam(name="removeSeq", required=false, defaultValue="") String removeSeq,
                             @RequestParam(name="xDist", required=false, defaultValue="0") int xDist,
                             @RequestParam(name="yDist", required=false, defaultValue="0") int yDist,
-                            Model model)
-    {
+                            Model model) throws IOException, InterruptedException {
 
         String binaryC = "";
 
@@ -53,32 +55,33 @@ public class AboutCalvinCTRL {
         model.addAttribute("binaryR", binaryR);
         model.addAttribute("distXY", distXY);
 
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://weatherapi-com.p.rapidapi.com/current.json?q=q%3DSan%20Diego%20California"))
+                .header("x-rapidapi-host", "weatherapi-com.p.rapidapi.com")
+                .header("x-rapidapi-key", "e2ec6cd693msh31f1d4d692bd6b0p1dcb11jsn9ee520fd4398")
+                .method("GET", HttpRequest.BodyPublishers.noBody())
+                .build();
+        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
 
+        //alternative #1: convert response.body() to java hash map
+        var weatherStats = new ObjectMapper().readValue(response.body(), HashMap.class);
+
+//        pass stats to view
+        model.addAttribute("weatherStats", weatherStats);
         return "/AboutUs/aboutcalvin";
     }
-
-//    public String API(Model model) throws IOException, InterruptedException, ParseException {
-//        // https://rapidapi.com/spamakashrajtech/api/corona-virus-world-and-india-data/
-//        //rapidapi setup:
-//        HttpRequest request = HttpRequest.newBuilder()
-//                .uri(URI.create("https://visual-crossing-weather.p.rapidapi.com/history?startDateTime=2019-01-01T00%3A00%3A00&aggregateHours=24&location=San%20Diego%2C%20California%2C%20USA&endDateTime=2019-01-03T00%3A00%3A00&unitGroup=us&dayStartTime=8%3A00%3A00&contentType=csv&dayEndTime=17%3A00%3A00&shortColumnNames=0"))
-//                .header("x-rapidapi-host", "visual-crossing-weather.p.rapidapi.com")
-//                .header("x-rapidapi-key", "e2ec6cd693msh31f1d4d692bd6b0p1dcb11jsn9ee520fd4398")
-//                .method("GET", HttpRequest.BodyPublishers.noBody())
-//                .build();
-//        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-////        System.out.println(response.body());
+//    @Autowired
+//    PersonSqlRepository repository;
 //
+//    @GetMapping("/AboutUs/aboutcalvin")
+//    public String addComment(PersonSqlRepository personSqlRepository) {
+//        try{
+//            repository.save(Person);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            return "/AboutUs/aboutcalvin";
+//        }
 //
-////        //alternative #1: convert response.body() to java hash map
-//        var weatherStats = new ObjectMapper().readValue(response.body(), HashMap.class);
-////
-////        //pass stats to view
-//        model.addAttribute("weatherStats", weatherStats);
-////        model.addAttribute("world_map", map.get("world_total")); //illustrative of map get
-//
-//
-//        return "/AboutUs/aboutcalvin";
 //    }
 
 }
