@@ -1,5 +1,4 @@
 <!DOCTYPE HTML>
-<!DOCTYPE HTML>
 <html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
       layout:decorate="~{layout}" lang="en">
 
@@ -109,60 +108,55 @@
     </script>
   </div>
 
+
   <div class="row justify-content-md-center" style="color:white;">
     <h3 class="text-center">FRQ UNIT 2</h3>
 
+    <th:block th:each="binary: ${binary}" style="color:white;">
+      <div class="row justify-content-md-center" style="color:white;" >
+        <form action="/aboutflora">
+          <TABLE>
+            <TD>
+              <label for="seq">What sequence?</label>
+              <input name="seq" id="seq">
+              <p th:text="${binary}"></p>
+            </TD>
+            <TD>
+              <label for="changeSeq">Change the sequence?</label>
+              <input name="changeSeq" id="changeSeq">
+              <p th:text="${binaryC}"></p>
+            </TD>
+            <TD>
+              <label for="insertSeq">Insert Sequence and where?</label>
+              <input name="insertSeq" id="insertSeq">
+              <input name="insertSeqLoc" id="insertSeqLoc">
+              <p  th:text="${binaryI}"></p>
+
+            </TD>
+            <TD>
+
+              <label for="removeSeq">Remove sequence?</label>
+              <input name="removeSeq" id="removeSeq">
+              <p  th:text="${binaryR}"></p>
+            </TD>
+            <TD>
+              <label for="xDist">Calculate Distance? X and Y distance</label>
+              <input name="xDist" id="xDist">
+              <input name="yDist" id="yDist">
+              <p  th:text="${distXY}"></p>
+            </TD>
+          </TABLE>
+          <div class="row justify-content-md-center" >
+            <input type="submit" value="Submit">
+          </div>
+        </form>
+      </div>
+    </th:block>
+
   </div>
-  <th:block th:each="binary: ${binary}" style="color:white;">
-    <div class="row justify-content-md-center" style="color:white;" >
-      <form action="/aboutflora">
-        <TABLE>
-          <TD>
-            <label for="seq">What sequence?</label>
-            <input name="seq" id="seq">
-            <p th:text="${binary}"></p>
-          </TD>
-          <TD>
-            <label for="changeSeq">Change the sequence?</label>
-            <input name="changeSeq" id="changeSeq">
-            <p th:text="${binaryC}"></p>
-          </TD>
-          <TD>
-            <label for="insertSeq">Insert Sequence and where?</label>
-            <input name="insertSeq" id="insertSeq">
-            <input name="insertSeqLoc" id="insertSeqLoc">
-            <p  th:text="${binaryI}"></p>
 
-          </TD>
-          <TD>
-
-            <label for="removeSeq">Remove sequence?</label>
-            <input name="removeSeq" id="removeSeq">
-            <p  th:text="${binaryR}"></p>
-          </TD>
-          <TD>
-            <label for="xDist">Calculate Distance? X and Y distance</label>
-            <input name="xDist" id="xDist">
-            <input name="yDist" id="yDist">
-            <p  th:text="${distXY}"></p>
-          </TD>
-        </TABLE>
-        <div class="row justify-content-md-center" >
-          <input type="submit" value="Submit">
-        </div>
-
-
-
-      </form>
-
-
-
-
-
-    </div>
-  </th:block>
-
-
+  <div class="row justify-content-md-center" style="color:white;">
+    <h3 class="text-center">FRQ UNIT 3</h3>
 
 
 
@@ -170,5 +164,9 @@
 </div>
 
 </div>
+
 </body>
+
+
+
 </html>
