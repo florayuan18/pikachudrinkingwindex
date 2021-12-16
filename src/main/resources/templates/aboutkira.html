@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layout}" lang="en">
+<head>
+    <div layout:fragment="metadata" th:remove="tag">
+        <!-- Start of head content specific to page -->
+        <title>About Kira</title>
+
+        <!-- End of head content specific to page -->
+        <script>
+            function imagefun() {
+                var Image_Id = document.getElementById('getImage');
+                if (Image_Id.src.match("../images/kira.png")) {
+                    Image_Id.src = "../images/kira_greywater.png";
+                }
+                else {
+                    Image_Id.src = "../images/kira.png";
+                }
+            }
+        </script>
+    </div>
+</head>
+<body style="background-color:lightgreen; text-align: center; margin:auto;"><div layout:fragment="content" th:remove="tag" style="color:white;">
+<h1 style="padding:20px;">About Kira</h1>
+
+    <div style=" left: auto; top: 40px;">
+        <img th:src="@{/images/kira.png}" width="auto" height="200" onclick="imagefun()" id="getImage"; />
+    </div>
+
+    <div class="contact row justify-content-md-center" style="padding:20px;">
+        <button type="button" class="block" onclick="window.location.href='https://docs.google.com/document/d/1Z3TToryEbC6EhNMEnVD3aBqpBPHM4CEq_jDYc56mHU4/edit?usp=sharing';">
+            Journal
+        </button>
+        <button type="button" class="block" onclick="window.location.href='https://github.com/florayuan18/pikachudrinkingwindex/projects/1?card_filter_query=assignee%3Acrystalwidjaja';">
+            Scrum Board
+        </button>
+        <button type="button" class="block" onclick="window.location.href='https://github.com/florayuan18/pikachudrinkingwindex/graphs/contributors';">
+            Commits
+        </button>
+        <button type="button" class="block" onclick="window.location.href='https://github.com/4disease';">
+            Profile
+        </button>
+    </div>
+
+    <h2>FRQ 3</h2>
+<div style="padding:30px; background-color: #2c2c2c; padding:20px;">
+<pre style="text-align:left;"><code style="font-size:11px; color:white;">
+    public static void drawSquare(int x, int y, int len) {
+    if(x+len>10)
+    len = 10-x;
+    if(y+len>10)
+    len = 10-y;
+    System.out.println("side length = " + len + ", area = " + len*len);
+    drawLine(x, y, x+len, y);
+    drawLine(x+len,y,x+len,y-len);
+    drawLine(x+len, y-len, x, y-len);
+    drawLine(x, y-len, x, y);
+    }
+
+    public static void main(String [] args)
+    {
+    boolean rsvp = true;
+    int selection = 1;
+    String option1 = "";
+    String option2 = "";
+
+    if(rsvp){
+    System.out.println("Attending");
+    }
+    else{
+    System.out.println("Not attending");
+    }
+
+    if(selection ==1){
+    System.out.println("beef");
+    }
+    else if (selection ==2){
+    System.out.println("chicken");
+    }
+    else if(selection ==3){
+    System.out.println("pasta");
+    }
+    else{
+    System.out.println("fish");
+    }
+
+    if(rsvp && selection ==1){
+    option1 = "Thanks for attending.You will be served beef.";
+    }
+    if(rsvp && selection ==2){
+    option1 = "Thanks for attending.You will be served chicken.";
+    }
+    if(rsvp && selection ==1){
+    option1 = "Thanks for attending.You will be served pasta.";
+    }
+    else if(rsvp){
+    option1 = "Thanks for attending.You will be served fish.";
+    }
+    else{
+    option1 = "Sorry you couldn't make it";
+    }
+
+    if (option1.equals(option2)) {
+    System.out.println("true");
+    }
+    else{
+    System.out.println("false");
+    }
+
+    }</code></pre>
+</div>
+
+    <p>Output:</p>
+    <p>Attending beef false</p>
+
+</div>
+
+</body>
+</html>

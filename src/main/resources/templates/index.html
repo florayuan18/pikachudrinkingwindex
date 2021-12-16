@@ -5,7 +5,7 @@
       layout:decorate="~{layout}" lang="en">
 
 <head><div layout:fragment="metadata" th:remove="tag">
-    <title>Spring Intro</title>
+    <title>Umbrella Box Games</title>
     <script src="/static/vanta/three.r119.min.js" th:src="@{/vanta/three.r119.min.js}"></script>
     <script src="/static/vanta/vanta.net.min.js" th:src="@{/vanta/vanta.net.min.js}"></script>
     <script>
@@ -23,11 +23,55 @@
         })
     </script>
 </div></head>
+<style>
+    html, body{
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .block {
+        display: inline-block;
+        width: 20%;
+        height: 65px;
+        border: 2px solid white;
+        background-color: Transparent;
+        color: white;
+        padding: 14px 28px;
+        font-size: 20px;
+        cursor: pointer;
+        text-align: center;
+        margin: 10px;
+        position: relative;
+        top: 50%;
+        left: 49.2%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+    .block:hover {
+        background-color: #05c4c4;
+        border: 2px solid #05c4c4;
+        color: black;
+        width: 30%;
+        transition: all .4s cubic-bezier(0.65, 0, 0.076, 1);
+    }
+    .pageTitle{
+        color: white;
+        text-align: center;
+        margin: 20px;
+    }
 
+</style>
+</div></head>
 <!-- layout::fragment="content" is heart of ThymeLeaf layout -->
 <body><div layout:fragment="content" th:remove="tag">
     <!-- Start of body content specific to page -->
-   <br>
+    <div class="contact">
+        <div style="background-color:#2b425b; padding:20px;">
+        <h1 class="pageTitle">Umbrella Box Games</h1>
+            <p>Welcome to our website! Here, we strive to present great game titles to our users.</p>
+        </div>
+    </div>
     <!-- End of body content specific to page -->
 </div></body>
 

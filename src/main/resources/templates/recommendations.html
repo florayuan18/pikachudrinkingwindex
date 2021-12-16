@@ -4,7 +4,59 @@
 
 <head><div layout:fragment="metadata" th:remove="tag">
     <title>Recommendations</title>
-</div></head>
+    <style>
+        .block {
+            display: inline-block;
+            width: 50px;
+            height: 65px;
+            border: 2px solid #000000;
+            background-color: Transparent;
+            color: #000000;
+            padding: 14px 28px;
+            font-size: 20px;
+            cursor: pointer;
+            text-align: center;
+            margin: 10px;
+            position: relative;
+            top: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+        .block:hover {
+            background-color: #05c4c4;
+            border: 2px solid #05c4c4;
+            color: black;
+            width: 30%;
+            transition: all .4s cubic-bezier(0.65, 0, 0.076, 1);
+        }
+    </style>
+</div>
+</head>
+
+<body style = "background-color:#2b425b; margin:auto;">
+<div layout:fragment="content" th:remove="tag">
+
+    <div style="background-color:white; padding:40px; text-align:center; border-radius:15px; width:700px; margin:auto;">
+    <h1 style="padding:10px;">Game Recommendations</h1>
+    <p style="margin:auto; text-align:center;">Enter a genre and we will recommend games we think you'd like!</p>
+        <div style="padding:50px; text-align:center;">
+        <button type="button" class="block" onclick="window.location.href='';">
+            Strategy
+        </button>
+        <br>
+        <button type="button" class="block" onclick="window.location.href='';">
+            Horror
+        </button>
+        <br>
+        <button type="button" class="block" onclick="window.location.href='';">
+            RPG
+        </button>
+        <br>
+        </div>
+    </div>
+
+</div>
+</body>
 
 
 </html>
