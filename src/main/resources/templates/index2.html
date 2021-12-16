@@ -1,0 +1,51 @@
+<!-- This page is illustrative and contains ideas about HTML formatting -->
+<!DOCTYPE HTML>
+<!-- Signals to the Layout Dialect which layout should be used to decorate this View -->
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layout}" lang="en">
+
+<head><div layout:fragment="metadata" th:remove="tag">
+  <title>Spring Intro</title>
+
+  <!--    <script src="/static/vanta/three.r119.min.js" th:src="@{/vanta/three.r119.min.js}"></script>-->
+  <!--    <script src="/static/vanta/vanta.net.min.js" th:src="@{/vanta/vanta.net.min.js}"></script>-->
+  <!--    <script>-->
+  <!--        VANTA.NET({-->
+  <!--            el: "html",-->
+  <!--            mouseControls: tarue,-->
+  <!--            touchControls: true,-->
+  <!--            gyroControls: false,-->
+  <!--            minHeight: 200.00,-->
+  <!--            minWidth: 200.00,-->
+  <!--            scale: 1.00,-->
+  <!--            scaleMobile: 1.00,-->
+  <!--            color: 0x3fb3ff,-->
+  <!--            backgroundColor: 0x151e3c-->
+  <!--        })-->
+  <!--    </script>-->
+</div></head>
+
+<!-- layout::fragment="content" is heart of ThymeLeaf layout -->
+
+<body><div layout:fragment="content" th:remove="tag">
+  <h1>UMBRELLA BOX</h1>
+  <h3>Video game database</h3>
+  <!-- Start of body content specific to page -->
+  <table class="table" style="color:white;">
+    <tr>
+      <h3 class="text-center" style="color:white;">San Diego Weather API</h3>
+      <th>Temp</th>
+      <th>Weather</th>
+
+    </tr>
+    <tr>
+      <!-- Usage of Java HashMap and Thymeleaf -->
+      <td th:text="${gameNews}"></td>
+      <!--            <td th:text="${weatherStats.skin}"></td>-->
+
+    </tr>
+  </table>
+  <!-- End of body content specific to page -->
+</div></body>
+
+</html>

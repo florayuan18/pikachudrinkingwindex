@@ -51,36 +51,52 @@
       Profile
     </button>
   </div>
-<!-- Database -->
-<!--  <div align="center">-->
-<!--    <h1 style="color:Black;" class="row justify-content-md-center">Rate your teacher!</h1>-->
-<!--    <a href="/Database/personcreate/" class="row justify-content-md-center">Add Rating</a>-->
-<!--    <br/><br/>-->
 
-<!--    <table border="1" cellpadding="10" class="center">-->
-<!--      <thead>-->
-<!--      <tr style="color:Black;">-->
-<!--        <th>Class</th>-->
-<!--        <th>Teacher</th>-->
-<!--        <th>Rating</th>-->
-<!--        <th>Action</th>-->
-<!--      </tr>-->
-<!--      </thead>-->
-<!--      <tbody style="color:Black;">-->
-<!--      <tr th:each="person : ${list}">-->
-<!--        <td th:text="${person.teacher_class}" >Class</td>-->
-<!--        <td th:text="${person.teacher_name}" >Name</td>-->
-<!--        <td th:text="${person.rating}" >Rating</td>-->
+<!-- FRQ 3 -->
+  <h3 class="text-center" style="color:white;">FRQ 3</h3>
+  <div class="contact row justify-content-md-center"style="color:white;">
+    <table>
+      <td><h4>A La Carte Menu|</h4></td>
+  <td><h5>Beef Bourguignon: 1|</h5></td>
+  <td><h5>Chicken Fricassée: 2|</h5></td>
+  <td> <h5>Pistou Linguine: 3|</h5></td>
 
-<!--        <td style="color:Black;" >-->
-<!--          <a th:href="@{/Database/personupdate/{id}(id = ${person.id})}">Update</a>-->
-<!--          <a th:href="@{/Database/persondelete/{id}(id = ${person.id})}">Delete</a>-->
-<!--        </td>-->
-<!--      </tr>-->
-<!--      </tbody>-->
-<!--    </table>-->
+    </table>
+    </div>
 
-<!--  </div>-->
+  <form action="/AboutUs/aboutcalvin">
+  <TABLE style="color:white;">
+    <TD>
+      <label for="rsvp">RSVP1?</label>
+      <input name="rsvp" id="rsvp">
+      <p th:text="${rsv}"></p>
+    </TD>
+    <TD>
+      <label for="food">FOOD?</label>
+      <input name="food" id="food">
+      <p th:text="${food}"></p>
+    </TD>
+    <TABLE style="color:white;">
+      <TD>
+        <label for="rsvp2">RSVP2?</label>
+        <input name="rsvp2" id="rsvp2">
+        <p th:text="${rsv2}"></p>
+      </TD>
+      <TD>
+        <label for="food2">Food 2?</label>
+        <input name="food2" id="food2">
+        <p th:text="${food}"></p>
+      </TD>
+      <label style="color:white;">Are the orders the same? T/F</label>
+      <p th:text="${foodcheck}" style="color:white;"></p>
+      <div class="row justify-content-md-center" >
+        <input type="submit" value="Submit">
+      </div>
+    </TABLE>
+  </TABLE>
+  </form>
+
+
 <!--Weather API-->
   <div class="contact row justify-content-md-center">
 <!--  <th:block th:each="weatherStats: ${weatherStats}" style="color:white;">-->

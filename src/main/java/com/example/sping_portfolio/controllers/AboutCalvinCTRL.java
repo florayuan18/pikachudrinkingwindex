@@ -1,6 +1,7 @@
 package com.example.sping_portfolio.controllers;
 
 import com.example.sping_portfolio.controllers.CalvinFRQ.LightSequence;
+import com.example.sping_portfolio.controllers.CalvinFRQ.FRQ_3.FRQ3_P1;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,6 +15,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.HashMap;
 
+
 @Controller
 public class AboutCalvinCTRL {
     @GetMapping("/AboutUs/aboutcalvin")
@@ -24,6 +26,10 @@ public class AboutCalvinCTRL {
                             @RequestParam(name="removeSeq", required=false, defaultValue="") String removeSeq,
                             @RequestParam(name="xDist", required=false, defaultValue="0") int xDist,
                             @RequestParam(name="yDist", required=false, defaultValue="0") int yDist,
+                            @RequestParam(name="rsvp", required=false, defaultValue="false") Boolean rsvp,
+                            @RequestParam(name="food", required=false, defaultValue="0") int food,
+                            @RequestParam(name="rsvp2", required=false, defaultValue="false") Boolean rsvp2,
+                            @RequestParam(name="food2", required=false, defaultValue="0") int food2,
                             Model model) throws IOException, InterruptedException {
 
         String binaryC = "";
@@ -47,6 +53,16 @@ public class AboutCalvinCTRL {
         model.addAttribute("binaryI", binaryI);
         model.addAttribute("binaryR", binaryR);
         model.addAttribute("distXY", distXY);
+
+        String foodcheck = "";
+        FRQ3_P1 John = new FRQ3_P1();
+        String rsv = John.didUrsvp(rsvp, food);
+        String rsv2 = John.didUrsvp(rsvp2, food2);
+        foodcheck = John.foodsCheck();
+
+        model.addAttribute("rsv", rsv);
+        model.addAttribute("rsv2", rsv2);
+        model.addAttribute("foodcheck", foodcheck);
 
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create("https://weatherapi-com.p.rapidapi.com/current.json?q=q%3DSan%20Diego%20California"))
