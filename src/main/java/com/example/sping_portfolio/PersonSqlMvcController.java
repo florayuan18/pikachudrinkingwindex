@@ -1,6 +1,5 @@
 package com.example.sping_portfolio;
 
-
 import com.example.sping_portfolio.SQL.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +23,8 @@ import java.util.List;
 import com.example.sping_portfolio.controllers.KiraLightSequence;
 // Built using article: https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/mvc.html
 // or similar: https://asbnotebook.com/2020/04/11/spring-boot-thymeleaf-form-validation-example/
+
+
 @Controller
 public class PersonSqlMvcController implements WebMvcConfigurer {
 
@@ -71,6 +72,7 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
         String makeurl = "https://billboard-api2.p.rapidapi.com/billboard-200?range=1-10&date=" + java.time.LocalDate.now();
         return makeurl;
     }
+
     @GetMapping("/aboutkira")
     public String quotes(Model model) throws IOException, InterruptedException, ParseException {
         //rapidapi setup:
@@ -109,10 +111,34 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
         return "AboutUs/aboutkira";
     }
 
-    @GetMapping("/aboutmaggie")
-    public String aboutmaggie() {
-        return "aboutmaggie";
+
+    public static String createurl(){
+        //String createurl = "https://dad-jokes.p.rapidapi.com/random/joke?count=1";
+        String createurl = "https://www.episodate.com/api/most-popular?page=1";
+        // change to this API https://www.episodate.com/api/most-popular?page=1
+        return createurl;
     }
+
+    @GetMapping("/aboutmaggie")
+    public String aboutmaggie(){
+        return "AboutUS/aboutMaggie";
+    }
+    /*
+    public String jokes(Model model) throws IOException, InterruptedException, ParseException {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(createurl()))
+                .method("GET", HttpRequest.BodyPublishers.noBody())
+                .build();
+        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+        var map = new ObjectMapper().readValue(response.body(), HashMap.class);
+        model.addAttribute("data", map);
+        model.addAttribute("name", map.get("name"));
+        model.addAttribute("trade", map.get(".."));
+        model.addAttribute("percentage", map.get(".."));
+        model.addAttribute("name", map.get("CompanyName"));
+        return "AboutUs/aboutmaggie";
+    }
+*/
 
     @GetMapping("/Database/personupdate/{id}")
     public String personUpdate(@PathVariable("id") int id, Model model) {

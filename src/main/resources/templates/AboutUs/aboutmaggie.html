@@ -2,8 +2,9 @@
 
 <html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
       layout:decorate="~{layout}" lang="en">
-<head>
+<head><div layout:fragment="metadata" th:remove="tag">
   <title>About Maggie</title>
+
   <style type="text/css">
     html, body {
       background: #f1d483;
@@ -43,12 +44,13 @@
       }
     }
   </script>
+</div>
 </head>
 
 <div layout:fragment="content">
-  <div>
-    <img th:src="@{/images/maggiewithmask.png}" id="getImage">
-
+  <br>
+  <div style=" left: auto; top: 40px;">
+    <img th:src="@{/images/maggiewithmask.png}" width="auto" height="200" onclick="imagefun()" id="getImage"; />
   </div>
   <div>
     <input type="button" onclick="imagefun()" value="Change Image">
@@ -67,5 +69,13 @@
       Profile
     </button>
   </div>
+  <br>
+  <p>Symbol: <span th:text="${data.Data.Symbol}"></span></p>
+  <br>
+  <p>Name: <span th:text="${data.Data.Name}"></span></p>
+  <br>
+  <p>Close: <span th:text="${data.Data.Stock.Close}" ></span></p>
+  <br>
+  <p>Last Exchange Date: <span th:text="${data.Data.Stock.LastExchangeDate}"></span></p>
 </div>
 </html>
