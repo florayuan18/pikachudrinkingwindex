@@ -1,6 +1,7 @@
 package com.example.sping_portfolio;
 
 import com.example.sping_portfolio.SQL.*;
+import com.example.sping_portfolio.controllers.MaggieLightSequence;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -120,9 +121,20 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
     }
 
     @GetMapping("/aboutmaggie")
-    public String aboutmaggie(){
-        return "AboutUS/aboutMaggie";
+    public String aboutmaggie(Model model){
+        MaggieLightSequence gradShow = new MaggieLightSequence("0101 0101 0101");
+        model.addAttribute("originalSequence", gradShow.display());
+        gradShow.changeSequence("0011 0011 0011");
+        model.addAttribute("changedSequence", gradShow.display());
+        gradShow.insertSegment("1111 1111", 4);
+        model.addAttribute("insertedSequence", gradShow.display());
+        gradShow.removeSegment("11");
+        model.addAttribute("removedSequence", gradShow.display());
+        double x = gradShow.findDistance(3, 4);
+        model.addAttribute("distance", x);
+        return "AboutUs/aboutMaggie";
     }
+
     /*
     public String jokes(Model model) throws IOException, InterruptedException, ParseException {
         HttpRequest request = HttpRequest.newBuilder()

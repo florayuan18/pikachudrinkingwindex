@@ -70,12 +70,14 @@
     </button>
   </div>
   <br>
-  <p>Symbol: <span th:text="${data.Data.Symbol}"></span></p>
+  <p>Original Sequence: <span th:text="${originalSequence}"></span></p>
   <br>
-  <p>Name: <span th:text="${data.Data.Name}"></span></p>
+  <p>Changed Sequence: <span th:text="${changedSequence}"></span></p>
   <br>
-  <p>Close: <span th:text="${data.Data.Stock.Close}" ></span></p>
+  <p>Inserted Sequence: <span th:text="${insertedSequence}" ></span></p>
   <br>
-  <p>Last Exchange Date: <span th:text="${data.Data.Stock.LastExchangeDate}"></span></p>
+  <p>Removed Sequence: <span th:text="${removedSequence}"></span></p>
+  <br>
+  <p>Distance Between A & B: <span th:text="${distance}"></span></p>
 </div>
 </html>
