@@ -17,6 +17,16 @@
 | Kira Liao | Web Designer | [Bootstrap](https://github.com/florayuan18/pikachudrinkingwindex/issues/28) |
 | Maggie Killada | Deployment Manager | [Runtime and Updates](https://github.com/florayuan18/pikachudrinkingwindex/issues/35) |
 
+# Week 2 Issues
+[Group Ticket](https://github.com/florayuan18/pikachudrinkingwindex/issues/34)
+| Team Member           | Roles |           Issues                              | 
+| -------------------------- |-----------------------------|-----------------------------|  
+| Calvin Cheah  | Technical Officer| [Individual Home Pages](https://github.com/florayuan18/pikachudrinkingwindex/issues/1) |
+| Crystal Widjaja | Scrum Leader | [Individual Home Pages](https://github.com/florayuan18/pikachudrinkingwindex/issues/2) |
+| Flora Yuan | GitHub Admin | [Individual Home Pages](https://github.com/florayuan18/pikachudrinkingwindex/issues/3) |
+| Kira Liao | Web Designer | [Individual Home Pages](https://github.com/florayuan18/pikachudrinkingwindex/issues/4) |
+| Maggie Killada | Deployment Manager | [Individual Home Pages](https://github.com/florayuan18/pikachudrinkingwindex/issues/5) |
+
 # Week 1 Issues
 | Team Member           | Roles |           Issues                              | 
 | -------------------------- |-----------------------------|-----------------------------|  
