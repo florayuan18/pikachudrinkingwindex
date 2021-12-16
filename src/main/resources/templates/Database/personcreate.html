@@ -27,15 +27,15 @@
         <form action="#" th:action="@{/Database/personcreate}" th:object="${person}"  method="POST" class="submissionfield">
             <table style="color:Black;" class="row justify-content-md-center">
                 <tr style="color:Black;">
-                    <td>Class:</td>
+                    <td>Game:</td>
                     <td><input type="text" th:field="*{teacher_class}" /></td>
                     <td th:if="${#fields.hasErrors('teacher_class')}" th:errors="*{teacher_class}">Class Error</td>
                 </tr>
-                <tr style="color:Black;">
-                    <td>Teacher:</td>
-                    <td><input type="text" th:field="*{teacher_name}" /></td>
-                    <td th:if="${#fields.hasErrors('teacher_name')}" th:errors="*{teacher_name}">Name Error</td>
-                </tr>
+<!--                <tr style="color:Black;">-->
+<!--                    <td>Teacher:</td>-->
+<!--                    <td><input type="text" th:field="*{teacher_name}" /></td>-->
+<!--                    <td th:if="${#fields.hasErrors('teacher_name')}" th:errors="*{teacher_name}">Name Error</td>-->
+<!--                </tr>-->
                 <tr style="color:Black;">
                     <td>Rating:</td>
                     <td><textarea type="text" th:field="*{rating}" rows="4" cols="50" /></td>

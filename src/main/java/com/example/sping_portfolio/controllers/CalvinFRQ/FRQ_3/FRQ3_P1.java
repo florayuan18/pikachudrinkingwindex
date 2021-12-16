@@ -1,4 +1,4 @@
-package com.example.sping_portfolio.controllers;
+package com.example.sping_portfolio.controllers.CalvinFRQ.FRQ_3;
 
 public class FRQ3_P1 {
 

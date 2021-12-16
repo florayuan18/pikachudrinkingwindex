@@ -1,11 +1,7 @@
 package com.example.sping_portfolio.controllers;
 
-import com.example.sping_portfolio.SQL.Person;
-import com.example.sping_portfolio.SQL.PersonSqlRepository;
+import com.example.sping_portfolio.controllers.CalvinFRQ.LightSequence;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.apache.tomcat.util.json.JSONParser;
-import org.json.simple.JSONObject;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,10 +12,7 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.text.ParseException;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 @Controller
 public class AboutCalvinCTRL {

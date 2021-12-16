@@ -11,30 +11,30 @@
     }
 </style>
 <head><div layout:fragment="metadata" th:remove="tag">
-    <title>Rate Your Teacher</title>
+    <title>My Collection</title>
 </div></head>
 
 <!-- layout::fragment="content" is heart of ThymeLeaf layout -->
 <body><div layout:fragment="content" th:remove="tag">
     <div style="margin: 2%; color:Black;">
         <div align="center">
-            <h1 style="color:Black;" class="row justify-content-md-center">Rate your teacher!</h1>
-            <a href="/Database/personcreate/" class="row justify-content-md-center">Add Rating</a>
+            <h1 style="color:Black;" class="row justify-content-md-center">My Collection</h1>
+            <a href="/Database/personcreate/" class="row justify-content-md-center">Add Game</a>
             <br/><br/>
 
             <table border="1" cellpadding="10" class="center">
                 <thead>
                 <tr style="color:Black;">
-                    <th>Class</th>
-                    <th>Teacher</th>
+                    <th>Game</th>
+<!--                    <th>Teacher</th>-->
                     <th>Rating</th>
                     <th>Action</th>
                 </tr>
                 </thead>
                 <tbody style="color:Black;">
                 <tr th:each="person : ${list}">
-                    <td th:text="${person.teacher_class}" >Class</td>
-                    <td th:text="${person.teacher_name}" >Name</td>
+                    <td th:text="${person.teacher_class}" >Game</td>
+<!--                    <td th:text="${person.teacher_name}" >Name</td>-->
                     <td th:text="${person.rating}" >Rating</td>
 
                     <td style="color:Black;" >

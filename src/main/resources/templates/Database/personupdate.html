@@ -32,22 +32,22 @@
       <form action="#" th:action="@{/Database/personupdate}" th:object="${person}" method="POST" class="submissionfield">
         <table style="color:Black;">
           <tr>
-            <td>ID:</td>
-            <td th:text="${person.id}">Person ID</td>
+<!--            <td>ID:</td>-->
+<!--            <td th:text="${person.id}">Person ID</td>-->
             <!-- hidden field is CRITICAL else id will be null on action -->
             <td><input type="hidden" th:field="*{id}" readonly="readonly" /></td>
           </tr>
           <tr>
-            <td>Email:</td>
-            <td th:text="${person.teacher_class}">EMail</td>
+<!--            <td>Email:</td>-->
+<!--            <td th:text="${person.teacher_class}">EMail</td>-->
             <td><input type="hidden" th:field="*{teacher_class}" readonly="readonly" /></td>
           </tr>
-          <tr>
-            <td>Name:</td>
-            <td><input type="text" th:field="*{teacher_name}" /></td>
-            <td th:if="${#fields.hasErrors('teacher_name')}" th:errors="*{teacher_name}">Name Error</td>
-          </tr>
-          <tr>
+<!--          <tr>-->
+<!--            <td>Game:</td>-->
+<!--            <td><input type="text" th:field="*{teacher_name}" /></td>-->
+<!--            <td th:if="${#fields.hasErrors('teacher_name')}" th:errors="*{teacher_name}">Name Error</td>-->
+<!--          </tr>-->
+<!--          <tr>-->
             <td>rating:</td>
             <td><textarea type="text" th:field="*{rating}" rows="4" cols="50"/></td>
             <td th:if="${#fields.hasErrors('rating')}" th:errors="*{rating}">Name Error</td>
