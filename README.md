@@ -18,7 +18,7 @@
 | Maggie Killada | Deployment Manager | [Runtime and Updates](https://github.com/florayuan18/pikachudrinkingwindex/issues/39) |
 
 # Week 2 Issues
-[Group Ticket](https://github.com/florayuan18/pikachudrinkingwindex/issues/34)
+[Group Ticket](https://github.com/florayuan18/pikachudrinkingwindex/issues/44)
 | Team Member           | Roles |           Issues                              | 
 | -------------------------- |-----------------------------|-----------------------------|  
 | Calvin Cheah  | Technical Officer| [Individual Home Pages](https://github.com/florayuan18/pikachudrinkingwindex/issues/1) |
