@@ -8,7 +8,7 @@
 | Maggie Killada | maggie3000 | [Journal](https://docs.google.com/document/d/1Z3TToryEbC6EhNMEnVD3aBqpBPHM4CEq_jDYc56mHU4/edit?usp=sharing) | [Scrum Board](https://github.com/florayuan18/pikachudrinkingwindex/projects/1?card_filter_query=assignee%3Amaggie3000) | [Commits](https://github.com/florayuan18/pikachudrinkingwindex/commits?author=maggie3000) | [Profile](https://github.com/maggie3000)
 
 # Week 3 Issues
-[Group Ticket](https://github.com/florayuan18/pikachudrinkingwindex/issues/42)
+[Group Ticket](https://github.com/florayuan18/pikachudrinkingwindex/issues/44)
 | Team Member           | Roles |           Issues                              | 
 | -------------------------- |-----------------------------|-----------------------------|  
 | Calvin Cheah  | Technical Officer| [Data and CRUD](https://github.com/florayuan18/pikachudrinkingwindex/issues/38) |
