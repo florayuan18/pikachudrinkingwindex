@@ -1,4 +1,4 @@
-package com.example.sping_portfolio.controllers;
+package com.example.sping_portfolio.controllers.MaggieFRQ;
 
 public class MaggieDinner {
     private Boolean rsvp;
