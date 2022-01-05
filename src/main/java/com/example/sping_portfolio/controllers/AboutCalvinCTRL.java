@@ -2,6 +2,7 @@ package com.example.sping_portfolio.controllers;
 
 import com.example.sping_portfolio.controllers.CalvinFRQ.LightSequence;
 import com.example.sping_portfolio.controllers.CalvinFRQ.FRQ_3.FRQ3_P1;
+import com.example.sping_portfolio.controllers.CalvinFRQ.FRQ_4.Streak;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,6 +31,7 @@ public class AboutCalvinCTRL {
                             @RequestParam(name="food", required=false, defaultValue="0") int food,
                             @RequestParam(name="rsvp2", required=false, defaultValue="false") Boolean rsvp2,
                             @RequestParam(name="food2", required=false, defaultValue="0") int food2,
+                            @RequestParam(name="word", required=false, defaultValue="") String word,
                             Model model) throws IOException, InterruptedException {
 
         String binaryC = "";
@@ -63,6 +65,11 @@ public class AboutCalvinCTRL {
         model.addAttribute("rsv", rsv);
         model.addAttribute("rsv2", rsv2);
         model.addAttribute("foodcheck", foodcheck);
+
+        Streak phrase = new Streak();
+        String word_output = phrase.longestStreak(word);
+
+        model.addAttribute("word_output", word_output);
 
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create("https://weatherapi-com.p.rapidapi.com/current.json?q=q%3DSan%20Diego%20California"))
