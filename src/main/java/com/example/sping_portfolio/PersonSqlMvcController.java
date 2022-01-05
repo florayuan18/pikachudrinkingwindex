@@ -1,8 +1,8 @@
 package com.example.sping_portfolio;
 
 import com.example.sping_portfolio.SQL.*;
-import com.example.sping_portfolio.controllers.MaggieDinner;
-import com.example.sping_portfolio.controllers.MaggieLightSequence;
+import com.example.sping_portfolio.controllers.MaggieFRQ.MaggieDinner;
+import com.example.sping_portfolio.controllers.MaggieFRQ.MaggieLightSequence;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

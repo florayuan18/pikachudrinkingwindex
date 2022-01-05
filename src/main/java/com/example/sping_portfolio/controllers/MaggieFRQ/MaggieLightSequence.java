@@ -1,4 +1,4 @@
-package com.example.sping_portfolio.controllers;
+package com.example.sping_portfolio.controllers.MaggieFRQ;
 
 //light sequence class
 public class MaggieLightSequence {

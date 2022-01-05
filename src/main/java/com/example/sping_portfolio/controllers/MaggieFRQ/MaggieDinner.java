@@ -1,4 +1,4 @@
-package com.example.sping_portfolio.controllers;
+package com.example.sping_portfolio.controllers.MaggieFRQ;
 
 public class MaggieDinner {
     private Boolean rsvp;
@@ -6,9 +6,11 @@ public class MaggieDinner {
     private String option1;
     private String option2 = "";
 
+    //default constructor
     public MaggieDinner(){
     }
 
+    //overloaded constructor
     public MaggieDinner(Boolean rsvp, int selection){
         this.rsvp = rsvp;
         this.selection = selection;

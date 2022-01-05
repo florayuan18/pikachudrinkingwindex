@@ -1,4 +1,4 @@
-package com.example.sping_portfolio.controllers;
+package com.example.sping_portfolio.controllers.CrystalFRQ;
 
 import com.example.sping_portfolio.controllers.CalvinFRQ.LightSequence;
 import org.springframework.stereotype.Controller;
