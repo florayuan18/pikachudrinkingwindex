@@ -1,16 +1,16 @@
 package com.example.sping_portfolio.controllers.FloraFRQ;
-
+/*
 public class FloraCoinGame {
 
     public void FloraCoinGame() {
     }
 
 
-/** Plays a simulated game between two players, as described in part (b). */
-/*Notes:
+/** Plays a simulated game between two players, as described in part (b).
+
 	Both players will start with same number of coins
 	Code section to determine winner
-*/
+
 
         int p1coins = startingCoins; // don’t use s because it’s attribute
         int p2coins = startingCoins;
@@ -20,7 +20,7 @@ public class FloraCoinGame {
         int p2spend; // determining how much player 2 spends
 
         /* conditions for the game to be played continually
-         */
+
         while (round <= maxRounds && p1coins >= 3 && p2coins >= 3) {
             p1spend = getPlayer1Move(); // no parameter for this one
             p2spend = getPlayer2Move(round); // round number included
@@ -37,7 +37,7 @@ public class FloraCoinGame {
             round++; // increment round
         }
 
-        /* determining the winner*/
+        /* determining the winner
 
         if (p1coins == p2coins)
             System.out.println("tie game");
@@ -56,7 +56,7 @@ public class FloraCoinGame {
         int p2spend; // determining how much player 2 spends
 
         /* conditions for the game to be played continually
-         */
+
         while (round <= maxRounds && p1coins >= 3 && p2coins >= 3) {
             p1spend = getPlayer1Move(); // no parameter for this one
             p2spend = getPlayer2Move(round); // round number included
@@ -73,7 +73,7 @@ public class FloraCoinGame {
             round++; // increment round
         }
 
-        /* determining the winner*/
+        /* determining the winner
 
         if (p1coins == p2coins)
             System.out.println("tie game");
@@ -83,3 +83,4 @@ public class FloraCoinGame {
             System.out.println("player 2 Wins");
     }
 }
+*/

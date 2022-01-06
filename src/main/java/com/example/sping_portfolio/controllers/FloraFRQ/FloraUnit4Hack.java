@@ -47,4 +47,4 @@ import java.util.Scanner;
             c.longestStreak("CCAAAATTT!");
         }
     }
-}
+
