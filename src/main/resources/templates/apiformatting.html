@@ -17,17 +17,17 @@
 
         <table class="table">
             <tr>
-                <th>Country</th>
-                <th>All-time Cases</th>
-                <th>Recorded Deaths</th>
-                <th>Active Cases</th>
+                <th>Game ID</th>
+                <th>Name</th>
+                <th>Release Date</th>
+                <th>Rating</th>
             </tr>
             <!-- Usage of JSON object and Thymeleaf -->
-            <tr th:each="country : ${jo.countries_stat}">
-                <td th:text="${api.id}"></td>
-                <td th:text="${api.name}"></td>
-                <td th:text="${api.image}"></td>
-                <td th:text="${api.description}"></td>
+            <tr th:each="results : ${gamelist.results}">
+                <td th:text="${results.id}"></td>
+                <td th:text="${results.name}"></td>
+                <td th:text="${results.released}"></td>
+                <td th:text="${results.rating}"></td>
         </table>
 
 
