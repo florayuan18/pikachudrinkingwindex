@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<!-- Signals to the Layout Dialect which layout should be used to decorate this View -->
+<html xmlns:layout="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layout}" lang="en">
+
+<!-- <head> -->
+<div layout:fragment="head" th:remove="tag">
+    <!-- Page specific head additions -->
+    <title>Video Game Database</title>
+</div>
+
+<!-- <body> -->
+<div layout:fragment="body" th:remove="tag">
+    <!-- Page specific body additions -->
+    <div class="container">
+
+        <table class="table">
+            <tr>
+                <th>Country</th>
+                <th>All-time Cases</th>
+                <th>Recorded Deaths</th>
+                <th>Active Cases</th>
+            </tr>
+            <!-- Usage of JSON object and Thymeleaf -->
+            <tr th:each="country : ${jo.countries_stat}">
+                <td th:text="${api.id}"></td>
+                <td th:text="${api.name}"></td>
+                <td th:text="${api.image}"></td>
+                <td th:text="${api.description}"></td>
+        </table>
+
+
+    </div>
+</div>
+
+</html>
