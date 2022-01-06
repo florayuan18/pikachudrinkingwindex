@@ -65,6 +65,11 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
         return "redirect:/Database/person";
     }
 
+    @GetMapping("/apiformatting")
+    public String apiformatting() {
+        return "apiformatting";
+    }
+
     @GetMapping("/aboutflora")
     public String aboutflora() {
         return "aboutflora";
