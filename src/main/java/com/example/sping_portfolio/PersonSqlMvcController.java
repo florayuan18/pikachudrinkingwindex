@@ -12,15 +12,20 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.json.simple.parser.ParseException;
+import org.springframework.web.bind.annotation.GetMapping;
 
-import javax.validation.Valid;
+import java.util.HashMap;
+
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.text.ParseException;
-import java.util.HashMap;
+import javax.validation.Valid;
 import java.util.List;
 import com.example.sping_portfolio.controllers.KiraLightSequence;
 // Built using article: https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/mvc.html
@@ -66,7 +71,24 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
     }
 
     @GetMapping("/apiformatting")
-    public String apiformatting() {
+    public String apiformatting(Model model) throws IOException, InterruptedException, ParseException {
+        //online link https://rapidapi.com/spamakashrajtech/api/corona-virus-world-and-india-data/
+
+        //rapid api setup:
+        //HttpRequest request = HttpRequest.newBuilder()
+       //         .uri(URI.create("https://corona-virus-world-and-india-data.p.rapidapi.com/api"))
+         //       .header("x-rapidapi-key", "dec069b877msh0d9d0827664078cp1a18fajsn2afac35ae063")
+         //       .header("x-rapidapi-host", "corona-virus-world-and-india-data.p.rapidapi.com")
+          //      .method("GET", HttpRequest.BodyPublishers.noBody())
+            //    .build();
+        //rapid api call
+        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+
+        Object obj = new JSONParser().parse(response.body());
+        JSONObject results = (JSONObject) obj;
+
+        //pass stats to view
+        model.addAttribute("results", results);
         return "apiformatting";
     }
 
