@@ -21,6 +21,8 @@ public class MaggieCoinGame{
     /* Returns the number of coins (1, 2, or 3) that player 2 will spend, as described in part (a).
     public int getPlayer2Move(int round){
         //to be implemented in part (a)
+        int result;
+        return result;
     }
     */
 
