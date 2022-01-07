@@ -3,6 +3,7 @@ package com.example.sping_portfolio;
 import com.example.sping_portfolio.SQL.*;
 import com.example.sping_portfolio.controllers.MaggieFRQ.MaggieDinner;
 import com.example.sping_portfolio.controllers.MaggieFRQ.MaggieLightSequence;
+import com.example.sping_portfolio.controllers.MaggieFRQ.MaggieLongestStreak;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -165,6 +166,9 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
         MaggieDinner myDinner = new MaggieDinner(true, 2);
         myDinner.message1();
         model.addAttribute("message", myDinner.displayOption1());
+        //FRQ #4
+        MaggieLongestStreak myStreak = new MaggieLongestStreak();
+        model.addAttribute("streakInfo", myStreak.longestStreak("CCAAAAATTT!"));
         return "AboutUs/aboutMaggie";
     }
 
