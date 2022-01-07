@@ -72,15 +72,15 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
 
     @GetMapping("/apiformatting")
     public String apiformatting(Model model) throws IOException, InterruptedException, ParseException {
-        //online link https://rapidapi.com/spamakashrajtech/api/corona-virus-world-and-india-data/
+        //online link https://api.rawg.io/api/games?key=54fb065b24e840cb9c21e4b51275b3e8
 
         //rapid api setup:
-        //HttpRequest request = HttpRequest.newBuilder()
-       //         .uri(URI.create("https://corona-virus-world-and-india-data.p.rapidapi.com/api"))
-         //       .header("x-rapidapi-key", "dec069b877msh0d9d0827664078cp1a18fajsn2afac35ae063")
-         //       .header("x-rapidapi-host", "corona-virus-world-and-india-data.p.rapidapi.com")
-          //      .method("GET", HttpRequest.BodyPublishers.noBody())
-            //    .build();
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://api.rawg.io/api/games?key=54fb065b24e840cb9c21e4b51275b3e8"))
+                .header("x-rapidapi-host", "https://api.rawg.io/api/games")
+                .header("x-rapidapi-key", "54fb065b24e840cb9c21e4b51275b3e8")
+                .method("GET", HttpRequest.BodyPublishers.noBody())
+                .build();
         //rapid api call
         HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
 
