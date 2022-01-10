@@ -1,3 +1,8 @@
+/*
+Maggie Killada
+AP CSA FRQ #2
+ */
+
 package com.example.sping_portfolio.controllers.MaggieFRQ;
 
 //light sequence class

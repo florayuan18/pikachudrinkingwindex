@@ -1,3 +1,8 @@
+/*
+Maggie Killada
+AP CSA FRQ #4
+ */
+
 package com.example.sping_portfolio.controllers.MaggieFRQ;
 
 public class MaggieCoinGame{

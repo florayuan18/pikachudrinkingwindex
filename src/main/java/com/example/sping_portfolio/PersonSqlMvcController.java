@@ -84,10 +84,9 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
                 .build();
         //rapid api call
         HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-
+        var map = new ObjectMapper().readValue(response.body(), HashMap.class);
         Object obj = new JSONParser().parse(response.body());
         JSONObject results = (JSONObject) obj;
-
         //pass stats to view
         model.addAttribute("results", results);
         return "apiformatting";
@@ -181,13 +180,12 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
         HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
         var map = new ObjectMapper().readValue(response.body(), HashMap.class);
         model.addAttribute("data", map);
-        model.addAttribute("name", map.get("name"));
-        model.addAttribute("trade", map.get(".."));
-        model.addAttribute("percentage", map.get(".."));
-        model.addAttribute("name", map.get("CompanyName"));
+        model.addAttribute("question", map.get("setup"));
+        model.addAttribute("answer", map.get("punchline"));
         return "AboutUs/aboutmaggie";
     }
-*/
+    */
+
 
     @GetMapping("/Database/personupdate/{id}")
     public String personUpdate(@PathVariable("id") int id, Model model) {
