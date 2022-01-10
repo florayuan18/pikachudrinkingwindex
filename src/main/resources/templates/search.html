@@ -10,38 +10,24 @@
 <div layout:fragment="content" th:remove="tag">
     <div class="container">
     <h1>Games List</h1>
-<!--    <div class="row justify-content-md-center">-->
-<!--        <h1><strong>Search For Games!</strong></h1>-->
-<!--        <form th:action="@{/search}" method="GET" id="seachForm">-->
-<!--            <button>Refresh!</button>-->
-<!--        </form>-->
-<!--    </div>-->
+    <div class="row justify-content-md-center">
+        <h1><strong>Search For Games!</strong></h1>
+        <form th:action="@{/search}" method="GET" id="seachForm">
+            <button>Refresh!</button>
+        </form>
+    </div>
 
-<!--        <th:block th:each="gameList: ${gameList}">-->
-<!--            <div class="row justify-content-md-center">-->
-<!--                <table class="table">-->
-<!--                    <tr id="table">-->
-<!--                        <td th:text="${gameList.results.name[0]}"></td>-->
-<!--                        <td th:text="${gameList.results.name[1]}"></td>-->
-<!--                        <td th:text="${gameList.results.name[2]}"></td>-->
-<!--                    </tr>-->
-                    <!--        <tr><td th:text="${schedule[3]}"></td></tr>-->
-                    <!--        <tr><td th:text="${schedule[4]}"></td></tr>-->
-
-                </table>
-            </div>
-        </th:block>
-    </table>
     <table class="table" style="color:white;">
         <tr>
-            <h3 class="text-center" style="color:white;">San Diego Weather API</h3>
-            <th>Temp</th>
-            <th>Weather</th>
+<!--            <h3 class="text-center" style="color:white;">San Diego Weather API</h3>-->
+<!--            <th>Temp</th>-->
+<!--            <th>Weather</th>-->
 
         </tr>
-        <tr>
-            <!-- Usage of Java HashMap and Thymeleaf -->
-<!--            <td th:text="${gameList.count}"></td>-->
+        <tr th:each="value: ${gameList}">
+
+            <td th:text="${value[0]}"></td>
+            <td th:text="${value[1]}"></td>
 <!--            <td th:text="${gameList.next}"></td>-->
 
 

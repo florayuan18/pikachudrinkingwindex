@@ -1,6 +1,8 @@
 package com.example.sping_portfolio.controllers.CalvinFRQ.FRQ_4;
 
 
+import java.util.Scanner;
+
 import static java.lang.Math.abs;
 
 public class CoinGame
@@ -13,6 +15,8 @@ public class CoinGame
     private int p2_move;
     private int p1_bank;
     private int p2_bank;
+    private int check;
+//    private Sanner p1_move;
 
 
 
@@ -67,11 +71,24 @@ public class CoinGame
         while (round < maxRounds) {
             System.out.println("Round " + (round + 1));
 
-            p1_move = getPlayer1Move();
+//            p1_move = getPlayer1Move();
             p2_move = getPlayer2Move(round);
+            p1_move = -1;
 
-            p1_bank = p1_bank - p1_move;
+            Scanner p1_moveSCN = new Scanner(System.in);
+
+            while (p1_move >3 || p1_move <= 0){
+                System.out.println("How much do you want to bet? 1-3");
+                p1_move = Integer.parseInt(p1_moveSCN.nextLine());
+            }
+
+
+
+            p1_bank = p1_bank -  p1_move;
             p2_bank = p2_bank - p2_move;
+
+
+
             System.out.println("Player 1 has wagered " + p1_move);
             System.out.println("Player 2 has wagered " + p2_move);
 
