@@ -3,6 +3,7 @@ package com.example.sping_portfolio;
 import com.example.sping_portfolio.SQL.*;
 import com.example.sping_portfolio.controllers.MaggieFRQ.MaggieDinner;
 import com.example.sping_portfolio.controllers.MaggieFRQ.MaggieLightSequence;
+import com.example.sping_portfolio.controllers.MaggieFRQ.MaggieLongestStreak;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,15 +13,20 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.json.simple.parser.ParseException;
+import org.springframework.web.bind.annotation.GetMapping;
 
-import javax.validation.Valid;
+import java.util.HashMap;
+
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.text.ParseException;
-import java.util.HashMap;
+import javax.validation.Valid;
 import java.util.List;
 import com.example.sping_portfolio.controllers.KiraLightSequence;
 // Built using article: https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/mvc.html
@@ -63,6 +69,28 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
         repository.save(person);
         // Redirect to next step
         return "redirect:/Database/person";
+    }
+
+    @GetMapping("/apiformatting")
+    public String apiformatting(Model model) throws IOException, InterruptedException, ParseException {
+        //online link https://api.rawg.io/api/games?key=54fb065b24e840cb9c21e4b51275b3e8
+
+        //rapid api setup:
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://api.rawg.io/api/games?key=54fb065b24e840cb9c21e4b51275b3e8"))
+                .header("x-rapidapi-host", "https://api.rawg.io/api/games")
+                .header("x-rapidapi-key", "54fb065b24e840cb9c21e4b51275b3e8")
+                .method("GET", HttpRequest.BodyPublishers.noBody())
+                .build();
+        //rapid api call
+        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+
+        Object obj = new JSONParser().parse(response.body());
+        JSONObject results = (JSONObject) obj;
+
+        //pass stats to view
+        model.addAttribute("results", results);
+        return "apiformatting";
     }
 
     @GetMapping("/aboutflora")
@@ -138,6 +166,9 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
         MaggieDinner myDinner = new MaggieDinner(true, 2);
         myDinner.message1();
         model.addAttribute("message", myDinner.displayOption1());
+        //FRQ #4
+        MaggieLongestStreak myStreak = new MaggieLongestStreak();
+        model.addAttribute("streakInfo", myStreak.longestStreak("CCAAAAATTT!"));
         return "AboutUs/aboutMaggie";
     }
 
