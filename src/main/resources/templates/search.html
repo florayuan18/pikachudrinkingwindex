@@ -12,8 +12,8 @@
     <h1>Games List</h1>
     <div class="row justify-content-md-center">
         <h1><strong>Search For Games!</strong></h1>
-        <form th:action="@{/search}" method="GET" id="seachForm">
-            <button>Refresh!</button>
+<!--        <form th:action="@{/search}" method="GET" id="seachForm">-->
+<!--            <button>Refresh!</button>-->
         </form>
     </div>
 
@@ -26,8 +26,11 @@
         </tr>
         <tr th:each="value: ${gameList}">
 
+            <img th:src="${value[2]}"></img>
             <td th:text="${value[0]}"></td>
             <td th:text="${value[1]}"></td>
+
+
 <!--            <td th:text="${gameList.next}"></td>-->
 
 

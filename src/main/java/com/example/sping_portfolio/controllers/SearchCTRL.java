@@ -45,7 +45,7 @@ public class SearchCTRL {
                 .build();
         HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
 
-        System.out.println(response.body());
+//        System.out.println(response.body());
 
 //        var gameList = new ObjectMapper().readValue(response.body(), HashMap.class);
 //        JSONObject resp = new JSONObject(response.body()).getJSONObject("player").getJSONObject("stats").getJSONObject("Bedwars");
@@ -53,7 +53,7 @@ public class SearchCTRL {
 
         JSONArray gameList = new JSONObject(response.body()).getJSONArray("results");
 
-        System.out.println(gameList.length());
+//        System.out.println(gameList.length());
 
         String[][] retArr = new String[0][2];
 
@@ -61,8 +61,9 @@ public class SearchCTRL {
             if (i >= retArr.length) {
                 retArr = Arrays.copyOf(retArr, i + 1);
             }
-            retArr[i] = new String[] {gameList.getJSONObject(i).getString("name"), gameList.getJSONObject(i).getString("released")};
+            retArr[i] = new String[] {gameList.getJSONObject(i).getString("name"), gameList.getJSONObject(i).getString("released"),gameList.getJSONObject(i).getString("background_image")};
         }
+
         //JSONObject gameList = new JSONObject("{'test':1}").getJSONArray("results").getJSONObject(0);
 
         model.addAttribute("gameList", retArr);
