@@ -31,16 +31,20 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import org.json.simple.parser.ParseException;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class SearchCTRL {
     @GetMapping("/search")
-    public String RawgAPI(Model model) throws IOException, InterruptedException, ParseException, JSONException {
+    public String RawgAPI(@RequestParam(name="search", required=true, defaultValue= "tf2") String search, Model model) throws IOException, InterruptedException, ParseException, JSONException {
+
+        String KEY = "54fb065b24e840cb9c21e4b51275b3e8";
+        String url = "https://api.rawg.io/api/games?key=" + KEY + "&search=" + search;
 
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("https://api.rawg.io/api/games?key=54fb065b24e840cb9c21e4b51275b3e8"))
+                .uri(URI.create(url))
                 .header("x-rapidapi-host", "https://api.rawg.io/api/games")
-                .header("x-rapidapi-key", "54fb065b24e840cb9c21e4b51275b3e8")
+                .header("x-rapidapi-key", KEY)
                 .method("GET", HttpRequest.BodyPublishers.noBody())
                 .build();
         HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
