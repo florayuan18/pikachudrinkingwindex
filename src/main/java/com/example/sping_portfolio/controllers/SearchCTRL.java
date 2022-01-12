@@ -36,9 +36,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class SearchCTRL {
     @GetMapping("/search")
-    public String RawgAPI(@RequestParam(name="search", required=true, defaultValue= "tf2") String search, Model model) throws IOException, InterruptedException, ParseException, JSONException {
+    public String RawgAPI(@RequestParam(name="search", required=true, defaultValue= "") String search, Model model) throws IOException, InterruptedException, ParseException, JSONException {
 
-        String KEY = "54fb065b24e840cb9c21e4b51275b3e8";
+        String KEY = "42771867b81b456496770e0c1c15d4f2";
         String url = "https://api.rawg.io/api/games?key=" + KEY + "&search=" + search;
 
         HttpRequest request = HttpRequest.newBuilder()
@@ -48,7 +48,7 @@ public class SearchCTRL {
                 .method("GET", HttpRequest.BodyPublishers.noBody())
                 .build();
         HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-
+//
 //        System.out.println(response.body());
 
 //        var gameList = new ObjectMapper().readValue(response.body(), HashMap.class);
@@ -59,13 +59,13 @@ public class SearchCTRL {
 
 //        System.out.println(gameList.length());
 
-        String[][] retArr = new String[0][2];
+        String[][] retArr = new String[0][3];
 
         for (int i = 0; i < gameList.length(); i++) {
             if (i >= retArr.length) {
                 retArr = Arrays.copyOf(retArr, i + 1);
             }
-            retArr[i] = new String[] {gameList.getJSONObject(i).getString("name"), gameList.getJSONObject(i).getString("released"),gameList.getJSONObject(i).getString("background_image")};
+            retArr[i] = new String[] {gameList.getJSONObject(i).getString("name"), gameList.getJSONObject(i).getString("id"),gameList.getJSONObject(i).getString("background_image")};
         }
 
         //JSONObject gameList = new JSONObject("{'test':1}").getJSONArray("results").getJSONObject(0);
