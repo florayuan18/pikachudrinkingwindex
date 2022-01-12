@@ -8,6 +8,24 @@ AP CSA FRQ #5
 
 package com.example.sping_portfolio.controllers.MaggieFRQ;
 
-public class MaggieInvitation {
+public class MaggieInvitation{
+    private String hostName;
+    private String address;
+
+    public MaggieInvitation(String n, String a){
+        hostName = n;
+        address = a;
+    }
+
+    //returns host name
+    public String displayHostName(){return hostName;}
+
+    //method that accepts a parameter and uses it to update an address for the event
+    public String updateAddress(String newAddress){
+        newAddress = "16601 Nighthawk Ln";
+        address = newAddress;
+        return address;
+    }
+
 
 }

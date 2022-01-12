@@ -5,7 +5,7 @@ AP CSA FRQ #3
 
 package com.example.sping_portfolio.controllers.MaggieFRQ;
 
-public class MaggieDinner {
+public class MaggieDinner{
     private Boolean rsvp;
     private int selection;
     private String option1;
