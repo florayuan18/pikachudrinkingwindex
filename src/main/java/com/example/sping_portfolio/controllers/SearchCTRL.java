@@ -36,7 +36,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class SearchCTRL {
     @GetMapping("/search")
-    public String RawgAPI(@RequestParam(name="search", required=true, defaultValue= "") String search, Model model) throws IOException, InterruptedException, ParseException, JSONException {
+    public String RawgAPI(@RequestParam(name="search", required=true, defaultValue= "") String search
+            , Model model) throws IOException, InterruptedException, ParseException, JSONException {
+
 
         String KEY = "42771867b81b456496770e0c1c15d4f2";
         String url = "https://api.rawg.io/api/games?key=" + KEY + "&search=" + search;
@@ -50,10 +52,6 @@ public class SearchCTRL {
         HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
 //
 //        System.out.println(response.body());
-
-//        var gameList = new ObjectMapper().readValue(response.body(), HashMap.class);
-//        JSONObject resp = new JSONObject(response.body()).getJSONObject("player").getJSONObject("stats").getJSONObject("Bedwars");
-
 
         JSONArray gameList = new JSONObject(response.body()).getJSONArray("results");
 
