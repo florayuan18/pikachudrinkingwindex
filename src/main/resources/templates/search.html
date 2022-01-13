@@ -43,8 +43,11 @@
                 <div class="card shadow-sm">
                     <img th:src="${value[2]}" style="margin-left:30px; max-width: 150px; margin-right:20px; margin-top:20px;">
                     <div class="card-body">
-                        <p class="card-text" th:text="${value[0]}" style="font-family:Times New Roman;"></p>
-
+                        <p class="card-text" th:text="${value[0]}" style="font-family:Times New Roman; font-weight: bold"></p>
+                        <h6 style="font-family:Times New Roman; text-align:left">Rating:</h6>
+                        <h6 class="card-text" th:text="${value[3]}" style="font-family:Times New Roman;"></h6>
+                        <h6 style="font-family:Times New Roman; text-align:left">Playtime (in hours): </h6>
+                        <h6 class="card-text" th:text="${value[4]}" style="font-family:Times New Roman;"></h6>
 
                     </div>
                 </div>

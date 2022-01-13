@@ -59,13 +59,13 @@ public class SearchCTRL {
 
 //        System.out.println(gameList.length());
 
-        String[][] retArr = new String[0][3];
+        String[][] retArr = new String[0][5];
 
         for (int i = 0; i < gameList.length(); i++) {
             if (i >= retArr.length) {
                 retArr = Arrays.copyOf(retArr, i + 1);
             }
-            retArr[i] = new String[] {gameList.getJSONObject(i).getString("name"), gameList.getJSONObject(i).getString("id"),gameList.getJSONObject(i).getString("background_image")};
+            retArr[i] = new String[] {gameList.getJSONObject(i).getString("name"), gameList.getJSONObject(i).getString("id"),gameList.getJSONObject(i).getString("background_image"), gameList.getJSONObject(i).getString("rating"), gameList.getJSONObject(i).getString("playtime")};
         }
 
         //JSONObject gameList = new JSONObject("{'test':1}").getJSONArray("results").getJSONObject(0);
