@@ -2,6 +2,7 @@
 <html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
       layout:decorate="~{layout}" lang="en">
 
+
 <head><div layout:fragment="metadata" th:remove="tag">
     <title>Search</title>
 
@@ -24,13 +25,28 @@
 <body>
 <div layout:fragment="content" th:remove="tag">
     <div class="container">
-      <div class="row justify-content-md-center">
-          <h1 style="font-family:Times New Roman; color:White"><strong>Search For Games!</strong></h1><br>
-          <form action="/search">
-          <label for="search">Search</label>
-         <input name="search" id="search">
-              <input type="submit" value="Submit">
+        <div class="row justify-content-md-center">
+            <h1 style="font-family:Times New Roman; color:White"><strong>Search For Games!</strong></h1>
+        </div>
+        <div class="row justify-content-md-center">
+            <form action="/search">
+                <div>
+                    <label for="search">Search</label>
+                    <input name="search" id="search">
+                    <input type="submit" value="Submit">
+              </div>
+                <div>
+                  <p style="font-family:Times New Roman; color:White">Sort by:</p>
+                    <label for="sortby_rating">rating</label>
+                    <input type="checkbox" id="sortby_rating" name="sortby_rating" value=true>
+                    <label for="sortby_PlayTime">Play Time</label>
+                    <input type="checkbox" id="sortby_PlayTime" name="sortby_PlayTime" value=true>
+
+             </div>
+
+
         </form>
+
     </div>
 
 </div>
