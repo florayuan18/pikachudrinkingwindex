@@ -1,0 +1,70 @@
+// redefine colors
+$primary: #00eeff;
+$secondary: #797979;
+$body-bg: #000000;
+
+//@import "../../../../../scss/bootstrap";
+
+@font-face {
+  font-family: arcade;
+  src: url(arcade.ttf);
+}
+
+// setup default background
+html, body {
+  background-color: $body-bg !important;
+}
+
+.titlehead {
+  color:$primary !important;
+  font-family: arcade;
+}
+
+.nav-link{
+  color:$primary;
+  font-family: 'Consolas', sans-serif;
+  :hover > & {
+    color: $secondary;
+  }
+}
+
+.navbar{
+  background-color:#000000;
+}
+
+.bodytext{
+  color:$secondary !important;
+  font-family: 'Consolas', sans-serif;
+}
+
+.frontdisplay{
+  background-image: url("../images/nightcity.gif");
+  min-height:350px;
+  text-align: center;
+  padding: 150px 0;
+}
+
+// setup dark mode styling
+//.dark-mode {
+//  /* redefine theme colors */
+//  $primary: #5c7ba8;
+//  $secondary: #5B9D82;;
+//  $body-bg: #455a64;
+//  /* set background values */
+//  --#{$variable-prefix}body-bg: #{$body-bg};
+//
+//  $theme-colors: (
+//          "primary": $primary,
+//          "secondary": $secondary
+//  );
+//  /* redefine theme color variables */
+//  @each $color, $value in $theme-colors {
+//    --#{$variable-prefix}#{$color}: #{$value};
+//  }
+//  /* redefine theme theme-colors-rgb variables */
+//  $theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
+//  @each $color, $value in $theme-colors-rgb {
+//    --#{$variable-prefix}#{$color}-rgb: #{$value};
+//  }
+//
+//}
