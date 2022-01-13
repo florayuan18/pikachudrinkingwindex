@@ -117,7 +117,7 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
         model.addAttribute("returnString", returnString);
 
 
-        return "AboutUs/aboutkira";
+        return "aboutkira";
     }
 
 
