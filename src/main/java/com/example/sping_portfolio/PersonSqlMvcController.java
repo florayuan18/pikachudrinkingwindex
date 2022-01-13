@@ -3,6 +3,7 @@ package com.example.sping_portfolio;
 import com.example.sping_portfolio.SQL.*;
 import com.example.sping_portfolio.controllers.MaggieFRQ.MaggieDinner;
 import com.example.sping_portfolio.controllers.MaggieFRQ.MaggieLightSequence;
+import com.example.sping_portfolio.controllers.MaggieFRQ.MaggieLongestStreak;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,15 +13,20 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.json.simple.parser.ParseException;
+import org.springframework.web.bind.annotation.GetMapping;
 
-import javax.validation.Valid;
+import java.util.HashMap;
+
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.text.ParseException;
-import java.util.HashMap;
+import javax.validation.Valid;
 import java.util.List;
 import com.example.sping_portfolio.controllers.KiraLightSequence;
 // Built using article: https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/mvc.html
@@ -64,6 +70,7 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
         // Redirect to next step
         return "redirect:/Database/person";
     }
+
 
     @GetMapping("/aboutflora")
     public String aboutflora() {
@@ -138,6 +145,9 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
         MaggieDinner myDinner = new MaggieDinner(true, 2);
         myDinner.message1();
         model.addAttribute("message", myDinner.displayOption1());
+        //FRQ #4
+        MaggieLongestStreak myStreak = new MaggieLongestStreak();
+        model.addAttribute("streakInfo", myStreak.longestStreak("CCAAAAATTT!"));
         return "AboutUs/aboutMaggie";
     }
 
@@ -150,13 +160,12 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
         HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
         var map = new ObjectMapper().readValue(response.body(), HashMap.class);
         model.addAttribute("data", map);
-        model.addAttribute("name", map.get("name"));
-        model.addAttribute("trade", map.get(".."));
-        model.addAttribute("percentage", map.get(".."));
-        model.addAttribute("name", map.get("CompanyName"));
+        model.addAttribute("question", map.get("setup"));
+        model.addAttribute("answer", map.get("punchline"));
         return "AboutUs/aboutmaggie";
     }
-*/
+    */
+
 
     @GetMapping("/Database/personupdate/{id}")
     public String personUpdate(@PathVariable("id") int id, Model model) {

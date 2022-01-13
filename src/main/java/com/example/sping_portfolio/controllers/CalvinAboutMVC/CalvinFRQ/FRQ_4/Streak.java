@@ -1,4 +1,4 @@
-package com.example.sping_portfolio.controllers.CalvinFRQ.FRQ_4;
+package com.example.sping_portfolio.controllers.CalvinAboutMVC.CalvinFRQ.FRQ_4;
 
 public class Streak {
     private String best_letter;

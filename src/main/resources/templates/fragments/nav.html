@@ -3,16 +3,34 @@
 <head>
     <title>...</title>
 <style>
-@font-face {
-    font-family: arcade;
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap');
+    @font-face {
+        font-family: 'Montserrat', sans-serif;
+    }
 
-    format('truetype');
-}
+    /*
+    .nav-link:hover{
+        font-family: 'Montserrat', sans-serif;
+        background-color: #05c4c4;
+        color: black;
+    }
+    */
+
+/*@font-face {*/
+/*    font-family: arcade;*/
+/*    src: url('/static/PressStart2P-vaV7.ttf');*/
+/*    format('truetype');
+      } */
+
+/*body {*/
+/*    font-family: arcade*/
+/*}*/
+
 </style>
 </head>
 <body>
     <!-- Begin navigation fragments -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" th:fragment="header">
+    <nav style="font-family: Montserrat;" class="navbar navbar-expand-lg navbar-dark bg-dark" th:fragment="header">
         <a class="navbar-brand" href="https://www.amazon.com/Windex-Cleaner-Trigger-Bottle-Original/dp/B01GFLZ0WU">
             <img src="/static/images/PikachuDrinkingWindex.jpg" th:src="@{/images/PikachuDrinkingWindex.jpg}" width="50" height="50" class="d-inline-block align-center" alt="">
             Umbrella Box
@@ -21,11 +39,11 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <!-- Bootstrap menus -->
-        <div style="font-family: arcade;" class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div  class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <!--root menu -->
                 <li class="nav-item active">
-                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/">Home <span class="sr-only" >(current)</span></a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="/search">Search <span class="sr-only">(current)</span></a>
@@ -40,8 +58,12 @@
                     <a class="nav-link" href="/login">Login <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
+                    <a class="nav-link" href="https://florayuan18.github.io/">Umbrella Box Project</a>
+                </li>
+                <li class="nav-item active">
                     <a class="nav-link" href="/aboutus">About Us <span class="sr-only">(current)</span></a>
                 </li>
+            </ul>
         </div>
     </nav>
 </body>
