@@ -5,13 +5,27 @@
 <head><div layout:fragment="metadata" th:remove="tag">
     <title>Search</title>
 
+    <style type="text/css">
+
+        label:after {
+            content: ": ";
+        }
+
+        label {
+            color: white;
+            padding: 4px;
+            text-transform: uppercase;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size: small;
+        }
+
+    </style>
 </div></head>
 <body>
 <div layout:fragment="content" th:remove="tag">
     <div class="container">
-        <h1>Games List</h1>
       <div class="row justify-content-md-center">
-          <h1><strong>Search For Games!</strong></h1>
+          <h1 style="font-family:Times New Roman; color:White"><strong>Search For Games!</strong></h1><br>
           <form action="/search">
           <label for="search">Search</label>
          <input name="search" id="search">
