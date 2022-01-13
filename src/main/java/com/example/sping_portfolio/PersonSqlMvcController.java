@@ -71,26 +71,6 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
         return "redirect:/Database/person";
     }
 
-    @GetMapping("/apiformatting")
-    public String apiformatting(Model model) throws IOException, InterruptedException, ParseException {
-        //online link https://api.rawg.io/api/games?key=54fb065b24e840cb9c21e4b51275b3e8
-
-        //rapid api setup:
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("https://api.rawg.io/api/games?key=54fb065b24e840cb9c21e4b51275b3e8"))
-                .header("x-rapidapi-host", "https://api.rawg.io/api/games")
-                .header("x-rapidapi-key", "54fb065b24e840cb9c21e4b51275b3e8")
-                .method("GET", HttpRequest.BodyPublishers.noBody())
-                .build();
-        //rapid api call
-        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-        var map = new ObjectMapper().readValue(response.body(), HashMap.class);
-        Object obj = new JSONParser().parse(response.body());
-        JSONObject results = (JSONObject) obj;
-        //pass stats to view
-        model.addAttribute("results", results);
-        return "apiformatting";
-    }
 
     @GetMapping("/aboutflora")
     public String aboutflora() {
