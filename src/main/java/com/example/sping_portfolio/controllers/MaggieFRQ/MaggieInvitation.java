@@ -17,6 +17,12 @@ public class MaggieInvitation{
         address = a;
     }
 
+    //one parameter constructor
+    public MaggieInvitation(String address){
+        address = "address";
+        hostName = "Karen";
+    }
+
     //returns host name
     public String displayHostName(){return hostName;}
 
@@ -27,5 +33,18 @@ public class MaggieInvitation{
         return address;
     }
 
+    //displays invitation message
+    public String message(String guestName) {
+        return "Dear " + guestName + ", please attend my event at " + address + ". See you then, " + hostName;
+    }
 
+    /*
+    //method call
+    public static void main(String [] args) {
+        MaggieInvitation party = new MaggieInvitation("5678 Cashew Lane");
+        party.displayHostName();
+        party.updateAddress("1234 Walnut Street");
+        party.message("Cheryl");
+    }
+     */
 }

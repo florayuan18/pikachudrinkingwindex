@@ -5,11 +5,14 @@
       layout:decorate="~{layout}" lang="en">
 
 <style>
-    .center {
+    table {
         margin-left: auto;
         margin-right: auto;
     }
+
 </style>
+
+
 <head><div layout:fragment="metadata" th:remove="tag">
     <title>My Collection</title>
 </div></head>
@@ -26,7 +29,7 @@
                 <thead>
                 <tr style="color:Black;">
                     <th>Game</th>
-<!--                    <th>Teacher</th>-->
+                    <!--<th>Teacher</th>-->
                     <th>Rating</th>
                     <th>Action</th>
                 </tr>
@@ -44,9 +47,26 @@
                 </tr>
                 </tbody>
             </table>
-
         </div>
     </div>
-</div></body>
 
+    <div class="row justify-content-md-center" >
+        <table class="table" style="color:white;">
+            <tr th:each="person : ${list}">
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h6 class="card-text" th:text="${person.teacher_class}"></h6>
+                            <p class="card-text" th:text="${person.rating}"></p>
+                                <a th:href="@{/Database/personupdate/{id}(id = ${person.id})}" class="card-link">Update</a>
+                                <a th:href="@{/Database/persondelete/{id}(id = ${person.id})}" class="card-link">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </tr>
+        </table>
+    </div>
+
+</div>
+</body>
 </html>
