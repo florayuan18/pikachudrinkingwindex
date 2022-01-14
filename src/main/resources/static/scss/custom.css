@@ -1,0 +1,56 @@
+.theme-dark {
+  --primary: #00eeff;
+  --secondary: #797979;
+  --body-bg: #000000;
+  --display: url("../images/nightcity.gif");
+  --offset: 5%;
+}
+
+.theme-light {
+  --primary: #904b6b;
+  --secondary: #50435d;
+  --body-bg: #ffffff;
+  --display: url("../images/sunnycity.gif");
+  --offset: 45%;
+}
+
+@font-face {
+  font-family: arcade;
+  src: url(arcade.ttf);
+}
+html, body {
+  background-color: var(--body-bg) !important;
+}
+
+.titlehead {
+  color: var(--primary) !important;
+  font-family: arcade;
+}
+
+.nav-link {
+  color: var(--primary);
+  font-family: "Consolas", sans-serif;
+}
+:hover > .nav-link {
+  color: var(--secondary);
+}
+
+.navbar {
+  background-color: var(--body-bg);
+}
+
+.bodytext {
+  color: var(--secondary) !important;
+  font-family: "Consolas", sans-serif;
+}
+
+.frontdisplay {
+  background-image: var(--display);
+  background-position-y: var(--offset);
+  background-size: cover;
+  min-height: 330px;
+  text-align: center;
+  padding: 150px 0;
+}
+
+/*# sourceMappingURL=custom.css.map */
