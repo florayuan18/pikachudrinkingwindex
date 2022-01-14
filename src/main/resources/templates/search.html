@@ -26,7 +26,7 @@
 <div layout:fragment="content" th:remove="tag">
     <div class="container">
         <div class="row justify-content-md-center">
-            <h1 style="font-family:Times New Roman; color:White"><strong>Search For Games!</strong></h1>
+            <h1 style="font-family:Times New Roman; color:Black"><strong>Search For Games!</strong></h1>
         </div>
         <div class="row justify-content-md-center">
             <form action="/search">
@@ -36,10 +36,10 @@
                     <input type="submit" value="Submit">
                 </div>
                 <div>
-                    <p style="font-family:Times New Roman; color:White">Sort by:</p>
-                    <label for="sortby_rating">rating</label>
+                    <p style="font-family:Times New Roman; color:Black">Sort by:</p>
+                    <label for="sortby_rating" style="color:Black">rating</label>
                     <input type="checkbox" id="sortby_rating" name="sortby_rating" value=true>
-                    <label for="sortby_PlayTime">Play Time</label>
+                    <label for="sortby_PlayTime" style="color:Black">Play Time</label>
                     <input type="checkbox" id="sortby_PlayTime" name="sortby_PlayTime" value=true>
 
                 </div>
