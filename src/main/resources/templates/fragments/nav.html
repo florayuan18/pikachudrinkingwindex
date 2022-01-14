@@ -2,38 +2,14 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>...</title>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap');
-    @font-face {
-        font-family: 'Montserrat', sans-serif;
-    }
-
-    /*
-    .nav-link:hover{
-        font-family: 'Montserrat', sans-serif;
-        background-color: #05c4c4;
-        color: black;
-    }
-    */
-
-/*@font-face {*/
-/*    font-family: arcade;*/
-/*    src: url('/static/PressStart2P-vaV7.ttf');*/
-/*    format('truetype');
-      } */
-
-/*body {*/
-/*    font-family: arcade*/
-/*}*/
-
-</style>
 </head>
+
 <body>
     <!-- Begin navigation fragments -->
-    <nav style="font-family: Montserrat;" class="navbar navbar-expand-lg navbar-dark bg-dark" th:fragment="header">
-        <a class="navbar-brand" href="https://www.amazon.com/Windex-Cleaner-Trigger-Bottle-Original/dp/B01GFLZ0WU">
-            <img src="/static/images/PikachuDrinkingWindex.jpg" th:src="@{/images/PikachuDrinkingWindex.jpg}" width="50" height="50" class="d-inline-block align-center" alt="">
-            Umbrella Box
+    <nav class="navbar navbar-expand-lg dark-nav" th:fragment="header">
+        <a class="navbar-brand">
+            <img onClick="location.href='https://www.amazon.com/Windex-Cleaner-Trigger-Bottle-Original/dp/B01GFLZ0WU'" src="/static/images/PikachuDrinkingWindex.jpg" th:src="@{/images/PikachuDrinkingWindex.jpg}" width="50" height="50" class="d-inline-block align-center " alt="" style="border-radius: 50%;">
+            <a class="titlehead" style="padding-right:20px;">Umbrella Box</a>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -64,7 +40,40 @@
                     <a class="nav-link" href="/aboutus">About Us <span class="sr-only">(current)</span></a>
                 </li>
             </ul>
+
+            <div class="custom-control custom-switch">
+                <input type="checkbox" onchange="toggleTheme()" class="custom-control-input" id="slider">
+                <label class="custom-control-label bodytext" for="slider">Light Mode</label>
+            </div>
         </div>
+
+        <script>
+            function setTheme(themeName) {
+                localStorage.setItem('theme', themeName);
+                document.documentElement.className = themeName;
+            }
+
+            // function to toggle between light and dark theme
+            function toggleTheme() {
+                if (localStorage.getItem('theme') === 'theme-dark') {
+                    setTheme('theme-light');
+                } else {
+                    setTheme('theme-dark');
+                }
+            }
+
+            // Immediately invoked function to set the theme on initial load
+            (function () {
+                if (localStorage.getItem('theme') === 'theme-dark') {
+                    setTheme('theme-dark');
+                    document.getElementById('slider').checked = false;
+                } else {
+                    setTheme('theme-light');
+                    document.getElementById('slider').checked = true;
+                }
+            })();
+        </script>
+
     </nav>
 </body>
 

@@ -2,6 +2,7 @@
 <html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
       layout:decorate="~{layout}" lang="en">
 
+
 <head><div layout:fragment="metadata" th:remove="tag">
     <title>Search</title>
 
@@ -24,40 +25,61 @@
 <body>
 <div layout:fragment="content" th:remove="tag">
     <div class="container">
-      <div class="row justify-content-md-center">
-          <h1 style="font-family:Times New Roman; color:White"><strong>Search For Games!</strong></h1><br>
-          <form action="/search">
-          <label for="search">Search</label>
-         <input name="search" id="search">
-              <input type="submit" value="Submit">
-        </form>
+        <div class="row justify-content-md-center">
+            <a class="titlehead">Search For Games!</a>
+        </div>
+
+        <div class="row justify-content-md-center" style="padding:20px;">
+            <form action="/search">
+                <div class="bodytext">
+                    <a>Search</a>
+                    <input name="search" id="search">
+                    <input type="submit" value="Submit">
+                </div>
+                <div class="bodytext">
+                    <a>Sort by:</a>
+                    <a>Rating</a>
+                    <input type="checkbox" id="sortby_rating" name="sortby_rating" value=true>
+                    <a>Playtime</a>
+                    <input type="checkbox" id="sortby_PlayTime" name="sortby_PlayTime" value=true>
+
+                </div>
+
+
+            </form>
+
+        </div>
+
     </div>
 
-</div>
+    <div class="row justify-content-md-center" >
+        <table class="table" style="color:white;">
+            <tr th:each="value: ${gameList}">
 
-<div class="row justify-content-md-center" >
-    <table class="table" style="color:white;">
-        <tr th:each="value: ${gameList}">
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img th:src="${value[2]}" style="margin-left:30px; max-width: 150px; margin-right:20px; margin-top:20px;">
+                        <div class="card-body">
+                            <p class="card-text" th:text="${value[0]}" style="font-family:Times New Roman; font-weight: bold"></p>
+                            <h6 style="font-family:Times New Roman; text-align:left">Rating:</h6>
+                            <h6 class="card-text" th:text="${value[3]}" style="font-family:Times New Roman;"></h6>
+                            <h6 style="font-family:Times New Roman; text-align:left">Playtime (in hours): </h6>
+                            <h6 class="card-text" th:text="${value[4]}" style="font-family:Times New Roman;"></h6>
+                            <h6 class="card-text" th:text="${value[1]}" style="font-family:Times New Roman;"></h6>
+                            <!--                        <a href="https://www.w3schools.com/">more</a>-->
 
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img th:src="${value[2]}" style="margin-left:30px; max-width: 150px; margin-right:20px; margin-top:20px;">
-                    <div class="card-body">
-                        <p class="card-text" th:text="${value[0]}" style="font-family:Times New Roman; font-weight: bold"></p>
-                        <h6 style="font-family:Times New Roman; text-align:left">Rating:</h6>
-                        <h6 class="card-text" th:text="${value[3]}" style="font-family:Times New Roman;"></h6>
-                        <h6 style="font-family:Times New Roman; text-align:left">Playtime (in hours): </h6>
-                        <h6 class="card-text" th:text="${value[4]}" style="font-family:Times New Roman;"></h6>
-
+                        </div>
                     </div>
                 </div>
-            </div>
 
 
-        </tr>
-    </table>
-</div>
+            </tr>
+        </table>
+    </div>
 </div>
 </body>
 
 </html>
+© 2022 GitHub, Inc.
+Terms
+Privacy
