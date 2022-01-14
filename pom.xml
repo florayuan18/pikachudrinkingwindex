@@ -9,10 +9,32 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.nighthawk</groupId>
-    <artifactId>csa</artifactId>
+    <artifactId>windex</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>csa</name>
     <description>CSA project for Spring Boot</description>
+    <build>
+        <plugins>
+            <plugin>
+                <!--  Building an executable jar  -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <!--  give full qualified name of your main class -->
+                            <mainClass>com.example.sping_portfolio.Main</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
     <properties>
         <java.version>11</java.version>
         <!-- Thymeleaf 3 -->
