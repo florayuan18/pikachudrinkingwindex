@@ -72,11 +72,11 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
     }
 
 
-    @GetMapping("/aboutflora")
-    public String aboutflora() {
-        return "aboutflora";
-    }
-
+//    @GetMapping("/aboutflora")
+//    public String aboutflora() {
+//        return "aboutflora";
+//    }
+//
     public static String makeurl(){
         String makeurl = "https://billboard-api2.p.rapidapi.com/billboard-200?range=1-10&date=" + java.time.LocalDate.now();
         return makeurl;
