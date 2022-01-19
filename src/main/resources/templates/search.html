@@ -42,37 +42,36 @@
                     <input type="checkbox" id="sortby_rating" name="sortby_rating" value=true>
                     <a>Playtime</a>
                     <input type="checkbox" id="sortby_PlayTime" name="sortby_PlayTime" value=true>
-
                 </div>
-
-
             </form>
-
         </div>
-
     </div>
 
-    <div class="row justify-content-md-center" >
-        <table class="table" style="color:white;">
+    <div class="row justify-content-md-center flex-container" style="padding:10px; width:1000px;" >
+        <table class="table">
             <tr th:each="value: ${gameList}">
-
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img th:src="${value[2]}" style="margin-left:30px; max-width: 150px; margin-right:20px; margin-top:20px;">
+                <div>
+                    <div class="card" style="width:300px; margin:10px;">
+                        <img th:src="${value[2]}" class="card-img-top" style="height:200px;">
                         <div class="card-body">
-                            <p class="card-text" th:text="${value[0]}" style="font-family:Times New Roman; font-weight: bold"></p>
-                            <h6 style="font-family:Times New Roman; text-align:left">Rating:</h6>
-                            <h6 class="card-text" th:text="${value[3]}" style="font-family:Times New Roman;"></h6>
-                            <h6 style="font-family:Times New Roman; text-align:left">Playtime (in hours): </h6>
-                            <h6 class="card-text" th:text="${value[4]}" style="font-family:Times New Roman;"></h6>
-                            <h6 class="card-text" th:text="${value[1]}" style="font-family:Times New Roman;"></h6>
-                            <!--                        <a href="https://www.w3schools.com/">more</a>-->
-
+                            <p class="card-text titlehead" th:text="${value[0]}"></p>
+                            <a class="bodytext" style="text-align:left">Rating:</a>
+                            <a class="card-text bodytext" th:text="${value[3]}"></a></br>
+                            <a style="text-align:left" class="bodytext">Playtime (in hours): </a>
+                            <a class="card-text bodytext" th:text="${value[4]}" ></a></br>
+                            <h6 class="card-text" th:text="${value[1]}"></h6>
                         </div>
+
+                        <script>
+                            ScrollReveal().reveal('.card', {
+                                interval: 16,
+                                reset: true,
+                                useDelay: 'onload'
+                            })
+
+                        </script>
                     </div>
                 </div>
-
-
             </tr>
         </table>
     </div>

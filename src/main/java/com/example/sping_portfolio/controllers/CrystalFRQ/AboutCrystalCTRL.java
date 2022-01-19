@@ -21,7 +21,7 @@ public class AboutCrystalCTRL {
 
         String binaryC = "";
 
-        LightSequence gradShow = new LightSequence(seq);
+        CrystalLightSequence gradShow = new CrystalLightSequence(seq);
         String binary = gradShow.displayRet();
 
         if (changeSeq.equals("")) {
