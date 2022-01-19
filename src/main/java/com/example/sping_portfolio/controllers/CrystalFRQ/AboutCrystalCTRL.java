@@ -41,7 +41,6 @@ public class AboutCrystalCTRL {
         model.addAttribute("binaryR", binaryR);
         model.addAttribute("distXY", distXY);
 
-
         return "/aboutcrystal";
     }
 }
