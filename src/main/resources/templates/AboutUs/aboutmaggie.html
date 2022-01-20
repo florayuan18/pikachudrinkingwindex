@@ -48,40 +48,64 @@
 </head>
 
 <div layout:fragment="content">
-  <br>
-  <div style=" left: auto; top: 40px;">
-    <img th:src="@{/images/maggiewithmask.png}" width="auto" height="200" onclick="imagefun()" id="getImage"; />
-  </div>
-  <div>
-    <input type="button" onclick="imagefun()" value="Change Image">
-  </div>
-  <div class="contact">
-    <button type="button" class="block" onclick="window.location.href='https://docs.google.com/document/d/1Z3TToryEbC6EhNMEnVD3aBqpBPHM4CEq_jDYc56mHU4/edit?usp=sharing';">
+  <div class="content">
+
+    <br>
+    <div style=" left: auto; top: 40px;">
+      <img th:src="@{/images/maggiewithmask.png}" width="auto" height="200" onclick="imagefun()" id="getImage" ;="">
+    </div>
+    <br>
+
+
+    <button type="button" class="btn btn-info" onclick="window.location.href='https://docs.google.com/document/d/1Z3TToryEbC6EhNMEnVD3aBqpBPHM4CEq_jDYc56mHU4/edit?usp=sharing';">
       Journal
     </button>
-    <button type="button" class="block" onclick="window.location.href='https://github.com/florayuan18/pikachudrinkingwindex/projects/1?card_filter_query=assignee%3Amaggie3000';">
-      Scrum Board
+    <button type="button" class="btn btn-info" onclick="window.location.href='https://github.com/florayuan18/pikachudrinkingwindex/projects/1?card_filter_query=assignee%3Amaggie3000';">
+    Scrum Board
     </button>
-    <button type="button" class="block" onclick="window.location.href='https://github.com/florayuan18/pikachudrinkingwindex/commits?author=maggie3000';">
+    <button type="button" class="btn btn-info" onclick="window.location.href='https://github.com/florayuan18/pikachudrinkingwindex/commits?author=maggie3000';">
       Commits
     </button>
-    <button type="button" class="block" onclick="window.location.href='https://github.com/maggie3000';">
+    <button type="button" class="btn btn-info" onclick="window.location.href='https://github.com/maggie3000';">
       Profile
     </button>
+    <hr>
+
+
+    <h6>FRQ #2</h6>
+    <form class="form-inline" role="form" action="/AboutUs/aboutmaggie">
+      <div class="row justify-content-md-center">
+        <div class="form-group mx-sm-3 mb-2">
+          <input type="text" class="form-control" id="seq" name="seq" placeholder="enter sequence">
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+          <input type="text" class="form-control" id="insseq" name="insseq" placeholder="enter insert segment">
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+          <input type="number" class="form-control" id="idx" name="idx" placeholder="enter index number">
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+          <input type="text" class="form-control" id="remseq" name="remseq" placeholder="enter removable segment">
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Submit</button>
+      </div>
+    </form>
+
+    <p>Original Sequence: <span th:text="${originalSequence}"></span></p>
+    <p>Changed Sequence: <span th:text="${changedSequence}"></span></p>
+    <p>Inserted Sequence: <span th:text="${insertedSequence}"></span></p>
+    <p>Removed Sequence: <span th:text="${removedSequence}"></span></p>
+    <p>Distance Between A &amp; B: <span th:text="${distance}"></span></p>
+    <hr>
+
+
+    <h6>FRQ #3</h6>
+    <p>Message: <span th:text="${message}"></span></p>
+    <hr>
+
+    <h6>FRQ #4</h6>
+    <p>Streak: </p>
+    <p>Streak Info: <span th:text="${streakInfo}"></span></p>
   </div>
-  <hr>
-  <h6>FRQ #2</h6>
-  <p>Original Sequence: <span th:text="${originalSequence}"></span></p>
-  <p>Changed Sequence: <span th:text="${changedSequence}"></span></p>
-  <p>Inserted Sequence: <span th:text="${insertedSequence}" ></span></p>
-  <p>Removed Sequence: <span th:text="${removedSequence}"></span></p>
-  <p>Distance Between A & B: <span th:text="${distance}"></span></p>
-  <hr>
-  <h6>FRQ #3</h6>
-  <p>Message: <span th:text="${message}"></span></p>
-  <hr>
-  <h6>FRQ #4</h6>
-  <p>Streak: </p>
-  <p>Streak Info: <span th:text="${streakInfo}"></span></p>
 </div>
 </html>
