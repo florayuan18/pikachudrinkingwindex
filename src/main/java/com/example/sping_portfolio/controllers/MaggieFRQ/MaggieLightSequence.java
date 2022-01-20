@@ -26,7 +26,7 @@ public class MaggieLightSequence {
         return(resultSeq);
     }
 
-    //changes the sequence, kinda redundant with LightSequence
+    //changes the sequence
     public void changeSequence(String seq) {
         this.oldSeq = seq;
     }
@@ -40,7 +40,8 @@ public class MaggieLightSequence {
     public String removeSegment(String segment) {
         int index = oldSeq.indexOf(segment);
         String newSeq = oldSeq.substring(0, index) + oldSeq.substring(index + segment.length());
-        return newSeq;
+        this.oldSeq = newSeq;
+        return oldSeq;
     }
 
     //finds distance between point A and point B

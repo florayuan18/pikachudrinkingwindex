@@ -128,16 +128,20 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
         return createurl;
     }
 
-    @GetMapping("/aboutmaggie")
-    public String aboutmaggie(Model model){
+    @GetMapping("AboutUs/aboutmaggie")
+    public String aboutmaggie(@RequestParam(name="seq", required=false, defaultValue="000000000000") String seq,
+                              @RequestParam(name="insseq", required=false, defaultValue="1111") String insseq,
+                              @RequestParam(name="idx" , required=false, defaultValue="4") int idx,
+                              @RequestParam(name="remseq" , required=false, defaultValue="11") String remseq,
+                                Model model) throws IOException, InterruptedException {
         //FRQ #2
-        MaggieLightSequence gradShow = new MaggieLightSequence("0101 0101 0101");
+        MaggieLightSequence gradShow = new MaggieLightSequence("010101010101");
         model.addAttribute("originalSequence", gradShow.display());
-        gradShow.changeSequence("0011 0011 0011");
+        gradShow.changeSequence(seq);
         model.addAttribute("changedSequence", gradShow.display());
-        gradShow.insertSegment("1111 1111", 4);
+        gradShow.insertSegment(insseq, idx);
         model.addAttribute("insertedSequence", gradShow.display());
-        gradShow.removeSegment("11");
+        gradShow.removeSegment(remseq);
         model.addAttribute("removedSequence", gradShow.display());
         double x = gradShow.findDistance(3, 4);
         model.addAttribute("distance", x);
@@ -148,7 +152,7 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
         //FRQ #4
         MaggieLongestStreak myStreak = new MaggieLongestStreak();
         model.addAttribute("streakInfo", myStreak.longestStreak("CCAAAAATTT!"));
-        return "AboutUs/aboutMaggie";
+        return "AboutUs/aboutmaggie";
     }
 
     /*
