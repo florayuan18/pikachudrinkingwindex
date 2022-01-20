@@ -135,6 +135,7 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
                               @RequestParam(name="remseq" , required=false, defaultValue="11") String remseq,
                               @RequestParam(name="attendance" , required=false, defaultValue="false") Boolean attendance,
                               @RequestParam(name="food" , required=false, defaultValue="1") int food,
+                              @RequestParam(name="word" , required=false, defaultValue="GREET") String word,
                                 Model model) throws IOException, InterruptedException {
         //FRQ #2
         MaggieLightSequence gradShow = new MaggieLightSequence("010101010101");
@@ -153,7 +154,7 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
         model.addAttribute("message", myDinner.displayOption1());
         //FRQ #4
         MaggieLongestStreak myStreak = new MaggieLongestStreak();
-        model.addAttribute("streakInfo", myStreak.longestStreak("CCAAAAATTT!"));
+        model.addAttribute("streakInfo", myStreak.longestStreak(word));
         return "AboutUs/aboutmaggie";
     }
 

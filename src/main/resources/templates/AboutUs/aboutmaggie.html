@@ -97,6 +97,7 @@
     <p><b>Inserted Sequence: </b><span th:text="${insertedSequence}"></span></p>
     <p><b>Removed Sequence: </b><span th:text="${removedSequence}"></span></p>
     <p><b>Distance Between A &amp; B: </b><span th:text="${distance}"></span></p>
+    <br>
     <hr>
 
     <h4>FRQ #3</h4>
@@ -119,18 +120,29 @@
     </form>
     <p> ORDER OPTIONS: (1) Beef, (2) Chicken, (3) Pasta, (4) Fish</p>
     <p><b>Message: </b><span th:text="${message}"></span></p>
+    <br>
     <hr>
 
     <h4>FRQ #4</h4>
     <br>
-    <p><b>Streak: "CCAAAAATTT!"</b></p>
-    <p>Streak Info: <span th:text="${streakInfo}"></span></p>
+    <form class="form-inline" role="form" action="/AboutUs/aboutmaggie">
+      <div class="row justify-content-md-center">
+        <div class="form-group mx-sm-3 mb-2">
+          <input type="text" class="form-control" id="word" name="word" placeholder="enter word">
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Get Streak Info</button>
+      </div>
+    </form>
+    <small class="text-muted">
+      Example: try "CCAAAAATTT!"
+    </small>
+    <p><b>Streak Info: </b><span th:text="${streakInfo}"></span></p>
+    <br>
     <hr>
 
     <h4>FRQ #5</h4>
     <br>
-    <p><b>Streak: "CCAAAAATTT!"</b></p>
-    <p>Streak Info: <span th:text="${streakInfo}"></span></p>
+    <p>Work in progress.</p>
   </div>
 </div>
 </html>
