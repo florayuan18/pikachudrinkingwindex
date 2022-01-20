@@ -1,6 +1,7 @@
 package com.example.sping_portfolio.controllers.CrystalFRQ;
 
 import com.example.sping_portfolio.controllers.CalvinAboutMVC.CalvinFRQ.LightSequence;
+import com.example.sping_portfolio.controllers.MaggieFRQ.MaggieDinner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -41,6 +42,9 @@ public class AboutCrystalCTRL {
         model.addAttribute("binaryR", binaryR);
         model.addAttribute("distXY", distXY);
 
+        CrystalDinner myDinner = new CrystalDinner(true, 2);
+        myDinner.message1();
+        model.addAttribute("message", myDinner.displayOption1());
 
         return "/aboutcrystal";
     }
