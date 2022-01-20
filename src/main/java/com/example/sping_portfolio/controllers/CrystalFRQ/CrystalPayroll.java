@@ -44,7 +44,7 @@ public class CrystalPayroll {
     public void printWages() {
         for (int i = 0; i < wages.length; i++)
         {
-            System.out.printf("Employee =%d , ItemsSold = %d, Wage = %.2f\n",i,itemsSold[i], wages[i]);
+            System.out.printf("Employee = %d , ItemsSold = %d, Wage = %.2f\n",i,itemsSold[i], wages[i]);
         }
     }
 }
