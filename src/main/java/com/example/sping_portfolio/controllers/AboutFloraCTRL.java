@@ -16,6 +16,8 @@ public class AboutFloraCTRL {
                             @RequestParam(name="removeSeq", required=false, defaultValue="") String removeSeq,
                             @RequestParam(name="xDist", required=false, defaultValue="0") int xDist,
                             @RequestParam(name="yDist", required=false, defaultValue="0") int yDist,
+                            @RequestParam(name="rsvp", required=false, defaultValue="false") Boolean rsvp,
+
                             Model model)
     {
 
