@@ -17,7 +17,7 @@ public class AboutFloraCTRL {
                             @RequestParam(name="xDist", required=false, defaultValue="0") int xDist,
                             @RequestParam(name="yDist", required=false, defaultValue="0") int yDist,
                             @RequestParam(name="rsvp", required=false, defaultValue="false") Boolean rsvp,
-
+                            @RequestParam(name="food", required=false, defaultValue="0") int food,
                             Model model)
     {
 
