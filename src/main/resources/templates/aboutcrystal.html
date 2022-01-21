@@ -10,12 +10,12 @@
         <!-- End of head content specific to page -->
     </div>
 </head>
-<!--<style>-->
-<!--  body {-->
-<!--    background-repeat: no-repeat;-->
-<!--    background-attachment: fixed;-->
-<!--  }-->
-<!--</style>-->
+<style type="text/css">
+    html body {
+        background-color: #05c4c4 !important;
+    }
+
+</style>
 
 <body>
 <div layout:fragment="content" th:remove="tag" style="color:white;">
@@ -108,14 +108,20 @@
             </form>
 
         </div>
-        <h4>FRQ #3</h4>
         <br>
+
+        <div class="row justify-content-md-center" style="color:white;">
+            <h3 class="text-center">FRQ UNIT 3</h3>
+
+        </div>
+        <br>
+
         <form class="form-inline" role="form" action="/aboutcrystal">
             <div class="row justify-content-md-center">
                 <div class="form-group mx-sm-3 mb-2">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="attendance" name="attendance" value="true">
-                        <label class="form-check-label" for="attendance">
+                        <label class="form-check-label" for="attendance" style="color:white;">
                             Attending?
                         </label>
                     </div>
@@ -126,14 +132,20 @@
                 </div>
             </div>
         </form>
-        <p> ORDER OPTIONS: (1) Chocolate, (2) Vanilla, (3) Strawberry, (4) Caramel</p>
-        <p><b>Message: </b><span th:text="${message}"></span></p>
+        <p style="color:white;"> ORDER OPTIONS: (1) Chocolate, (2) Vanilla, (3) Strawberry, (4) Caramel </p>
+        <p style="color:white;"><b>Message: </b><span th:text="${message}"></span> </p>
         <br>
         <hr>
 
-        <h4>FRQ #4</h4>
         <br>
-        <form class="form-inline" role="form" action="/aboutcrystal">
+
+        <div class="row justify-content-md-center" style="color:white;">
+            <h3 class="text-center">FRQ UNIT 4</h3>
+
+        </div>
+        <br>
+
+        <form class="form-inline" role="form" action="/aboutcrystal" style="color:white;">
             <div class="row justify-content-md-center">
                 <div class="form-group mx-sm-3 mb-2">
                     <input type="text" class="form-control" id="word" name="word" placeholder="enter word">
@@ -141,11 +153,11 @@
                 <button type="submit" class="btn btn-primary mb-2">Get Streak Info</button>
             </div>
         </form>
-        <p><b>Streak Info: </b><span th:text="${streakInfo}"></span></p>
+        <p style="color:white;"><b>Streak Info: </b><span th:text="${streakInfo}"></span></p>
         <br>
         <hr>
 
-        <p>API to find your coordinates</p>
+        <p style="color:white;">API to find your coordinates</p>
 
         <button onclick="getLocation()">Try It</button>
 
