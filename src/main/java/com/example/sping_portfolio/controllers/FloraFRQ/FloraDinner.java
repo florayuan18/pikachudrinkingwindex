@@ -65,9 +65,16 @@ public void message1() {
 }
     public Boolean message2 () {
         if (option1.equals(option2)) {
-            return "true";
+            return true;
         } else {
-            return "false";
+            return false;
         }
     }
+
+    public static void main(String[] args) {
+        FloraDinner Guest= new FloraDinner();
+    }
 }
+
+
+
