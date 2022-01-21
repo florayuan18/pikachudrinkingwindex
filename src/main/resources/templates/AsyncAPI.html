@@ -5,50 +5,46 @@
     <meta charset="UTF-8">
     <title>Async API</title>
     <script>
-        const getTodos = async () => {
-            const response = await fetch("https://twitch-game-popularity.p.rapidapi.com/game?name=League%20of%20Legends&year=2020&month=08", {
-                "method": "GET",
-                "headers": {
-                    "x-rapidapi-host": "twitch-game-popularity.p.rapidapi.com",
-                    "x-rapidapi-key": "e2ec6cd693msh31f1d4d692bd6b0p1dcb11jsn9ee520fd4398"
-                }
-            })
-                .then(response => {
-                    console.log('resolved', response);
-                }).then(data => {
-                    console.log(data);
-                })
-                .catch(err => {
-                    console.log('rejected', err);
-                    // console.error(err);
-                });
-            if(response.status !== 200){
-                throw new Error('cannot fetch the data')
-            }
-            const data = await response.json();
+        async function getData() {
 
-            return data;
-        };
+                const response = await fetch("https://twitch-game-popularity.p.rapidapi.com/game?name=League%20of%20Legends&year=2020&month=08", {
+                    "method": "GET",
+                    "headers": {
+                        "x-rapidapi-host": "twitch-game-popularity.p.rapidapi.com",
+                        "x-rapidapi-key": "e2ec6cd693msh31f1d4d692bd6b0p1dcb11jsn9ee520fd4398"
+                    }
+                })
+                    .then(response => {
+                        console.log('resolved', response);
+                    }).then(data => {
+                        console.log(data);
+                    })
+                    .catch(err => {
+                        console.log('rejected', err);
+                        // console.error(err);
+                    });
+                if (response.status !== 200) {
+                    throw new Error('cannot fetch the data')
+                }
+                const data = await response.json();
+
+                return data;
+
+        }
         // console.log(1);
         // console.log(2);
         // getTodos()
         // .then(data => console.log('resolved:', data));
         // console.log(3);
         // console.log(4);
-        function funClick() {
-            getTodos()
-                .then(data => datax = data);
-            var x = document.getElementById("datax");
-            x.innerHTML = datax
-        }
     </script>
 </head>
 
 <body>
 
 <div layout:fragment="content" th:remove="tag">
-<button type="button" onclick="funClick()">Click Me</button>
-    <p id="datax"></p>
+<button type="button" onclick="getData()">Click Me</button>
+    <p id="data"></p>
 </div>
 </body>
 </html>
