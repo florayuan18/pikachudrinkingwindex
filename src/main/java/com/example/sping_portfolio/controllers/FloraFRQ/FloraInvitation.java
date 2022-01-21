@@ -8,6 +8,7 @@ public class FloraInvitation {
     }
     public String setAddress(String ad){
         address=ad;
+        return address;
     }
     public FloraInvitation(String n, String a){
         hostName = n;
@@ -15,5 +16,9 @@ public class FloraInvitation {
     }
     public String message(String guestName){
         return "Dear " + guestName + ", please attend my event at " + address + ". See you then, " + hostName;
+    }
+
+    public static void main(String[] args) {
+        FloraInvitation Guest= new FloraInvitation();
     }
 }
