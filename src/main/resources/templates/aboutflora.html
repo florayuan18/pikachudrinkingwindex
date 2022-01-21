@@ -158,7 +158,13 @@
 
   <div class="row justify-content-md-center" style="color:white;">
     <h3 class="text-center">FRQ UNIT 3</h3>
-
+    <th:block th:each="binary: ${binary}" style="color:white;">
+      <div class="row justify-content-md-center" style="color:white;" >
+        <form action="/aboutflora">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="attendance" name="attendance" value="true">
+        <input class="form-check-input" for="attendance">
+          Are you attending?
 
 
 </div>
