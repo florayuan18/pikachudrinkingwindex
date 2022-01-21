@@ -108,6 +108,43 @@
             </form>
 
         </div>
+        <h4>FRQ #3</h4>
+        <br>
+        <form class="form-inline" role="form" action="/aboutcrystal">
+            <div class="row justify-content-md-center">
+                <div class="form-group mx-sm-3 mb-2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="attendance" name="attendance" value="true">
+                        <label class="form-check-label" for="attendance">
+                            Attending?
+                        </label>
+                    </div>
+                    <div class="form-group mx-sm-3 mb-2">
+                        <input type="number" class="form-control" id="food" name="food" placeholder="type 1,2,3,OR 4">
+                    </div>
+                    <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                </div>
+            </div>
+        </form>
+        <p> ORDER OPTIONS: (1) Chocolate, (2) Vanilla, (3) Strawberry, (4) Caramel</p>
+        <p><b>Message: </b><span th:text="${message}"></span></p>
+        <br>
+        <hr>
+
+        <h4>FRQ #4</h4>
+        <br>
+        <form class="form-inline" role="form" action="/aboutcrystal">
+            <div class="row justify-content-md-center">
+                <div class="form-group mx-sm-3 mb-2">
+                    <input type="text" class="form-control" id="word" name="word" placeholder="enter word">
+                </div>
+                <button type="submit" class="btn btn-primary mb-2">Get Streak Info</button>
+            </div>
+        </form>
+        <p><b>Streak Info: </b><span th:text="${streakInfo}"></span></p>
+        <br>
+        <hr>
+
         <p>API to find your coordinates</p>
 
         <button onclick="getLocation()">Try It</button>
@@ -132,7 +169,7 @@
         </script>
 
 </div>
-    </th:block>
+
 
 
 

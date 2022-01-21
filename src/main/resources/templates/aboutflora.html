@@ -158,15 +158,33 @@
 
   <div class="row justify-content-md-center" style="color:white;">
     <h3 class="text-center">FRQ UNIT 3</h3>
-
-
-
+    <th:block th:each="binary: ${binary}" style="color:white;">
+      <div class="row justify-content-md-center" style="color:white;" >
+        <form action="/aboutflora">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="attendance" name="attendance" value="true">
+        <label class="form-check-label" for="attendance">
+          Are you attending?
+        </label>
+        </div>
+      <div class="form-group">
+        <input type="number" class="form-control" id="food" name="food" placeholder="1, 2, 3, or 4">
+      </div>
+          <button type="submit">Place Order</button>
+    </th:block>
+        </form>
+    </div>
+  <p>Please Choose One: (1) Beef, (2) Chicken, (3) Pasta, (4) Fish</p>
+  <p><br>Message: <span th:text="${message}"></span></p>
 </div>
 </div>
 </div>
+
+<div class="row justify-content-md-center" style="color:white;">
+  <h3 class="text-center">FRQ UNIT 4</h3>
+  <p>in intellij for now :/</p>
 
 </body>
-
 
 
 </html>
