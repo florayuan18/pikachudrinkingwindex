@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layout}" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Async API</title>
+<!--    <script src = "./AsyncAPIJA"></script>-->
+    <script>async function getData() {
+
+        const response = await fetch("https://twitch-game-popularity.p.rapidapi.com/game?name=League%20of%20Legends&year=2020&month=08", {
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-host": "twitch-game-popularity.p.rapidapi.com",
+                "x-rapidapi-key": "e2ec6cd693msh31f1d4d692bd6b0p1dcb11jsn9ee520fd4398"
+            }
+        })
+
+        const top_games = await response.json();
+
+        // document.getElementById("demo").innerHTML =
+        // top_games.Rank;
+        const cocktail = top_games[0];
+        const cocktailDiv = document.getElementById("cocktail");
+        const cocktailName = cocktail.Rank;
+        // document.getElementById("h1").innerHTML = cocktailName;
+        const heading = document.createElement("h1");
+        heading.innerHTML = cocktail;
+        // cocktailDiv.appendChild(heading);
+
+
+
+        return top_games;
+    }
+
+    document.addEventListener("DOMContentLoaded", async () => {
+        let top_games = [];
+
+        try {
+            top_games = await getData();
+        } catch(e) {
+            console.log("Error!");
+            console.log(e);
+        }
+
+        console.log(top_games);
+    });</script>
+</head>
+
+<body onload="getData()">
+<p id="h1"></p>
+<!--<div layout:fragment="content" th:remove="tag">-->
+<!--<button type="button" onclick="getData()">Click Me</button>-->
+<!--    <p id="data"></p>-->
+</div>
+</body>
+</html>
