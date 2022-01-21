@@ -1,7 +1,7 @@
 package com.example.sping_portfolio.controllers.CrystalFRQ;
 
 public class CrystalDiceGame {
-    public static void CrystalDiceGame(String[] args) {
+    public static void main(String[] args) {
         int playerA[] = new int[10];
         int playerB[] = new int[10];
         int playerAScore = 0;

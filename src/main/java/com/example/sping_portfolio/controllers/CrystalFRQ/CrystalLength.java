@@ -2,7 +2,7 @@ package com.example.sping_portfolio.controllers.CrystalFRQ;
 import java.util.Scanner;
 
 public class CrystalLength {
-    public static void CrystalLength(String[] args) {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter your string: ");
         String s = scanner.nextLine();
