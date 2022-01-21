@@ -73,7 +73,6 @@ public void message1() {
 
     public static void main(String[] args) {
         FloraDinner Guest= new FloraDinner();
-
     }
 }
 
