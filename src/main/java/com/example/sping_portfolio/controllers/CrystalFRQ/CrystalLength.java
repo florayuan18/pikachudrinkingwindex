@@ -31,4 +31,5 @@ public class CrystalLength {
         }
         System.out.println("Length: " + ans + " Char: " + c + " Start: " + start + " End: " + end);
     }
+    
 }
