@@ -15,10 +15,20 @@ public FloraDinner(Boolean rsvp, int selection) {
     this.selection = selection;
 }
 
-public String displayOption () {
+public String displayOption(){
     return option1;
 }
 
-public String displayOption2 () {
+public String displayOption2(){
     return option2;
 }
+
+public String attendance(){
+    if(rsvp){
+        System.out.println("attending");
+    }
+    else{
+        System.out.println("not attending");
+    }
+}
+
