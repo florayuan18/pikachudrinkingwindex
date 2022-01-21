@@ -24,25 +24,25 @@ public String displayOption2(){
 
 public String attendance(){
     if(rsvp == true){
-        System.out.println("attending");
+        return "attending";
     }
     else{
-        System.out.println("not attending");
+        return "not attending";
     }
 }
 
 public String food(){
     if(selection == 1){
-        System.out.println("beef");
+        return "beef";
     }
     if(selection == 2){
-        System.out.println("chicken");
+        return "chicken";
     }
     if(selection == 3){
-        System.out.println("pasta");
+        return "pasta";
     }
     else{
-        System.out.println("fish");
+        return "fish";
     }
 }
 
@@ -65,9 +65,9 @@ public void message1() {
 }
     public Boolean message2 () {
         if (option1.equals(option2)) {
-            System.out.println("true");
+            return "true";
         } else {
-            System.out.println("false");
+            return "false";
         }
     }
 }
