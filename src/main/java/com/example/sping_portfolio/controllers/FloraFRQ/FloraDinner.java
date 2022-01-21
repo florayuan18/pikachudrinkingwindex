@@ -4,8 +4,7 @@ public class FloraDinner {
     private Boolean rsvp;
     private int selection;
     private String option1;
-    private String option = "";
-}
+    private String option2 = "";
 
 public FloraDinner() {
 }
@@ -63,12 +62,12 @@ public void message1() {
             option1 += "fish.";
         }
     }
-
-public Boolean message2 () {
-    if (option1.equals(option2)) {
-        System.out.println("true");
-    }
-    else {
-        System.out.println("false");
+}
+    public Boolean message2 () {
+        if (option1.equals(option2)) {
+            System.out.println("true");
+        } else {
+            System.out.println("false");
+        }
     }
 }
