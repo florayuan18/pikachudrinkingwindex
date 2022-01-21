@@ -13,7 +13,7 @@ public class FloraPayroll {
 
     public double computeBonusThreshold()
     {
-        int highestt = itemsSold[0];
+        int highest = itemsSold[0];
         int lowest = itemsSold[0];
         int sumOfItemsSold = itemsSold[0];
 
@@ -35,7 +35,7 @@ public class FloraPayroll {
     }
     public void computeWages(double fixedWage, double perItemWage)
     {
-        int bonusThresholdForWages = computeBonusThreshold();
+        double bonusThresholdForWages = computeBonusThreshold();
         for (int i = 0; i < wages.length ; i++)
         {
             wages[i] = fixedWage + ( itemsSold[i] * perItemWage);
@@ -48,9 +48,9 @@ public class FloraPayroll {
     }
     public void printWages()
     {
-        for (int i = 0; i < wages.length ; i++);
+        for (int i = 0; i < wages.length ; i++)
         {
-            System.out.printf("Employee =%d , ItemsSold = %d, Wage = %.2f\n",i,itemsSold[i], wages[i])
+            System.out.printf("Employee =%d , ItemsSold = %d, Wage = %.2f\n",i,itemsSold[i], wages[i]);
         }
     }
 
@@ -61,5 +61,3 @@ public class FloraPayroll {
         florapayroll.printWages();
     }
 }
-
-
