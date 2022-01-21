@@ -36,13 +36,13 @@ public class CrystalDinner {
     public String food() {
         switch (selection) {
             case 1:
-                return "beef";
+                return "chocolate";
             case 2:
-                return "chicken";
+                return "vanilla";
             case 3:
-                return "pasta";
+                return "strawberry";
             default:
-                return "fish";
+                return "caramel";
         }
     }
 
