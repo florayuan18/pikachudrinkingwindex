@@ -1,10 +1,7 @@
 package com.example.sping_portfolio;
 
 import com.example.sping_portfolio.SQL.*;
-import com.example.sping_portfolio.controllers.MaggieFRQ.MaggieDinner;
-import com.example.sping_portfolio.controllers.MaggieFRQ.MaggieLightSequence;
-import com.example.sping_portfolio.controllers.MaggieFRQ.MaggieLongestStreak;
-import com.example.sping_portfolio.controllers.MaggieFRQ.MaggiePasswordGenerator;
+import com.example.sping_portfolio.controllers.MaggieFRQ.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -162,6 +159,9 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
         MaggiePasswordGenerator pw1 = new MaggiePasswordGenerator(len, pref);
         model.addAttribute("genpassword",pw1.pwGen());
         model.addAttribute("passwordcount",pw1.pwCount());
+        //FRQ #6
+        MaggiePayroll maggiepayroll = new MaggiePayroll();
+        model.addAttribute("bonusthreshold", maggiepayroll.computeBonusThreshold());
         return "AboutUs/aboutmaggie";
     }
 

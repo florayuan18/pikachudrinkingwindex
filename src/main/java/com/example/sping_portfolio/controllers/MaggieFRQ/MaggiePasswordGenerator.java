@@ -40,6 +40,7 @@ public class MaggiePasswordGenerator {
 
         }
 
+        /*
         //main method
         public static void main(String[] args) {
             MaggiePasswordGenerator pw1 = new MaggiePasswordGenerator(4,"chs");
@@ -52,7 +53,6 @@ public class MaggiePasswordGenerator {
             System.out.println(pw2.pwGen());
             System.out.println(pw2.pwCount());
             System.out.println(pw1.pwCount());
-
         }
-
+        */
     }
