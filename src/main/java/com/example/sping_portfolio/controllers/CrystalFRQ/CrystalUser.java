@@ -15,9 +15,9 @@ public class CrystalUser {
         }
 
 
-        public boolean isUsed(String name, String[] arr)
+        public boolean isUsed(String name, String[] arr) {
 
-        { /* implementation not shown */ }
+        }
 
 
         public void setAvailableUserNames(String[] usedNames) {
@@ -30,6 +30,3 @@ public class CrystalUser {
         }
 
     }
-
-
-}
