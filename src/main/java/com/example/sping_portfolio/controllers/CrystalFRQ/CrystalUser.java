@@ -15,9 +15,7 @@ public class CrystalUser {
         }
 
 
-        public boolean isUsed(String name, String[] arr) {
-
-        }
+      //  public boolean isUsed(String name, String[] arr)
 
 
         public void setAvailableUserNames(String[] usedNames) {
