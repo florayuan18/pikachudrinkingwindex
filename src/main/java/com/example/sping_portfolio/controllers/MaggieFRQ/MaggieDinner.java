@@ -6,6 +6,7 @@ AP CSA FRQ #3
 package com.example.sping_portfolio.controllers.MaggieFRQ;
 
 public class MaggieDinner{
+    //initializing private instance variables
     private Boolean rsvp;
     private int selection;
     private String option1;
@@ -21,14 +22,16 @@ public class MaggieDinner{
         this.selection = selection;
     }
 
+    //display method for option 1
     public String displayOption1(){
         return option1;
     }
-
+    //display method for option 2
     public String displayOption2(){
         return option2;
     }
 
+    //method that verifies attendance using if statement
     public String attendance(){
         if (rsvp == true) {
             return "Attending";
@@ -38,6 +41,7 @@ public class MaggieDinner{
         }
     }
 
+    //method for selecting food using the switch method
     public String food() {
         switch (selection) {
             case 1:
@@ -51,6 +55,7 @@ public class MaggieDinner{
         }
     }
 
+    //void method so does not return anything, instead updates the variable option1
     public void message1(){
         if (rsvp == true){
             option1 = "Thanks for attending. You will be served " + food() + ".";
