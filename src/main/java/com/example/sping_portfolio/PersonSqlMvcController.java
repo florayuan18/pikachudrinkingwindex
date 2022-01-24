@@ -80,7 +80,7 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
         return makeurl;
     }
 
-    @GetMapping("/aboutkira")
+    @GetMapping("AboutUs/aboutkira")
     public String quotes(Model model) throws IOException, InterruptedException, ParseException {
         //rapidapi setup:
         HttpRequest request = HttpRequest.newBuilder()
