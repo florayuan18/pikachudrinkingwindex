@@ -2,6 +2,9 @@ package com.example.sping_portfolio.controllers.CrystalFRQ;
 
 import com.example.sping_portfolio.controllers.CalvinAboutMVC.CalvinFRQ.LightSequence;
 import com.example.sping_portfolio.controllers.MaggieFRQ.MaggieDinner;
+import com.example.sping_portfolio.controllers.MaggieFRQ.MaggieLongestStreak;
+import com.example.sping_portfolio.controllers.MaggieFRQ.MaggiePasswordGenerator;
+import com.example.sping_portfolio.controllers.MaggieFRQ.MaggiePayroll;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +20,11 @@ public class AboutCrystalCTRL {
                             @RequestParam(name="removeSeq", required=false, defaultValue="") String removeSeq,
                             @RequestParam(name="xDist", required=false, defaultValue="0") int xDist,
                             @RequestParam(name="yDist", required=false, defaultValue="0") int yDist,
+                            @RequestParam(name="attendance" , required=false, defaultValue="false") Boolean attendance,
+                            @RequestParam(name="food" , required=false, defaultValue="1") int food,
+                            @RequestParam(name="word" , required=false, defaultValue="GREET") String word,
+                            @RequestParam(name="len" , required=false, defaultValue="4") int len,
+                            @RequestParam(name="pref" , required=false, defaultValue="chs") String pref,
                             Model model)
     {
 
@@ -42,10 +50,20 @@ public class AboutCrystalCTRL {
         model.addAttribute("binaryR", binaryR);
         model.addAttribute("distXY", distXY);
 
-        CrystalDinner myDinner = new CrystalDinner(true, 2);
+        //FRQ #3
+        CrystalDinner myDinner = new CrystalDinner(attendance, food);
         myDinner.message1();
         model.addAttribute("message", myDinner.displayOption1());
-
+        //FRQ #4
+        CrystalLength myStreak = new CrystalLength();
+        model.addAttribute("streakInfo", myStreak.crystalength(word));
+        //FRQ #5
+        CrystalPassword pw1 = new CrystalPassword(len, pref);
+        model.addAttribute("genpassword",pw1.pwGen());
+        model.addAttribute("passwordcount",pw1.pwCount());
+        //FRQ #6
+        CrystalPayroll crystalpayroll = new CrystalPayroll();
+        model.addAttribute("bonusthreshold", crystalpayroll.computeBonusThreshold());
         return "/aboutcrystal";
     }
 }

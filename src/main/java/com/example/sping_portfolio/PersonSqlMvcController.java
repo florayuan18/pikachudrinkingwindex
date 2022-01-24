@@ -1,9 +1,7 @@
 package com.example.sping_portfolio;
 
 import com.example.sping_portfolio.SQL.*;
-import com.example.sping_portfolio.controllers.MaggieFRQ.MaggieDinner;
-import com.example.sping_portfolio.controllers.MaggieFRQ.MaggieLightSequence;
-import com.example.sping_portfolio.controllers.MaggieFRQ.MaggieLongestStreak;
+import com.example.sping_portfolio.controllers.MaggieFRQ.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -136,6 +134,8 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
                               @RequestParam(name="attendance" , required=false, defaultValue="false") Boolean attendance,
                               @RequestParam(name="food" , required=false, defaultValue="1") int food,
                               @RequestParam(name="word" , required=false, defaultValue="GREET") String word,
+                              @RequestParam(name="len" , required=false, defaultValue="4") int len,
+                              @RequestParam(name="pref" , required=false, defaultValue="chs") String pref,
                                 Model model) throws IOException, InterruptedException {
         //FRQ #2
         MaggieLightSequence gradShow = new MaggieLightSequence("010101010101");
@@ -155,6 +155,13 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
         //FRQ #4
         MaggieLongestStreak myStreak = new MaggieLongestStreak();
         model.addAttribute("streakInfo", myStreak.longestStreak(word));
+        //FRQ #5
+        MaggiePasswordGenerator pw1 = new MaggiePasswordGenerator(len, pref);
+        model.addAttribute("genpassword",pw1.pwGen());
+        model.addAttribute("passwordcount",pw1.pwCount());
+        //FRQ #6
+        MaggiePayroll maggiepayroll = new MaggiePayroll();
+        model.addAttribute("bonusthreshold", maggiepayroll.computeBonusThreshold());
         return "AboutUs/aboutmaggie";
     }
 

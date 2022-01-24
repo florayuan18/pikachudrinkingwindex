@@ -1,7 +1,7 @@
 package com.example.sping_portfolio.controllers.CrystalFRQ;
 
 public class CrystalPayrollOut {
-    public static void main(String[] args) {
+    public static void crystalpayroll(String[] args) {
         CrystalPayroll crystalpayroll = new CrystalPayroll();
 
         System.out.println("Bonus threshold items are : " + crystalpayroll.computeBonusThreshold());

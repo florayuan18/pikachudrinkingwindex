@@ -142,7 +142,25 @@
 
     <h4>FRQ #5</h4>
     <br>
-    <p>Work in progress.</p>
+    <form class="form-inline" role="form" action="/AboutUs/aboutmaggie">
+      <div class="row justify-content-md-center">
+        <div class="form-group mx-sm-3 mb-2">
+          <input type="text" class="form-control" id="pref" name="pref" placeholder="enter prefix">
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+          <input type="number" class="form-control" id="len" name="len" placeholder="enter length">
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Generate</button>
+      </div>
+    </form>
+    <p><b>Generated Password: </b><span th:text="${genpassword}"></span></p>
+    <p><b>Password Count: </b><span th:text="${passwordcount}"></span></p>
+    <br>
+    <hr>
+
+    <h4>FRQ #6</h4>
+    <br>
+    <p><b>Bonus Threshold: </b><span th:text="${bonusthreshold}"></span></p>
   </div>
 </div>
 </html>
