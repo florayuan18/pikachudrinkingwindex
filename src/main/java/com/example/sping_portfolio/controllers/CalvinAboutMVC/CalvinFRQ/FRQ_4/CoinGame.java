@@ -135,11 +135,15 @@ public class CoinGame
                 System.out.println("It's a tie!");
             }
 
+
     }
     public static void main(String [] args)
     {
-        CoinGame Game_1  = new CoinGame(10, 10);
-        Game_1.playGame();
+        if (!(2 != 2)){
+            System.out.println("hello");
+    }
+//        CoinGame Game_1  = new CoinGame(10, 10);
+//        Game_1.playGame();
     }
 
 }

@@ -5,7 +5,7 @@ public class PasswordGenerator {
     private String Password;
     private String Characters;
     private String Character;
-    public int NumberOfPass = 0;
+    private static int NumberOfPass = 0;
 
     public void pwGen(int NumberOfCharacters, String Prefix){
         Characters = "";
