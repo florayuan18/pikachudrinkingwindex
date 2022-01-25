@@ -16,9 +16,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.HashMap;
 
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -115,7 +112,7 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
         model.addAttribute("returnString", returnString);
 
 
-        return "aboutkira";
+        return "aboutkira2";
     }
 
 
@@ -163,22 +160,8 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
         MaggiePayroll maggiepayroll = new MaggiePayroll();
         model.addAttribute("bonusthreshold", maggiepayroll.computeBonusThreshold());
         return "AboutUs/aboutmaggie";
+        //FRQ #7
     }
-
-    /*
-    public String jokes(Model model) throws IOException, InterruptedException, ParseException {
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(createurl()))
-                .method("GET", HttpRequest.BodyPublishers.noBody())
-                .build();
-        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-        var map = new ObjectMapper().readValue(response.body(), HashMap.class);
-        model.addAttribute("data", map);
-        model.addAttribute("question", map.get("setup"));
-        model.addAttribute("answer", map.get("punchline"));
-        return "AboutUs/aboutmaggie";
-    }
-    */
 
 
     @GetMapping("/Database/personupdate/{id}")

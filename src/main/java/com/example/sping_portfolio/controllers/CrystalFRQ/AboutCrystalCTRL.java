@@ -1,10 +1,5 @@
 package com.example.sping_portfolio.controllers.CrystalFRQ;
 
-import com.example.sping_portfolio.controllers.CalvinAboutMVC.CalvinFRQ.LightSequence;
-import com.example.sping_portfolio.controllers.MaggieFRQ.MaggieDinner;
-import com.example.sping_portfolio.controllers.MaggieFRQ.MaggieLongestStreak;
-import com.example.sping_portfolio.controllers.MaggieFRQ.MaggiePasswordGenerator;
-import com.example.sping_portfolio.controllers.MaggieFRQ.MaggiePayroll;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class AboutCrystalCTRL {
-    @GetMapping("/aboutcrystal")
+    @GetMapping("AboutUs/aboutcrystal")
     public String TableCTRL(@RequestParam(name="seq", required=false, defaultValue= "") String seq,
                             @RequestParam(name="changeSeq", required=false, defaultValue= "") String changeSeq,
                             @RequestParam(name="insertSeq", required=false, defaultValue="") String insertSeq,
@@ -64,7 +59,7 @@ public class AboutCrystalCTRL {
         //FRQ #6
         CrystalPayroll crystalpayroll = new CrystalPayroll();
         model.addAttribute("bonusthreshold", crystalpayroll.computeBonusThreshold());
-        return "/aboutcrystal";
+        return "/AboutUs/aboutcrystal";
     }
 }
 
