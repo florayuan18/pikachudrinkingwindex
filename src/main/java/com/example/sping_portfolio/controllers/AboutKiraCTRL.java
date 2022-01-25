@@ -15,7 +15,7 @@ import java.util.HashMap;
 
 @Controller
 public class AboutKiraCTRL {
-    @GetMapping("AboutUs/aboutkira")
+    @GetMapping("AboutUs/aboutkira2")
     public String TableCTRL() {
 
         boolean rsvp = true;
@@ -59,6 +59,6 @@ public class AboutKiraCTRL {
             System.out.println("false");
         }
 
-        return "/aboutkira";
+        return "/AboutUs/aboutkira2";
     }
 }

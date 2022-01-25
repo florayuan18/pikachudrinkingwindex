@@ -16,9 +16,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.HashMap;
 
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -115,7 +112,7 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
         model.addAttribute("returnString", returnString);
 
 
-        return "aboutkira";
+        return "aboutkira2";
     }
 
 

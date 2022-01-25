@@ -43,7 +43,7 @@ public class AboutFloraCTRL {
         model.addAttribute("binaryR", binaryR);
         model.addAttribute("distXY", distXY);
 
-        return "/aboutflora";
+        return "AboutUs/aboutflora";
     }
 }
 

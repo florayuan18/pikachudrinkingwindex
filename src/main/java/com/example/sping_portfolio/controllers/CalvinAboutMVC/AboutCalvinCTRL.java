@@ -84,7 +84,7 @@ public class AboutCalvinCTRL {
 
 //        pass stats to view
         model.addAttribute("weatherStats", weatherStats);
-        return "/AboutUs/aboutcalvin";
+        return "AboutUs/aboutcalvin";
     }
 //    @Autowired
 //    PersonSqlRepository repository;
