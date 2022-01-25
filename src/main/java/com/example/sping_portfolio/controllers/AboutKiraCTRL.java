@@ -15,7 +15,7 @@ import java.util.HashMap;
 
 @Controller
 public class AboutKiraCTRL {
-    @GetMapping("/AboutUs/aboutkira")
+    @GetMapping("AboutUs/aboutkira")
     public String TableCTRL() {
 
         boolean rsvp = true;

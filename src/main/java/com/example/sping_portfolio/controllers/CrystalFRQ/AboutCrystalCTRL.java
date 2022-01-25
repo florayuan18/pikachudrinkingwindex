@@ -1,10 +1,5 @@
 package com.example.sping_portfolio.controllers.CrystalFRQ;
 
-import com.example.sping_portfolio.controllers.CalvinAboutMVC.CalvinFRQ.LightSequence;
-import com.example.sping_portfolio.controllers.MaggieFRQ.MaggieDinner;
-import com.example.sping_portfolio.controllers.MaggieFRQ.MaggieLongestStreak;
-import com.example.sping_portfolio.controllers.MaggieFRQ.MaggiePasswordGenerator;
-import com.example.sping_portfolio.controllers.MaggieFRQ.MaggiePayroll;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

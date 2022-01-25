@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class AboutFloraCTRL {
-    @GetMapping("/aboutflora")
+    @GetMapping("AboutUs/aboutflora")
     public String TableCTRL(@RequestParam(name="seq", required=false, defaultValue= "") String seq,
                             @RequestParam(name="changeSeq", required=false, defaultValue= "") String changeSeq,
                             @RequestParam(name="insertSeq", required=false, defaultValue="") String insertSeq,

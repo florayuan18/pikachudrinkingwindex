@@ -19,7 +19,7 @@ import java.util.HashMap;
 
 @Controller
 public class AboutCalvinCTRL {
-    @GetMapping("/AboutUs/aboutcalvin")
+    @GetMapping("AboutUs/aboutcalvin")
     public String TableCTRL(@RequestParam(name="seq", required=false, defaultValue= "") String seq,
                             @RequestParam(name="changeSeq", required=false, defaultValue= "") String changeSeq,
                             @RequestParam(name="insertSeq", required=false, defaultValue="") String insertSeq,
