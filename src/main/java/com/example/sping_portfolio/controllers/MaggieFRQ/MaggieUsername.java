@@ -25,13 +25,32 @@ public class MaggieUsername{
 
     /** Returns true if arr contains name, and false otherwise.
     public boolean isUsed(String name, String[] arr){
-        /* implementation not shown
-        return ...;
+        for(int i=0; i < possibleNames.size(); i++){
+            if (possibleNames.get(i) == name){
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
     }
-    */
+     */
 
-    /** Removes strings from possibleNames that are found in usedNames as described in part (b).*/
-    public void setAvailableUsernames(String[] usedNames)
-    { /* to be implemented in part (b) */ }
+    /** Removes strings from possibleNames that are found in usedNames as described in part (b).
+    public void setAvailableUserNames(String[] usedNames) {
+        for (int i = possibleNames.size() - 1; i >= 0; i--) {
+            if (isUsed(possibleNames.get(i), usedNames))
+            {
+                possibleNames.remove(i);
+            }
+        }
+    }
+     */
+
+
+    public static void main(String [] args) {
+        MaggieUsername person1 = new MaggieUsername("santa", "claus");
+        //person1.isUsed("claus", ...);
+    }
 
 }

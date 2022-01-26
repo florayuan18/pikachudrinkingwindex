@@ -160,7 +160,8 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
         MaggiePayroll maggiepayroll = new MaggiePayroll();
         model.addAttribute("bonusthreshold", maggiepayroll.computeBonusThreshold());
         return "AboutUs/aboutmaggie";
-        //FRQ #7
+        //FRQ #7 (work in progress)
+        //FRQ #8 (work in progress)
     }
 
 
