@@ -17,17 +17,18 @@ public class FloraUserName
 
         for (int n = 0; n < possibleNames.size(); n++)
         {
-            System.out.println();
             System.out.printf("n=%d, name = %s\n",n, possibleNames.get(n));
         }
     }
 
 
-
     /** Returns true if arr contains name, and false otherwise. */
+    public boolean isUsed(String name, String[] usedNames)
+    {
+        for (int i = 0; i < usedNames.length; i++)
+        {
 
-    public boolean isUsed(String name, String[] arr)
-    { /* implementation not shown */
+        }
         return true;
     }
 
