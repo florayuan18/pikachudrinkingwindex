@@ -25,12 +25,20 @@ public class FloraUserName
     /** Returns true if arr contains name, and false otherwise. */
     public boolean isUsed(String name, String[] usedNames)
     {
+        boolean isContainName = false;
         for (int i = 0; i < usedNames.length; i++)
         {
-            String[i] usedNames
-            usedNames[i];
+            if (usedNames[i].equals(name))
+            {
+                isContainName = true;
+                return isContainName;
+            }
+            else
+            {
+                isContainName = false;
+            }
         }
-        return true;
+        return isContainName;
     }
 
 
@@ -47,5 +55,16 @@ public class FloraUserName
 
     public static void main(String[] args) {
         FloraUserName florausername = new FloraUserName("John", "Smith");
+        String[] usedNames = {"harta", "hartm", "harty"};
+
+        if(florausername.isUsed("Bob", usedNames))
+        {
+            System.out.printf("True");
+        }
+        else
+        {
+            System.out.printf("False");
+        }
+
     }
 }
