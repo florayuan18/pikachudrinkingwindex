@@ -48,13 +48,21 @@ public class FloraUserName
 
     public void setAvailableUserNames(String[] usedNames)
     {
-        System.out.printf("+++ size=%d",possibleNames.size());
+    /*    System.out.printf("+++ size=%d",possibleNames.size());
         for (int i = (possibleNames.size() - 1); i >= 0; i--)
         {
 
             String pn = possibleNames.get(i);
 
             if (isUsed(pn, usedNames))
+            {
+                possibleNames.remove(i);
+            }
+        }
+        */
+        for (int i = 0; i < possibleNames.size(); i++)
+        {
+            if (isUsed(possibleNames.get(i), usedNames));
             {
                 possibleNames.remove(i);
             }
