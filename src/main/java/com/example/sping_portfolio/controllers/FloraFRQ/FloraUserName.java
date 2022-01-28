@@ -9,9 +9,10 @@ public class FloraUserName
 
     public FloraUserName(String firstName, String lastName)
     {
+        ArrayList<String> possibleNames = new ArrayList<String>();
         for (int i = 0; i < firstName.length(); i++)
         {
-
+            possibleNames.add(lastName + firstName[0]);
         }
 
     }
