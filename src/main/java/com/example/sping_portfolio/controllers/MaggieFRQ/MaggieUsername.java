@@ -10,10 +10,6 @@ public class MaggieUsername{
     //arraylist of possible usernames, based on a user’s first and last names
     private ArrayList<String> possibleNames;
 
-    //default constructor
-    public MaggieUsername(){
-    }
-
     //2-parameter constructor
     public MaggieUsername(String firstName, String lastName){
         possibleNames = new ArrayList<String>();
