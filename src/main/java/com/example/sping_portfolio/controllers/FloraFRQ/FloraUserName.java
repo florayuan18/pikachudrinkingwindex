@@ -12,9 +12,14 @@ public class FloraUserName
         ArrayList<String> possibleNames = new ArrayList<String>();
         for (int i = 0; i < firstName.length(); i++)
         {
-            possibleNames.add(lastName + firstName.substring());
+            possibleNames.add(lastName + firstName.substring(0, i+1));
         }
 
+        for (int n = 0; n < possibleNames.size(); n++)
+        {
+            System.out.println();
+            System.out.printf("n=%d , name = %.2f\n",n, );
+        }
     }
 
 
