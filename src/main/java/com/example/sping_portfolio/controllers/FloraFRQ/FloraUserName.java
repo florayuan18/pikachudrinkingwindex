@@ -27,7 +27,8 @@ public class FloraUserName
     {
         for (int i = 0; i < usedNames.length; i++)
         {
-
+            String[i] usedNames
+            usedNames[i];
         }
         return true;
     }
