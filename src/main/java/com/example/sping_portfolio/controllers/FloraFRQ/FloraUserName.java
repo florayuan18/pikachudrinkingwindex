@@ -12,7 +12,7 @@ public class FloraUserName
         ArrayList<String> possibleNames = new ArrayList<String>();
         for (int i = 0; i < firstName.length(); i++)
         {
-            possibleNames.add(lastName + firstName[0]);
+            possibleNames.add(lastName + firstName.substring());
         }
 
     }
