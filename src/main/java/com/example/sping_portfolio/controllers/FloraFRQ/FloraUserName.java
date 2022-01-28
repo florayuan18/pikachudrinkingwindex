@@ -18,7 +18,7 @@ public class FloraUserName
         for (int n = 0; n < possibleNames.size(); n++)
         {
             System.out.println();
-            System.out.printf("n=%d , name = %.2f\n",n, );
+            System.out.printf("n=%d, name = %s\n",n, possibleNames.get(n));
         }
     }
 
@@ -27,8 +27,10 @@ public class FloraUserName
     /** Returns true if arr contains name, and false otherwise. */
 
     public boolean isUsed(String name, String[] arr)
+    { /* implementation not shown */
+        return true;
+    }
 
-    { /* implementation not shown */ }
 
 
 
@@ -39,4 +41,9 @@ public class FloraUserName
     public void setAvailableUserNames(String[] usedNames)
 
     { /* to be implemented in part (b) */ }
+
+
+    public static void main(String[] args) {
+        FloraUserName florausername = new FloraUserName("John", "Smith");
+    }
 }
