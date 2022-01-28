@@ -5,7 +5,6 @@ AP CSA FRQ #7
 
 package com.example.sping_portfolio.controllers.MaggieFRQ;
 import java.util.ArrayList;
-import java.util.List;
 
 public class MaggieUsername{
     //arraylist of possible usernames, based on a user’s first and last names
@@ -51,10 +50,13 @@ public class MaggieUsername{
         return "No Usernames Available";
     }
 
+    /*
+    //method call
     public static void main(String [] args) {
         String[] used = {"harta", "hartm", "harty"};
         MaggieUsername person2 = new MaggieUsername("mary", "hart");
         person2.setAvailableUserNames(used);
         person2.displayPossibleUsernames();
     }
+     */
 }

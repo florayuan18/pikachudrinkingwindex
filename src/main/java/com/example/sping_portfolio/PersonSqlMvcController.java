@@ -23,6 +23,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import javax.validation.Valid;
 import java.util.List;
+import java.util.ArrayList;
 import com.example.sping_portfolio.controllers.KiraLightSequence;
 // Built using article: https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/mvc.html
 // or similar: https://asbnotebook.com/2020/04/11/spring-boot-thymeleaf-form-validation-example/
@@ -132,6 +133,8 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
                               @RequestParam(name="word" , required=false, defaultValue="GREET") String word,
                               @RequestParam(name="len" , required=false, defaultValue="4") int len,
                               @RequestParam(name="pref" , required=false, defaultValue="chs") String pref,
+                              @RequestParam(name="firstn" , required=false, defaultValue="mary") String firstn,
+                              @RequestParam(name="lastn" , required=false, defaultValue="hart") String lastn,
                                 Model model) throws IOException, InterruptedException {
         //FRQ #2
         MaggieLightSequence gradShow = new MaggieLightSequence("010101010101");
@@ -158,9 +161,13 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
         //FRQ #6
         MaggiePayroll maggiepayroll = new MaggiePayroll();
         model.addAttribute("bonusthreshold", maggiepayroll.computeBonusThreshold());
-        return "AboutUs/aboutmaggie";
-        //FRQ #7 (work in progress)
+        //FRQ #7
+        String[] used = {"harta", "hartm", "harty"};
+        MaggieUsername person2 = new MaggieUsername(firstn, lastn);
+        person2.setAvailableUserNames(used);
+        model.addAttribute("usernames", person2.displayPossibleUsernames());
         //FRQ #8 (work in progress)
+        return "AboutUs/aboutmaggie";
     }
 
 
