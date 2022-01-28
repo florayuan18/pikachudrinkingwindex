@@ -77,7 +77,8 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
         return makeurl;
     }
 
-    @GetMapping("/aboutkira")
+    /*
+    @GetMapping("AboutUs/aboutkira2")
     public String quotes(Model model) throws IOException, InterruptedException, ParseException {
         //rapidapi setup:
         HttpRequest request = HttpRequest.newBuilder()
@@ -110,11 +111,9 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
         //pass stats to view
         model.addAttribute("aboutkira", aboutkira);
         model.addAttribute("returnString", returnString);
-
-
-        return "aboutkira2";
+        return "AboutUs/aboutkira2";
     }
-
+*/
 
     public static String createurl(){
         //String createurl = "https://dad-jokes.p.rapidapi.com/random/joke?count=1";
