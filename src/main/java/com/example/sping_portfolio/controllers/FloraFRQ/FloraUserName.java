@@ -42,22 +42,31 @@ public class FloraUserName
     }
 
 
-
-
     /** Removes strings from possibleNames that are found in usedNames as described in part (b).
 
      */
 
     public void setAvailableUserNames(String[] usedNames)
+    {
+        for (int i = (possibleNames.size() - 1); i++)
+        {
+            String pn = possibleNames.get(i);
 
-    { /* to be implemented in part (b) */ }
+            if (isUsed(pn, usedNames))
+            {
+                possibleNames.remove(i);
+            }
+
+
+        }
+    }
 
 
     public static void main(String[] args) {
         FloraUserName florausername = new FloraUserName("John", "Smith");
         String[] usedNames = {"harta", "hartm", "harty"};
 
-        if(florausername.isUsed("Bob", usedNames))
+        if(florausername.isUsed("harta", usedNames))
         {
             System.out.printf("True");
         }
