@@ -22,11 +22,10 @@ public class MaggieDinner{
         this.selection = selection;
     }
 
-    //display method for option 1
+    //getters (display method for options 1&2)
     public String displayOption1(){
         return option1;
     }
-    //display method for option 2
     public String displayOption2(){
         return option2;
     }

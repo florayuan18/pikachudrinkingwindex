@@ -36,7 +36,13 @@ public class ExperimentalFarm{
                 }
             }
         }
-        System.out.println(GHY_plots);
+        if ((GHY_plots.isEmpty())){
+            System.out.println("null");
+        }
+        else{
+            System.out.println(GHY_plots);
+        }
+
 
     }
 
@@ -85,6 +91,7 @@ public class ExperimentalFarm{
         f.ExperimentalFarm(plot);
         f.getHighestYield("corn");
         f.getHighestYield("peas");
+        f.getHighestYield("bannan");
         f.sameCrop(0);
 
 

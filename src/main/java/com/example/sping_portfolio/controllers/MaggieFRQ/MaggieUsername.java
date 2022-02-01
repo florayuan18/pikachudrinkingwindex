@@ -10,10 +10,6 @@ public class MaggieUsername{
     //arraylist of possible usernames, based on a user’s first and last names
     private ArrayList<String> possibleNames;
 
-    //default constructor
-    public MaggieUsername(){
-    }
-
     //2-parameter constructor
     public MaggieUsername(String firstName, String lastName){
         possibleNames = new ArrayList<String>();
@@ -23,20 +19,16 @@ public class MaggieUsername{
         }
     }
 
-    /** Returns true if arr contains name, and false otherwise.
-    public boolean isUsed(String name, String[] arr){
-        for(int i=0; i < possibleNames.size(); i++){
-            if (possibleNames.get(i) == name){
+    //Returns true if arr contains name, and false otherwise.
+    public Boolean isUsed(String name, String[] arr){
+        for (int i=0; i < arr.length; i++){
+            if(name.equals(arr[i]))
                 return true;
-            }
-            else {
-                return false;
-            }
         }
+        return false;
     }
-     */
 
-    /** Removes strings from possibleNames that are found in usedNames as described in part (b).
+    //Removes strings from possibleNames that are found in usedNames
     public void setAvailableUserNames(String[] usedNames) {
         for (int i = possibleNames.size() - 1; i >= 0; i--) {
             if (isUsed(possibleNames.get(i), usedNames))
@@ -45,12 +37,22 @@ public class MaggieUsername{
             }
         }
     }
-     */
 
-
-    public static void main(String [] args) {
-        MaggieUsername person1 = new MaggieUsername("santa", "claus");
-        //person1.isUsed("claus", ...);
+    //display method
+    public String displayPossibleUsernames(){
+        for (int i = possibleNames.size() - 1; i >= 0; i--){
+            return possibleNames.get(i) + " ";
+        }
+        return "No Usernames Available";
     }
 
+    /*
+    //method call
+    public static void main(String [] args) {
+        String[] used = {"harta", "hartm", "harty"};
+        MaggieUsername person2 = new MaggieUsername("mary", "hart");
+        person2.setAvailableUserNames(used);
+        person2.displayPossibleUsernames();
+    }
+     */
 }

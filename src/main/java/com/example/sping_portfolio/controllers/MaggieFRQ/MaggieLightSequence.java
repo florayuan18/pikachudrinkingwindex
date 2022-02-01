@@ -10,10 +10,6 @@ public class MaggieLightSequence {
     //private instance variables
     private String oldSeq;
 
-    //default constructor
-    public MaggieLightSequence(){
-    }
-
     //overloaded constructor
     public MaggieLightSequence(String seq) {
         this.oldSeq = seq;
