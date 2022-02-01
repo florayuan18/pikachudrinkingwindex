@@ -160,6 +160,8 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
         model.addAttribute("passwordcount",pw1.pwCount());
         //FRQ #6
         MaggiePayroll maggiepayroll = new MaggiePayroll();
+        maggiepayroll.computeWages(10.0, 1.5);
+        maggiepayroll.printWages();
         model.addAttribute("bonusthreshold", maggiepayroll.computeBonusThreshold());
         //FRQ #7
         String[] used = {"harta", "hartm", "harty"};

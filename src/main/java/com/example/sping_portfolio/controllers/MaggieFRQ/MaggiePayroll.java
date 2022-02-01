@@ -47,10 +47,12 @@ public class MaggiePayroll {
         }
     }
 
+    /*
     public static void main(String[] args) {
         MaggiePayroll maggiepayroll = new MaggiePayroll();
         System.out.println("Bonus threshold items are : " + maggiepayroll.computeBonusThreshold());
         maggiepayroll.computeWages(10.0, 1.5);
         maggiepayroll.printWages();
     }
+     */
 }
