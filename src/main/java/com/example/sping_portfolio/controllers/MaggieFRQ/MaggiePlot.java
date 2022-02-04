@@ -4,8 +4,7 @@ public class MaggiePlot {
         private String cropType;
         private int cropYield;
 
-        public MaggiePlot(String crop, int yield)
-        {
+        public MaggiePlot(String crop, int yield) {
             this.cropType = crop;
             this.cropYield = yield;
         }

@@ -133,6 +133,10 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
                               @RequestParam(name="word" , required=false, defaultValue="GREET") String word,
                               @RequestParam(name="len" , required=false, defaultValue="4") int len,
                               @RequestParam(name="pref" , required=false, defaultValue="chs") String pref,
+                              @RequestParam(name="hname" , required=false, defaultValue="Karen") String hname,
+                              @RequestParam(name="guestname" , required=false, defaultValue="Cheryl") String guestname,
+                              @RequestParam(name="address" , required=false, defaultValue="5678 Cashew Lane") String address,
+                              @RequestParam(name="newaddress" , required=false, defaultValue="1234 Walnut Street") String newaddress,
                               @RequestParam(name="firstn" , required=false, defaultValue="mary") String firstn,
                               @RequestParam(name="lastn" , required=false, defaultValue="hart") String lastn,
                                 Model model) throws IOException, InterruptedException {
@@ -158,6 +162,11 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
         MaggiePasswordGenerator pw1 = new MaggiePasswordGenerator(len, pref);
         model.addAttribute("genpassword",pw1.pwGen());
         model.addAttribute("passwordcount",pw1.pwCount());
+        MaggieInvitation party = new MaggieInvitation(hname, address);
+        model.addAttribute("hostname",party.displayHostName());
+        model.addAttribute("message1",party.message(guestname));
+        party.updateAddress(newaddress);
+        model.addAttribute("message2",party.message(guestname));
         //FRQ #6
         MaggiePayroll maggiepayroll = new MaggiePayroll();
         maggiepayroll.computeWages(10.0, 1.5);
