@@ -177,9 +177,9 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
         myLibrary.add(book1);
         myLibrary.add(book2);
         MaggieBookListing listing1 = new MaggieBookListing(book1, 10.99);
-        listing1.printDescription();
+        model.addAttribute("bookone", listing1.printDescription());
         MaggieBookListing listing2 = new MaggieBookListing(book2, 12.99);
-        listing2.printDescription();
+        model.addAttribute("booktwo", listing2.printDescription());
         return "AboutUs/aboutmaggie";
     }
 
