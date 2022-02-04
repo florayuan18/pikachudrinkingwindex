@@ -12,9 +12,6 @@ public class MaggieDinner{
     private String option1;
     private String option2 = "";
 
-    //default constructor
-    public MaggieDinner(){
-    }
 
     //overloaded constructor
     public MaggieDinner(Boolean rsvp, int selection){
