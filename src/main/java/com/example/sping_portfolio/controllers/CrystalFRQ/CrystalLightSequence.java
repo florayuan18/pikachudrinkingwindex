@@ -1,7 +1,5 @@
 package com.example.sping_portfolio.controllers.CrystalFRQ;
 
-import com.example.sping_portfolio.controllers.CalvinAboutMVC.CalvinFRQ.LightSequence;
-
 public class CrystalLightSequence {
     private String resultSeq;
     private String seq;
