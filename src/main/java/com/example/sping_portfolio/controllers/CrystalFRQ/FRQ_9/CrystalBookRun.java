@@ -26,8 +26,7 @@ public class CrystalBookRun {
     
         CrystalBookListing listing2 = new CrystalBookListing(book2, 12.99);listing2.printDescription();
         System.out.println();
-    
-        System.out.println("Unit 9 FRQ part 2");
+
         CrystalAnimal lisa = new CrystalAnimal("carnivore", "lion", "Lisa");
         System.out.println(lisa.toString());
     
