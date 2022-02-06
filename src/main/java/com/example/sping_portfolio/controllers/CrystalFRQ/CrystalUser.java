@@ -7,47 +7,43 @@ import java.util.ArrayList;
 public class CrystalUser {
 
 // The list of possible user names, based on a user’s first and last names and initialized by the constructor.
-    private ArrayList<String> possibleNames = new ArrayList<>(){};
+    private ArrayList<String> possibleNames;
 
+    //2-parameter constructor
     public CrystalUser(String firstName, String lastName){
-        for(int i = 1; i < firstName.length(); i++){
-            String subFirst = firstName.substring(0, i);
-            possibleNames.add(lastName + subFirst);
+        possibleNames = new ArrayList<String>();
+        for (int i = 0; i < firstName.length(); i++){
+            possibleNames.add(lastName + firstName.substring(0, i + 1));
+            //example of values in possibleNames: "smithj", "smithjo", "smithjoh", "smithjohn"
         }
+    }
 
-        }
-
-    public boolean isUsed(String name, String[] arr){
-        for (String s : arr){
-            if (s.equals(name)) {
+    //Returns true if arr contains name, and false otherwise.
+    public Boolean isUsed(String name, String[] arr){
+        for (int i=0; i < arr.length; i++){
+            if(name.equals(arr[i]))
                 return true;
-            }
         }
         return false;
     }
 
-    public void setAvailableUserNames(String[] usedNames){
-        ArrayList<String> pN = possibleNames;
-        System.out.println(pN);
-        for (String nn : usedNames) {
-            for (int i = 0; i < pN.size(); i++) {
-                if (nn.equals(pN.get(i))) {
-                    possibleNames.remove(i);
-//                    System.out.println(pN.get(i));
-                }
+    //Removes strings from possibleNames that are found in usedNames
+    public void setAvailableUserNames(String[] usedNames) {
+        for (int i = possibleNames.size() - 1; i >= 0; i--) {
+            if (isUsed(possibleNames.get(i), usedNames))
+            {
+                possibleNames.remove(i);
             }
         }
-        for (String n : possibleNames){
-            System.out.println(n);
+    }
+
+    //display method
+    public String displayPossibleUsernames(){
+        String returnString = "";
+        for (int i = possibleNames.size() - 1; i >= 0; i--){
+            returnString += possibleNames.get(i) + " ";
         }
-
-
-
+        return returnString;
     }
 
-    public static void main(String [] args) {
-        CrystalUser person = new CrystalUser("john", "smith");
-        String[] used = {"smith", "smithj", "harty"};
-        person.setAvailableUserNames(used);
-    }
 }

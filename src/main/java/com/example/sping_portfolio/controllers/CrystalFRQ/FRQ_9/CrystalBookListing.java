@@ -10,7 +10,7 @@ public class CrystalBookListing {
     }
   
     public void printDescription(){
-      book.printCrystalBookInfo();
+      book.printBookInfo();
       System.out.print(", $" + cost);
     }
 }
