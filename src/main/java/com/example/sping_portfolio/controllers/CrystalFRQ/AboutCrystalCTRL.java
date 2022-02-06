@@ -3,6 +3,7 @@ package com.example.sping_portfolio.controllers.CrystalFRQ;
 import com.example.sping_portfolio.controllers.CrystalFRQ.FRQ_9.CrystalBookListing;
 import com.example.sping_portfolio.controllers.CrystalFRQ.FRQ_9.CrystalPictureBook;
 
+import com.example.sping_portfolio.controllers.MaggieFRQ.MaggieUsername;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
