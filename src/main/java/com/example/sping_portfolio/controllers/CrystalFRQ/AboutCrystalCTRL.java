@@ -1,5 +1,8 @@
 package com.example.sping_portfolio.controllers.CrystalFRQ;
 
+import com.example.sping_portfolio.controllers.CrystalFRQ.FRQ_9.CrystalBookListing;
+import com.example.sping_portfolio.controllers.CrystalFRQ.FRQ_9.CrystalPictureBook;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +23,8 @@ public class AboutCrystalCTRL {
                             @RequestParam(name="word" , required=false, defaultValue="GREET") String word,
                             @RequestParam(name="len" , required=false, defaultValue="4") int len,
                             @RequestParam(name="pref" , required=false, defaultValue="chs") String pref,
+                            @RequestParam(name="firstn" , required=false, defaultValue="mary") String firstn,
+                            @RequestParam(name="lastn" , required=false, defaultValue="hart") String lastn,
                             Model model)
     {
 
@@ -60,6 +65,23 @@ public class AboutCrystalCTRL {
         CrystalPayroll crystalpayroll = new CrystalPayroll();
         model.addAttribute("bonusthreshold", crystalpayroll.computeBonusThreshold());
         return "/AboutUs/aboutcrystal";
+        //FRQ #7
+//        String[] used = {"harta", "hartm", "harty"};
+//        CrystalUser person2 = new CrystalUser(firstn, lastn);
+//        person2.setAvailableUserNames(used);
+//        model.addAttribute("usernames", person2.displayPossibleUsernames());
+//        //FRQ #8
+//
+//        //FRQ #9
+//        ArrayList<CrystalBook> myLibrary = new ArrayList<CrystalBook>();
+//        CrystalBook book1 = new CrystalBook("Frankenstein", "Mary Shelley");
+//        CrystalBook book2 = new CrystalPictureBook("The Wonderful Wizard of Oz", "L. Frank Baum", "W.W. Denslow");
+//        myLibrary.add(book1);
+//        myLibrary.add(book2);
+//        CrystalBookListing listing1 = new CrystalBookListing(book1, 10.99);
+//        model.addAttribute("bookone", listing1.printDescription());
+//        CrystalBookListing listing2 = new CrystalBookListing(book2, 12.99);
+//        model.addAttribute("booktwo", listing2.printDescription());
     }
 }
 
