@@ -1,3 +1,8 @@
+/*
+Maggie Killada
+AP CSA FRQ #8
+ */
+
 package com.example.sping_portfolio.controllers.MaggieFRQ;
 
 public class MaggiePlot {
@@ -22,7 +27,6 @@ public class MaggiePlot {
         public String toString() {
             return this.cropType+", "+this.getCropYield();
         }
-
     }
 
 

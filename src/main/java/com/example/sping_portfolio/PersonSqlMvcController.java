@@ -131,6 +131,8 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
                               @RequestParam(name="attendance" , required=false, defaultValue="false") Boolean attendance,
                               @RequestParam(name="food" , required=false, defaultValue="1") int food,
                               @RequestParam(name="word" , required=false, defaultValue="GREET") String word,
+                              @RequestParam(name="startingcoins" , required=false, defaultValue="10") int startingcoins,
+                              @RequestParam(name="maxrounds" , required=false, defaultValue="5") int maxrounds,
                               @RequestParam(name="len" , required=false, defaultValue="4") int len,
                               @RequestParam(name="pref" , required=false, defaultValue="chs") String pref,
                               @RequestParam(name="hname" , required=false, defaultValue="Karen") String hname,
@@ -139,7 +141,9 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
                               @RequestParam(name="newaddress" , required=false, defaultValue="1234 Walnut Street") String newaddress,
                               @RequestParam(name="firstn" , required=false, defaultValue="mary") String firstn,
                               @RequestParam(name="lastn" , required=false, defaultValue="hart") String lastn,
-                                Model model) throws IOException, InterruptedException {
+                              @RequestParam(name="number1" , required=false, defaultValue="30") int number1,
+                              @RequestParam(name="number2" , required=false, defaultValue="3") int number2,
+                              Model model) throws IOException, InterruptedException {
         //FRQ #2
         MaggieLightSequence gradShow = new MaggieLightSequence("010101010101");
         model.addAttribute("originalSequence", gradShow.display());
@@ -158,6 +162,8 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
         //FRQ #4
         MaggieLongestStreak myStreak = new MaggieLongestStreak();
         model.addAttribute("streakInfo", myStreak.longestStreak(word));
+        MaggieCoinGame coingame = new MaggieCoinGame(startingcoins,maxrounds);
+        model.addAttribute("gameresults", coingame.playGame());
         //FRQ #5
         MaggiePasswordGenerator pw1 = new MaggiePasswordGenerator(len, pref);
         model.addAttribute("genpassword",pw1.pwGen());
@@ -177,8 +183,15 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
         MaggieUsername person2 = new MaggieUsername(firstn, lastn);
         person2.setAvailableUserNames(used);
         model.addAttribute("usernames", person2.displayPossibleUsernames());
-        //FRQ #8 (work in progress)
-
+        //FRQ #8
+        MaggieExperimentalFarm f = new MaggieExperimentalFarm();
+        MaggiePlot highestYield = f.getHighestYield("corn");
+        model.addAttribute("highestcornyield", highestYield.getCropYield());
+        MaggiePlot highestYield1 = f.getHighestYield("peas");
+        model.addAttribute("highestpeasyield", highestYield1.getCropYield());
+        model.addAttribute("samecropcolumn1", f.sameCrop(0));
+        model.addAttribute("samecropcolumn2", f.sameCrop(1));
+        model.addAttribute("samecropcolumn3", f.sameCrop(2));
         //FRQ #9
         ArrayList<MaggieBook> myLibrary = new ArrayList<MaggieBook>();
         MaggieBook book1 = new MaggieBook("Frankenstein", "Mary Shelley");
@@ -189,6 +202,11 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
         model.addAttribute("bookone", listing1.printDescription());
         MaggieBookListing listing2 = new MaggieBookListing(book2, 12.99);
         model.addAttribute("booktwo", listing2.printDescription());
+        //FRQ #10
+        int gcfresult = MaggieNumberSystem.gcf(number1,number2);
+        model.addAttribute("gcfresult", gcfresult);
+        String reduceresult = MaggieNumberSystem.reduceFraction(number1, number2);
+        model.addAttribute("reduceresult", reduceresult);
         return "AboutUs/aboutmaggie";
     }
 
