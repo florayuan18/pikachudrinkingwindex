@@ -1,5 +1,4 @@
 package com.example.sping_portfolio.controllers.CrystalFRQ;
-import java.util.Scanner;
 
 public class CrystalLength {
     public String crystalength(String str) {
