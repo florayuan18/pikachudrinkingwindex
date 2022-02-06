@@ -40,10 +40,11 @@ public class MaggieUsername{
 
     //display method
     public String displayPossibleUsernames(){
+        String returnString = "";
         for (int i = possibleNames.size() - 1; i >= 0; i--){
-            return possibleNames.get(i) + " ";
+            returnString += possibleNames.get(i) + " ";
         }
-        return "No Usernames Available";
+        return returnString;
     }
 
     /*

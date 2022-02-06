@@ -1,6 +1,9 @@
-package com.example.sping_portfolio.controllers.MaggieFRQ;
+/*
+Maggie Killada
+AP CSA FRQ #6
+ */
 
-import com.example.sping_portfolio.controllers.CrystalFRQ.CrystalPayroll;
+package com.example.sping_portfolio.controllers.MaggieFRQ;
 
 public class MaggiePayroll {
     private int[] itemsSold;

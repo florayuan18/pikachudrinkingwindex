@@ -169,6 +169,17 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
         person2.setAvailableUserNames(used);
         model.addAttribute("usernames", person2.displayPossibleUsernames());
         //FRQ #8 (work in progress)
+
+        //FRQ #9
+        ArrayList<MaggieBook> myLibrary = new ArrayList<MaggieBook>();
+        MaggieBook book1 = new MaggieBook("Frankenstein", "Mary Shelley");
+        MaggieBook book2 = new MaggiePictureBook("The Wonderful Wizard of Oz", "L. Frank Baum", "W.W. Denslow");
+        myLibrary.add(book1);
+        myLibrary.add(book2);
+        MaggieBookListing listing1 = new MaggieBookListing(book1, 10.99);
+        model.addAttribute("bookone", listing1.printDescription());
+        MaggieBookListing listing2 = new MaggieBookListing(book2, 12.99);
+        model.addAttribute("booktwo", listing2.printDescription());
         return "AboutUs/aboutmaggie";
     }
 
