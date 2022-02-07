@@ -7,6 +7,7 @@ import com.example.sping_portfolio.controllers.CrystalFRQ.FRQ_9.CrystalBookListi
 import com.example.sping_portfolio.controllers.CrystalFRQ.CrystalExperimentalFarm;
 
 import com.example.sping_portfolio.controllers.CrystalFRQ.FRQ_9.CrystalPictureBook;
+import com.example.sping_portfolio.controllers.MaggieFRQ.MaggieInvitation;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,6 +32,10 @@ public class AboutCrystalCTRL {
                             @RequestParam(name="pref" , required=false, defaultValue="chs") String pref,
                             @RequestParam(name="firstn" , required=false, defaultValue="mary") String firstn,
                             @RequestParam(name="lastn" , required=false, defaultValue="hart") String lastn,
+                            @RequestParam(name="hname" , required=false, defaultValue="Karen") String hname,
+                            @RequestParam(name="guestname" , required=false, defaultValue="Cheryl") String guestname,
+                            @RequestParam(name="address" , required=false, defaultValue="5678 Cashew Lane") String address,
+                            @RequestParam(name="newaddress" , required=false, defaultValue="1234 Walnut Street") String newaddress,
                             Model model)
     {
 
@@ -67,6 +72,11 @@ public class AboutCrystalCTRL {
         CrystalPassword pw1 = new CrystalPassword(len, pref);
         model.addAttribute("genpassword",pw1.pwGen());
         model.addAttribute("passwordcount",pw1.pwCount());
+        CrystalInvitation party = new CrystalInvitation(hname, address);
+        model.addAttribute("hostname",party.displayHostName());
+        model.addAttribute("message1",party.message(guestname));
+        party.updateAddress(newaddress);
+        model.addAttribute("message2",party.message(guestname));
         //FRQ #6
         CrystalPayroll crystalpayroll = new CrystalPayroll();
         model.addAttribute("bonusthreshold", crystalpayroll.computeBonusThreshold());
