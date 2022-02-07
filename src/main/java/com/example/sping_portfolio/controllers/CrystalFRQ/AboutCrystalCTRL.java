@@ -76,7 +76,6 @@ public class AboutCrystalCTRL {
 //        person2.setAvailableUserNames(used);
 //        model.addAttribute("usernames", person2.displayPossibleUsernames());
         //FRQ #8
-//        CrystalExperimentalFarm f = new CrystalExperimentalFarm();
         CrystalExperimentalFarm f = new CrystalExperimentalFarm();
         CrystalPlot highestYield = f.getHighestYield("corn");
         model.addAttribute("highestcornyield", highestYield.getCropYield());
