@@ -1,13 +1,18 @@
 package com.example.sping_portfolio.controllers.CrystalFRQ;
 
-import com.example.sping_portfolio.controllers.CrystalFRQ.FRQ_9.CrystalBookListing;
-import com.example.sping_portfolio.controllers.CrystalFRQ.FRQ_9.CrystalPictureBook;
 
-import com.example.sping_portfolio.controllers.MaggieFRQ.MaggieUsername;
+import com.example.sping_portfolio.controllers.CrystalFRQ.FRQ_9.CrystalBook;
+import com.example.sping_portfolio.controllers.CrystalFRQ.*;
+import com.example.sping_portfolio.controllers.CrystalFRQ.FRQ_9.CrystalBookListing;
+import com.example.sping_portfolio.controllers.CrystalFRQ.CrystalExperimentalFarm;
+
+import com.example.sping_portfolio.controllers.CrystalFRQ.FRQ_9.CrystalPictureBook;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.ArrayList;
 
 @Controller
 public class AboutCrystalCTRL {
@@ -65,15 +70,23 @@ public class AboutCrystalCTRL {
         //FRQ #6
         CrystalPayroll crystalpayroll = new CrystalPayroll();
         model.addAttribute("bonusthreshold", crystalpayroll.computeBonusThreshold());
-        return "/AboutUs/aboutcrystal";
         //FRQ #7
 //        String[] used = {"harta", "hartm", "harty"};
 //        CrystalUser person2 = new CrystalUser(firstn, lastn);
 //        person2.setAvailableUserNames(used);
 //        model.addAttribute("usernames", person2.displayPossibleUsernames());
-//        //FRQ #8
-//
-//        //FRQ #9
+        //FRQ #8
+//        CrystalExperimentalFarm f = new CrystalExperimentalFarm();
+        CrystalExperimentalFarm f = new CrystalExperimentalFarm();
+        CrystalPlot highestYield = f.getHighestYield("corn");
+        model.addAttribute("highestcornyield", highestYield.getCropYield());
+        CrystalPlot highestYield1 = f.getHighestYield("peas");
+        model.addAttribute("highestpeasyield", highestYield1.getCropYield());
+        model.addAttribute("samecropcolumn1", f.sameCrop(0));
+        model.addAttribute("samecropcolumn2", f.sameCrop(1));
+        model.addAttribute("samecropcolumn3", f.sameCrop(2));
+
+        //FRQ #9
 //        ArrayList<CrystalBook> myLibrary = new ArrayList<CrystalBook>();
 //        CrystalBook book1 = new CrystalBook("Frankenstein", "Mary Shelley");
 //        CrystalBook book2 = new CrystalPictureBook("The Wonderful Wizard of Oz", "L. Frank Baum", "W.W. Denslow");
@@ -83,6 +96,7 @@ public class AboutCrystalCTRL {
 //        model.addAttribute("bookone", listing1.printDescription());
 //        CrystalBookListing listing2 = new CrystalBookListing(book2, 12.99);
 //        model.addAttribute("booktwo", listing2.printDescription());
+        return "/AboutUs/aboutcrystal";
     }
 }
 
