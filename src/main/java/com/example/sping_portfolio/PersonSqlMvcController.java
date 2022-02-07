@@ -141,6 +141,11 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
                               @RequestParam(name="newaddress" , required=false, defaultValue="1234 Walnut Street") String newaddress,
                               @RequestParam(name="firstn" , required=false, defaultValue="mary") String firstn,
                               @RequestParam(name="lastn" , required=false, defaultValue="hart") String lastn,
+                              @RequestParam(name="title" , required=false, defaultValue="Frankenstein") String title,
+                              @RequestParam(name="author" , required=false, defaultValue="Mary Shelley") String author,
+                              @RequestParam(name="titlep", required = false, defaultValue = "The Wonderful Wizard of Oz") String titlep,
+                              @RequestParam(name="authorp", required = false, defaultValue = "TL. Frank Baum") String authorp,
+                              @RequestParam(name="illustrator", required = false, defaultValue = "W.W. Denslow") String illustrator,
                               @RequestParam(name="number1" , required=false, defaultValue="30") int number1,
                               @RequestParam(name="number2" , required=false, defaultValue="3") int number2,
                               Model model) throws IOException, InterruptedException {
@@ -194,8 +199,8 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
         model.addAttribute("samecropcolumn3", f.sameCrop(2));
         //FRQ #9
         ArrayList<MaggieBook> myLibrary = new ArrayList<MaggieBook>();
-        MaggieBook book1 = new MaggieBook("Frankenstein", "Mary Shelley");
-        MaggieBook book2 = new MaggiePictureBook("The Wonderful Wizard of Oz", "L. Frank Baum", "W.W. Denslow");
+        MaggieBook book1 = new MaggieBook(title, author);
+        MaggieBook book2 = new MaggiePictureBook(titlep, authorp, illustrator);
         myLibrary.add(book1);
         myLibrary.add(book2);
         MaggieBookListing listing1 = new MaggieBookListing(book1, 10.99);
