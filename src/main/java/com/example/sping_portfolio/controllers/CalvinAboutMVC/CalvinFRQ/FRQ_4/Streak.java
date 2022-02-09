@@ -43,13 +43,13 @@ public class Streak {
 
 
         }
-//       System.out.println(best_letter + " " + best_letter_streak);
+       System.out.println(best_letter + " " + best_letter_streak);
         combine = best_letter + " " + best_letter_streak;
         return combine;
     }
-//    public static void main(String [] args) {
-//        Streak phrase = new Streak();
-//        phrase.longestStreak("myyggguuuuy");
-//        phrase.longestStreak("CCAAAAATTT!");
-//    }
+    public static void main(String [] args) {
+        Streak phrase = new Streak();
+        phrase.longestStreak("myyggguuuuy");
+        phrase.longestStreak("CCAAAAATTT!");
+    }
 }
