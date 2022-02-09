@@ -2,7 +2,7 @@ package com.example.sping_portfolio.controllers.CalvinAboutMVC;
 
 import com.example.sping_portfolio.controllers.CalvinAboutMVC.CalvinFRQ.FRQ_3.FRQ3_P1;
 import com.example.sping_portfolio.controllers.CalvinAboutMVC.CalvinFRQ.FRQ_4.Streak;
-import com.example.sping_portfolio.controllers.CalvinAboutMVC.CalvinFRQ.LightSequence;
+import com.example.sping_portfolio.controllers.CalvinAboutMVC.CalvinFRQ.FRQ_2.LightSequence;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

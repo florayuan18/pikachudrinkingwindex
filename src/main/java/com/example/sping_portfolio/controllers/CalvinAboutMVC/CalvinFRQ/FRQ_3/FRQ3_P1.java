@@ -15,15 +15,15 @@ public class FRQ3_P1 {
     {
         if (rsvp == true)
         {
-//            System.out.println("attending");
+            System.out.println("attending");
             foods(selection);
-//            System.out.println("Thanks for attending. You will be served " + this.selection +".");
+            System.out.println("Thanks for attending. You will be served " + this.selection +".");
             retStuff = "Thanks for attending. You will be served " + this.selection +".";
         }
         else
         {
-//            System.out.println("Not attending");
-//            System.out.println("Sorry you can't make it.");
+            System.out.println("Not attending");
+            System.out.println("Sorry you can't make it.");
             retStuff = "Not attending, Sorry you can't make it.";
 
         }
@@ -33,19 +33,19 @@ public class FRQ3_P1 {
     {
         if (selection == 1)
         {
-//            System.out.println("Beef");
+            System.out.println("Beef");
             this.selection = "Beef";
             tempFoodnumber = "1";
         }
         else if (selection == 2)
         {
-//            System.out.println("Chicken");
+            System.out.println("Chicken");
             this.selection = "Chicken";
             tempFoodnumber = "2";
         }
         else if (selection == 3)
         {
-//            System.out.println("pasta");
+            System.out.println("pasta");
             this.selection = "pasta";
             tempFoodnumber = "3";
         }
@@ -68,13 +68,13 @@ public class FRQ3_P1 {
     {
         if (option1.equals(option2))
         {
-//            System.out.println("true");
+            System.out.println("true");
             retStuff = "true";
             return retStuff;
         }
         else
         {
-//            System.out.println("false");
+            System.out.println("false");
             retStuff = "false";
             return retStuff;
         }

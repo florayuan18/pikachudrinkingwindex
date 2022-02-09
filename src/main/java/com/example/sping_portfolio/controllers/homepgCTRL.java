@@ -1,6 +1,6 @@
 //package com.example.sping_portfolio.controllers;
 //
-//import com.example.sping_portfolio.controllers.CalvinAboutMVC.CalvinFRQ.LightSequence;
+//import com.example.sping_portfolio.controllers.CalvinAboutMVC.CalvinFRQ.FRQ_2.LightSequence;
 //import com.fasterxml.jackson.databind.ObjectMapper;
 //import javassist.bytecode.ClassFile;
 //import org.springframework.stereotype.Controller;
