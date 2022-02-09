@@ -49,6 +49,13 @@ public class UserName {
     public static void main(String [] args) {
         UserName person = new UserName("john", "smith");
         String[] used = {"smith", "smithj", "harty"};
-        person.setAvailableUserNames(used);
+//        person.setAvailableUserNames(used);
+        UserName person1 = new UserName("john", "smith");
+        if (person1 == person){
+            System.out.println("works");
+        }
+        else{
+            System.out.println("failed");
+        }
     }
 }

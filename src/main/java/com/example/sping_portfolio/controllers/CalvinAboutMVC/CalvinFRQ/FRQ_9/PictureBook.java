@@ -1,10 +1,10 @@
-package com.example.sping_portfolio.controllers.CrystalFRQ.FRQ_9;
+package com.example.sping_portfolio.controllers.CalvinAboutMVC.CalvinFRQ.FRQ_9;
 
-public class CrystalPictureBook extends CrystalBook {
+public class PictureBook extends Book {
 
     private String illustrator;
 
-    public CrystalPictureBook(String title, String author, String illustrator) {
+    public PictureBook(String title, String author, String illustrator) {
         super(title, author);
         this.illustrator = illustrator;
     }

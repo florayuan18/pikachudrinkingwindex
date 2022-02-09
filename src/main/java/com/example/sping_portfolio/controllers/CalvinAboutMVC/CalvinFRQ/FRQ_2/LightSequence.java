@@ -1,4 +1,4 @@
-package com.example.sping_portfolio.controllers.CalvinAboutMVC.CalvinFRQ;
+package com.example.sping_portfolio.controllers.CalvinAboutMVC.CalvinFRQ.FRQ_2;
 
 public class LightSequence
 {

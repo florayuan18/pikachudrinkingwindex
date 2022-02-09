@@ -61,12 +61,12 @@
     </table>
 
     <!--FRQ UNIT 2-->
-    <div class="row justify-content-md-center" style="color:white;">
+    <div class="row justify-content-md-center" style="color:black;">
         <h3 class="text-center">FRQ UNIT 2</h3>
 
     </div>
-    <th:block th:each="binary: ${binary}" style="color:white;">
-        <div class="row justify-content-md-center" style="color:white;" >
+    <th:block th:each="binary: ${binary}" style="color:black;">
+        <div class="row justify-content-md-center" style="color:black;" >
             <form action="/aboutcrystal">
                 <TABLE>
                     <TD>
@@ -109,18 +109,18 @@
     </th:block>
         <br>
 
-        <div class="row justify-content-md-center" style="color:white;">
+        <div class="row justify-content-md-center" style="color:black;">
             <h3 class="text-center">FRQ UNIT 3</h3>
 
         </div>
         <br>
 
-        <form class="form-inline" role="form" action="/aboutcrystal">
+        <form class="form-inline" role="form" action="/AboutUs/aboutcrystal">
             <div class="row justify-content-md-center">
                 <div class="form-group mx-sm-3 mb-2">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="attendance" name="attendance" value="true">
-                        <label class="form-check-label" for="attendance" style="color:white;">
+                        <label class="form-check-label" for="attendance" style="color:black;">
                             Attending?
                         </label>
                     </div>
@@ -131,20 +131,20 @@
                 </div>
             </div>
         </form>
-        <p style="color:white;"> ORDER OPTIONS: (1) Chocolate, (2) Vanilla, (3) Strawberry, (4) Caramel </p>
-        <p style="color:white;"><b>Message: </b><span th:text="${message}"></span> </p>
+        <p style="color:black;"> ORDER OPTIONS: (1) Chocolate, (2) Vanilla, (3) Strawberry, (4) Caramel </p>
+        <p style="color:black;"><b>Message: </b><span th:text="${message}"></span> </p>
         <br>
         <hr>
 
         <br>
 
-        <div class="row justify-content-md-center" style="color:white;">
+        <div class="row justify-content-md-center" style="color:black;">
             <h3 class="text-center">FRQ UNIT 4</h3>
 
         </div>
         <br>
 
-        <form class="form-inline" role="form" action="/aboutcrystal" style="color:white;">
+        <form class="form-inline" role="form" action="/AboutUs/aboutcrystal" style="color:black;">
             <div class="row justify-content-md-center">
                 <div class="form-group mx-sm-3 mb-2">
                     <input type="text" class="form-control" id="word" name="word" placeholder="enter word">
@@ -152,11 +152,73 @@
                 <button type="submit" class="btn btn-primary mb-2">Get Streak Info</button>
             </div>
         </form>
-        <p style="color:white;"><b>Streak Info: </b><span th:text="${streakInfo}"></span></p>
+        <p style="color:black;"><b>Streak Info: </b><span th:text="${streakInfo}"></span></p>
         <br>
         <hr>
+    <h4>FRQ #5</h4>
+    <br>
+    <h6>Password Generator</h6>
+    <form class="form-inline" role="form" action="/AboutUs/aboutcrystal">
+        <div class="row justify-content-md-center">
+            <div class="form-group mx-sm-3 mb-2">
+                <input type="text" class="form-control" id="pref" name="pref" placeholder="enter prefix">
+            </div>
+            <div class="form-group mx-sm-3 mb-2">
+                <input type="number" class="form-control" id="len" name="len" placeholder="enter length">
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">Generate</button>
+        </div>
+    </form>
+    <p><b>Generated Password: </b><span th:text="${genpassword}"></span></p>
+    <p><b>Password Count: </b><span th:text="${passwordcount}"></span></p>
+    <br>
+    <h6>Invitation</h6>
+    <form class="form-inline" role="form" action="/AboutUs/aboutcrystal">
+        <div class="row justify-content-md-center">
+            <div class="form-group mx-sm-3 mb-2">
+                <input type="text" class="form-control" id="hname" name="hname" placeholder="enter host name">
+            </div>
+            <div class="form-group mx-sm-3 mb-2">
+                <input type="text" class="form-control" id="guestname" name="guestname" placeholder="enter guest name">
+            </div>
+            <div class="form-group mx-sm-3 mb-2">
+                <input type="text" class="form-control" id="address" name="address" placeholder="enter address">
+            </div>
+            <div class="form-group mx-sm-3 mb-2">
+                <input type="text" class="form-control" id="newaddress" name="newaddress" placeholder="enter new address">
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">Invite</button>
+        </div>
+    </form>
+    <p><b>Message: </b><span th:text="${message1}"></span></p>
+    <p><b>New Message: </b><span th:text="${message2}"></span></p>
+    <br>
+    <hr>
 
-        <p style="color:white;">API to find your coordinates</p>
+    <h4>FRQ #6</h4>
+    <br>
+    <h6>Payroll</h6>
+    <p><b>Bonus Threshold items are: </b><span th:text="${bonusthreshold}"></span></p>
+    <hr>
+    <h4>FRQ #8</h4>
+    <br>
+    <h6>Experimental Farm</h6>
+    <p><b>Highest Corn Yield: </b><span th:text="${highestcornyield}"></span></p>
+    <p><b>Highest Peas Yield: </b><span th:text="${highestpeasyield}"></span></p>
+    <p><b>Same Crops in Column 1?: </b><span th:text="${samecropcolumn1}"></span></p>
+    <p><b>Same Crops in Column 2?: </b><span th:text="${samecropcolumn2}"></span></p>
+    <p><b>Same Crops in Column 3?: </b><span th:text="${samecropcolumn3}"></span></p>
+    <br>
+    <hr>
+
+    <h4>FRQ #9</h4>
+    <br>
+    <h6>Book</h6>
+    <p><b>Book 1: </b><span th:text="${bookone}"></span></p>
+    <p><b>Book 2: </b><span th:text="${booktwo}"></span></p>
+    <br>
+    <hr>
+        <p style="color:black;">API to find your coordinates</p>
 
         <button onclick="getLocation()">Try It</button>
 
