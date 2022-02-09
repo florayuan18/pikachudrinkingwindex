@@ -75,6 +75,7 @@
 
     <h4>FRQ #2</h4>
     <br>
+    <h6>Light Sequence</h6>
     <form class="form-inline" role="form" action="/AboutUs/aboutmaggie">
       <div class="row justify-content-md-center">
         <div class="form-group mx-sm-3 mb-2">
@@ -96,12 +97,14 @@
     <p><b>Changed Sequence: </b><span th:text="${changedSequence}"></span></p>
     <p><b>Inserted Sequence: </b><span th:text="${insertedSequence}"></span></p>
     <p><b>Removed Sequence: </b><span th:text="${removedSequence}"></span></p>
+    <br>
     <p><b>Distance Between A &amp; B: </b><span th:text="${distance}"></span></p>
     <br>
     <hr>
 
     <h4>FRQ #3</h4>
     <br>
+    <h6>Dinner</h6>
     <form class="form-inline" role="form" action="/AboutUs/aboutmaggie">
       <div class="row justify-content-md-center">
         <div class="form-group mx-sm-3 mb-2">
@@ -125,6 +128,7 @@
 
     <h4>FRQ #4</h4>
     <br>
+    <h6>Longest Streak</h6>
     <form class="form-inline" role="form" action="/AboutUs/aboutmaggie">
       <div class="row justify-content-md-center">
         <div class="form-group mx-sm-3 mb-2">
@@ -138,10 +142,25 @@
     </small>
     <p><b>Streak Info: </b><span th:text="${streakInfo}"></span></p>
     <br>
+    <h6>Coin Game</h6>
+    <form class="form-inline" role="form" action="/AboutUs/aboutmaggie">
+      <div class="row justify-content-md-center">
+        <div class="form-group mx-sm-3 mb-2">
+          <input type="number" class="form-control" id="startingcoins" name="startingcoins" placeholder="enter starting coins">
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+          <input type="number" class="form-control" id="maxrounds" name="maxrounds" placeholder="enter max rounds">
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Play Game</button>
+      </div>
+    </form>
+    <p><b>Game Results: </b><span th:text="${gameresults}"></span></p>
+    <br>
     <hr>
 
     <h4>FRQ #5</h4>
     <br>
+    <h6>Password Generator</h6>
     <form class="form-inline" role="form" action="/AboutUs/aboutmaggie">
       <div class="row justify-content-md-center">
         <div class="form-group mx-sm-3 mb-2">
@@ -156,16 +175,39 @@
     <p><b>Generated Password: </b><span th:text="${genpassword}"></span></p>
     <p><b>Password Count: </b><span th:text="${passwordcount}"></span></p>
     <br>
+    <h6>Invitation</h6>
+    <form class="form-inline" role="form" action="/AboutUs/aboutmaggie">
+      <div class="row justify-content-md-center">
+        <div class="form-group mx-sm-3 mb-2">
+          <input type="text" class="form-control" id="hname" name="hname" placeholder="enter host name">
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+          <input type="text" class="form-control" id="guestname" name="guestname" placeholder="enter guest name">
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+          <input type="text" class="form-control" id="address" name="address" placeholder="enter address">
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+          <input type="text" class="form-control" id="newaddress" name="newaddress" placeholder="enter new address">
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Invite</button>
+      </div>
+    </form>
+    <p><b>Message: </b><span th:text="${message1}"></span></p>
+    <p><b>New Message: </b><span th:text="${message2}"></span></p>
+    <br>
     <hr>
 
     <h4>FRQ #6</h4>
     <br>
+    <h6>Payroll</h6>
     <p><b>Bonus Threshold items are: </b><span th:text="${bonusthreshold}"></span></p>
     <br>
     <hr>
 
     <h4> FRQ #7</h4>
     <br>
+    <h6>Usernames</h6>
     <form class="form-inline" role="form" action="/AboutUs/aboutmaggie">
       <div class="row justify-content-md-center">
         <div class="form-group mx-sm-3 mb-2">
@@ -183,17 +225,65 @@
 
     <h4>FRQ #8</h4>
     <br>
-    <p><b>...: </b><span th:text="${bonusthreshold}"></span></p>
+    <h6>Experimental Farm</h6>
+    <p><b>Highest Corn Yield: </b><span th:text="${highestcornyield}"></span></p>
+    <p><b>Highest Peas Yield: </b><span th:text="${highestpeasyield}"></span></p>
+    <p><b>Same Crops in Column 1?: </b><span th:text="${samecropcolumn1}"></span></p>
+    <p><b>Same Crops in Column 2?: </b><span th:text="${samecropcolumn2}"></span></p>
+    <p><b>Same Crops in Column 3?: </b><span th:text="${samecropcolumn3}"></span></p>
     <br>
     <hr>
 
     <h4>FRQ #9</h4>
     <br>
+    <h6>Book</h6>
+    <p>Book</p>
+    <div class="row justify-content-md-center">
+      <div class="form-group mx-sm-3 mb-2">
+        <input type="text" class="form-control" id="title" name="title" placeholder="enter book title">
+      </div>
+      <div class="form-group mx-sm-3 mb-2">
+        <input type="text" class="form-control" id="author" name="author" placeholder="enter book author">
+      </div>
+      <button type="submit" class="btn btn-primary mb-2">Submit</button>
+    </div>
+    <br>
+    <p>Picture Book</p>
+    <div class="row justify-content-md-center">
+      <div class="form-group mx-sm-3 mb-2">
+        <input type="text" class="form-control" id="titlep" name="title" placeholder="enter book title">
+      </div>
+      <div class="form-group mx-sm-3 mb-2">
+        <input type="text" class="form-control" id="authorp" name="author" placeholder="enter book author">
+      </div>
+      <div class="form-group mx-sm-3 mb-2">
+      <input type="text" class="form-control" id="illustrator" name="illustrator" placeholder="enter book illustrator">
+    </div>
+      <button type="submit" class="btn btn-primary mb-2">Submit</button>
+    </div>
     <p><b>Book 1: </b><span th:text="${bookone}"></span></p>
     <p><b>Book 2: </b><span th:text="${booktwo}"></span></p>
     <br>
     <hr>
 
+    <h4>FRQ #10</h4>
+    <br>
+    <h6>Number System</h6>
+    <form class="form-inline" role="form" action="/AboutUs/aboutmaggie">
+      <div class="row justify-content-md-center">
+        <div class="form-group mx-sm-3 mb-2">
+          <input type="text" class="form-control" id="number1" name="number1" placeholder="enter a number">
+        </div>
+        <div class="form-group mx-sm-3 mb-2">
+          <input type="text" class="form-control" id="number2" name="number2" placeholder="enter another number">
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Calculate</button>
+      </div>
+    </form>
+    <p><b>Greatest Common Factor (GCF): </b><span th:text="${gcfresult}"></span></p>
+    <p><b>Reduced Fraction: </b><span th:text="${reduceresult}"></span></p>
+    <br>
+    <hr>
 
   </div>
 </div>
