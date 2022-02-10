@@ -73,12 +73,14 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
 //        return "aboutflora";
 //    }
 //
+
+    /*
     public static String makeurl(){
         String makeurl = "https://billboard-api2.p.rapidapi.com/billboard-200?range=1-10&date=" + java.time.LocalDate.now();
         return makeurl;
     }
 
-    /*
+
     @GetMapping("AboutUs/aboutkira2")
     public String quotes(Model model) throws IOException, InterruptedException, ParseException {
         //rapidapi setup:

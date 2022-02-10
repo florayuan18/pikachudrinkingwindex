@@ -3,25 +3,64 @@
 <!-- Signals to the Layout Dialect which layout should be used to decorate this View -->
 <html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
       layout:decorate="~{layout}" lang="en">
+<!-- GOOGLE SEARCH FORMATTING
+<script>
+    const search = document.getElementById('search');
+    const google = 'https://www.google.com/search?q=site%3A+';
+    const site = 'https://umbrellabox.cf';
+
+    function submitted(event) {
+        if (event.key === 'Enter') {
+            // calculations to determine new window size at 66% of existing
+            const reduction = 0.66;  // reduce by 66%
+            const w = Math.trunc(window.innerWidth*reduction);
+            const h = Math.trunc(window.outerHeight*reduction);
+            const l = Math.trunc(window.top.screenX + ((window.innerWidth - w)/2));
+            const t = Math.trunc(window.top.screenY + ((window.outerHeight - h)/2));
+            const left = "left=" + l;
+            const top = "top=" + t;
+            const width = "width=" + w;
+            const height = "height=" + h;
+            const location = left + ", " + top + ", " + width + ", " + height
+
+            // setup and display window
+            event.preventDefault();
+            const url = google
+                + site
+                + '+'
+                + search.value;
+            const win = window.open(url, "CompSci A Search", location);
+            win.focus();
+        }
+    }
+    search.addEventListener('keypress', submitted);
+</script>
+-->
 
 <style>
     table {
         margin-left: auto;
         margin-right: auto;
     }
-
 </style>
 
-
 <head><div layout:fragment="metadata" th:remove="tag">
-    <title>My Collection</title>
+    <title>Review</title>
 </div></head>
 
 <!-- layout::fragment="content" is heart of ThymeLeaf layout -->
 <body><div layout:fragment="content" th:remove="tag">
+    <!--
+    <div class="row justify-content-md-center" style="padding:20px;">
+        <form id="search">
+            <a>Search</a>
+            <input type="search" placeholder="Search" aria-label="Search">
+        </form>
+    </div>
+    -->
     <div style="margin: 2%; color:Black;">
         <div align="center">
-            <h1 style="color:Black;" class="row justify-content-md-center">My Collection</h1>
+            <h1 style="color:Black;" class="row justify-content-md-center">Video Game Reviews</h1>
             <a href="/Database/personcreate/" class="row justify-content-md-center">Add Game</a>
             <br/><br/>
 
@@ -49,6 +88,8 @@
             </table>
         </div>
     </div>
+
+
 
     <div class="row justify-content-md-center" >
         <table class="table" style="color:white;">
