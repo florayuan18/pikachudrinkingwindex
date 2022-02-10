@@ -1,6 +1,6 @@
 package com.example.sping_portfolio.controllers;
 
-import com.example.sping_portfolio.controllers.CalvinAboutMVC.CalvinFRQ.LightSequence;
+import com.example.sping_portfolio.controllers.CalvinAboutMVC.CalvinFRQ.FRQ_2.LightSequence;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
