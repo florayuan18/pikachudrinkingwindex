@@ -80,8 +80,8 @@
                     <td th:text="${person.rating}" >Rating</td>
 
                     <td style="color:Black;" >
-                        <a th:href="@{/Database/personupdate/{id}(id = ${person.id})}">Update</a>
-                        <a th:href="@{/Database/persondelete/{id}(id = ${person.id})}">Delete</a>
+                        <a th:href="@{personupdate/{id}(id = ${person.id})}">Update</a>
+                        <a th:href="@{persondelete/{id}(id = ${person.id})}">Delete</a>
                     </td>
                 </tr>
                 </tbody>
@@ -99,8 +99,8 @@
                         <div class="card-body">
                             <h6 class="card-text" th:text="${person.teacher_class}"></h6>
                             <p class="card-text" th:text="${person.rating}"></p>
-                                <a th:href="@{/Database/personupdate/{id}(id = ${person.id})}" class="card-link">Update</a>
-                                <a th:href="@{/Database/persondelete/{id}(id = ${person.id})}" class="card-link">Delete</a>
+                                <a th:href="@{personupdate/{id}(id = ${person.id})}" class="card-link">Update</a>
+                                <a th:href="@{persondelete/{id}(id = ${person.id})}" class="card-link">Delete</a>
                         </div>
                     </div>
                 </div>
