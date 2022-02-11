@@ -209,27 +209,27 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
     }
 
 
-    @GetMapping("/Database/personupdate/{id}")
+    @GetMapping("/personupdate/{id}")
     public String personUpdate(@PathVariable("id") int id, Model model) {
         model.addAttribute("person", repository.get(id));
-        return "Database/personupdate";
+        return "/personupdate";
     }
 
-    @PostMapping("/Database/personupdate")
+    @PostMapping("/personupdate")
     public String personUpdateSave(@Valid Person person, BindingResult bindingResult) {
         // Validation of Decorated PersonForm attributes
         if (bindingResult.hasErrors()) {
-            return "Database/personupdate";
+            return "/personupdate";
         }
         repository.save(person);
         // Redirect to next step
-        return "redirect:/Database/person";
+        return "redirect:/person";
     }
 
-    @GetMapping("/Database/persondelete/{id}")
+    @GetMapping("/persondelete/{id}")
     public String personDelete(@PathVariable("id") long id) {
         repository.delete(id);
-        return "redirect:/Database/person";
+        return "redirect:/person";
     }
 
     /*
