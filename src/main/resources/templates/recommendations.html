@@ -5,30 +5,51 @@
 <head><div layout:fragment="metadata" th:remove="tag">
     <title>Recommendations</title>
     <style>
-        .block {
-            display: inline-block;
-            width: 50px;
-            height: 65px;
-            border: 2px solid #000000;
-            background-color: Transparent;
-            color: #000000;
-            padding: 14px 28px;
-            font-size: 20px;
+        body {
+            background-color: #F3EBF6;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        .main {
+            background-color: #FFFFFF;
+            text-align:center;
+            width: 700px;
+            height: auto;
+            margin: 7em auto;
+            border-radius: 1.5em;
+            box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+        }
+
+        .sign {
+            padding-top: 40px;
+            font-weight: bold;
+            font-size: 23px;
+        }
+
+        .submit {
             cursor: pointer;
-            text-align: center;
-            margin: 10px;
-            position: relative;
-            top: 50%;
-            -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+            border-radius: 5em;
+            background: var(--primary);
+            border: 0;
+            padding-left: 40px;
+            padding-right: 40px;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            margin: 1%;
+            font-size: 13px;
+            box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
         }
-        .block:hover {
-            background-color: #05c4c4;
-            border: 2px solid #05c4c4;
-            color: black;
-            width: 30%;
-            transition: all .4s cubic-bezier(0.65, 0, 0.076, 1);
+
+        a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-size: 14px;
         }
+
+        @media (max-width: 1200px) {
+            .main {
+                border-radius: 0px;
+            }
     </style>
 </div>
 </head>
@@ -36,24 +57,34 @@
 <body style = "background-color:#2b425b; margin:auto;">
 <div layout:fragment="content" th:remove="tag">
 
-    <div style="background-color:white; padding:40px; text-align:center; border-radius:15px; width:700px; margin:auto;">
-    <h1 style="padding:10px;">Game Recommendations</h1>
-    <p style="margin:auto; text-align:center;">Enter a genre and we will recommend games we think you'd like!</p>
-        <div style="padding:50px; text-align:center;">
-        <button type="button" class="block" onclick="window.location.href='';">
-            Strategy
-        </button>
-        <br>
-        <button type="button" class="block" onclick="window.location.href='';">
-            Horror
-        </button>
-        <br>
-        <button type="button" class="block" onclick="window.location.href='';">
-            RPG
-        </button>
-        <br>
+    <div class="main" style="text-align: center; padding-left:30px;">
+        <p class="titlehead sign">Recommendations</p>
+            <a class="bodytext">Click on a genre!</a>
+            <div style="display:flex; flex-wrap:wrap; justify-content: center; margin:20px; padding-bottom:40px; max-width: 600px;">
+            <div class="bodytext submit" onclick='location.href="#"'>Action</div>
+            <div class="bodytext submit" onclick='location.href="#"'>Indie</div>
+            <div class="bodytext submit" onclick='location.href="#"'>Adventure</div>
+            <div class="bodytext submit" onclick='location.href="#"'>RPG</div>
+            <div class="bodytext submit" onclick='location.href="#"'>Strategy</div>
+            <div class="bodytext submit" onclick='location.href="#"'>Shooter</div>
+            <div class="bodytext submit" onclick='location.href="#"'>Casual</div>
+            <div class="bodytext submit" onclick='location.href="#"'>Simulation</div>
+            <div class="bodytext submit" onclick='location.href="#"'>Puzzle</div>
+            <div class="bodytext submit" onclick='location.href="#"'>Arcade</div>
+            <div class="bodytext submit" onclick='location.href="#"'>Platformer</div>
+            <div class="bodytext submit" onclick='location.href="#"'>Racing</div>
+            <div class="bodytext submit" onclick='location.href="#"'>Massively Multiplayer</div>
+            <div class="bodytext submit" onclick='location.href="#"'>Sports</div>
+            <div class="bodytext submit" onclick='location.href="#"'>Fighting</div>
+            <div class="bodytext submit" onclick='location.href="#"'>Family</div>
+            <div class="bodytext submit" onclick='location.href="#"'>Board Games</div>
+            <div class="bodytext submit" onclick='location.href="#"'>Educational</div>
+            <div class="bodytext submit" onclick='location.href="#"'>Card</div>
         </div>
+        </form>
+
     </div>
+
 
 </div>
 </body>
