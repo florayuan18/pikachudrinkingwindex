@@ -21,15 +21,12 @@
 
         .sign {
             padding-top: 40px;
-            color: #559aaa;
-            font-family: 'Ubuntu', sans-serif;
             font-weight: bold;
             font-size: 23px;
         }
 
         .un {
             width: 76%;
-            color: rgb(38, 50, 56);
             font-weight: 700;
             font-size: 14px;
             letter-spacing: 1px;
@@ -44,7 +41,6 @@
             margin-left: 46px;
             text-align: center;
             margin-bottom: 27px;
-            font-family: 'Ubuntu', sans-serif;
         }
 
         form.form1 {
@@ -53,7 +49,6 @@
 
         .pass {
             width: 76%;
-            color: rgb(38, 50, 56);
             font-weight: 700;
             font-size: 14px;
             letter-spacing: 1px;
@@ -68,11 +63,10 @@
             margin-left: 46px;
             text-align: center;
             margin-bottom: 27px;
-            font-family: 'Ubuntu', sans-serif;
         }
 
 
-        .un:focus, .pass:focus {
+        .bodytext:focus{
             border: 2px solid rgba(0, 0, 0, 0.18) !important;
 
         }
@@ -80,29 +74,25 @@
         .submit {
             cursor: pointer;
             border-radius: 5em;
-            color: #fff;
-            background: linear-gradient(to right, #278bb0, #40dffb);
+            background: var(--primary);
             border: 0;
             padding-left: 40px;
             padding-right: 40px;
             padding-bottom: 10px;
             padding-top: 10px;
-            font-family: 'Ubuntu', sans-serif;
             margin-left: 35%;
             font-size: 13px;
             box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
         }
 
         .forgot {
-            text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
-            color: #22a9ad;
             padding-top: 15px;
         }
 
         a {
-            text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
-            color: #229598;
-            text-decoration: none
+            text-decoration: none;
+            color: var(--secondary);
+            font-size: 14px;
         }
 
         @media (max-width: 600px) {
@@ -122,12 +112,12 @@
 <div layout:fragment="content" th:remove="tag">
 
     <div class="main">
-        <p class="sign" align="center">Sign In</p>
+        <p class="sign titlehead" align="center">Sign in</p>
         <form class="form1">
-            <input class="un " type="text" align="center" placeholder="Username">
-            <input class="pass" type="password" align="center" placeholder="Password">
-            <a class="submit" align="center">Sign In</a>
-            <p class="forgot" align="center"><a href="/register">No Account? Register Here </p>
+            <input class="un bodytext" type="text" align="center" placeholder="Username">
+            <input class="pass bodytext" type="password" align="center" placeholder="Password">
+            <a class="submit bodytext" align="center">Sign in</a>
+            <p class="forgot bodytext" align="center"><a href="/register">No Account? Register Here </p>
 
 
     </div>
