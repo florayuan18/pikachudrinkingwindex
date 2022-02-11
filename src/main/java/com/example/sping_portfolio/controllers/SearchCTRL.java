@@ -92,6 +92,5 @@ public class SearchCTRL {
 
         model.addAttribute("gameList", retArr);
         return "/search";
-
     }
 }
