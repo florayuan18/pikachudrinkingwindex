@@ -21,15 +21,12 @@
 
         .sign {
             padding-top: 40px;
-            color: #559aaa;
-            font-family: 'Ubuntu', sans-serif;
             font-weight: bold;
             font-size: 23px;
         }
 
         .un {
             width: 76%;
-            color: rgb(38, 50, 56);
             font-weight: 700;
             font-size: 14px;
             letter-spacing: 1px;
@@ -44,11 +41,9 @@
             margin-left: 46px;
             text-align: center;
             margin-bottom: 27px;
-            font-family: 'Ubuntu', sans-serif;
         }
         .first {
             width: 76%;
-            color: rgb(38, 50, 56);
             font-weight: 700;
             font-size: 14px;
             letter-spacing: 1px;
@@ -63,12 +58,10 @@
             margin-left: 46px;
             text-align: center;
             margin-bottom: 27px;
-            font-family: 'Ubuntu', sans-serif;
         }
 
         .last {
             width: 76%;
-            color: rgb(38, 50, 56);
             font-weight: 700;
             font-size: 14px;
             letter-spacing: 1px;
@@ -83,7 +76,6 @@
             margin-left: 46px;
             text-align: center;
             margin-bottom: 27px;
-            font-family: 'Ubuntu', sans-serif;
         }
 
         form.form1 {
@@ -92,7 +84,6 @@
 
         .pass {
             width: 76%;
-            color: rgb(38, 50, 56);
             font-weight: 700;
             font-size: 14px;
             letter-spacing: 1px;
@@ -107,7 +98,6 @@
             margin-left: 46px;
             text-align: center;
             margin-bottom: 27px;
-            font-family: 'Ubuntu', sans-serif;
         }
 
 
@@ -120,28 +110,25 @@
             cursor: pointer;
             border-radius: 5em;
             color: #fff;
-            background: linear-gradient(to right, #278bb0, #40dffb);
+            background: var(--primary);
             border: 0;
             padding-left: 40px;
             padding-right: 40px;
             padding-bottom: 10px;
             padding-top: 10px;
-            font-family: 'Ubuntu', sans-serif;
             margin-left: 35%;
             font-size: 13px;
             box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
         }
 
         .forgot {
-            text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
-            color: #22a9ad;
             padding-top: 15px;
         }
 
         a {
-            text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
-            color: #229598;
-            text-decoration: none
+            text-decoration: none;
+            color: var(--secondary);
+            font-size: 14px;
         }
 
         @media (max-width: 600px) {
@@ -162,14 +149,14 @@
 <div layout:fragment="content" th:remove="tag">
 
     <div class="main">
-        <p class="sign" align="center">Register</p>
+        <p class="titlehead sign" align="center">Register</p>
         <form class="form1">
-            <input class="first " type="text" align="center" placeholder="First Name">
-            <input class="last " type="text" align="center" placeholder="Last Name">
-            <input class="un " type="text" align="center" placeholder="Username">
-            <input class="pass" type="password" align="center" placeholder="Password">
-            <a class="submit" align="center">Register</a>
-            <p class="forgot" align="center"><a href="/login">Already Have an Account? Sign In Here</p>
+            <input class="bodytext first " type="text" align="center" placeholder="First Name">
+            <input class="bodytext last " type="text" align="center" placeholder="Last Name">
+            <input class="bodytext un " type="text" align="center" placeholder="Username">
+            <input class="bodytext pass" type="password" align="center" placeholder="Password">
+            <a class="bodytext submit" align="center">Register</a>
+            <p class="bodytext forgot" align="center"><a href="/login">Already Have an Account? Sign In Here</p>
         </form>
 
     </div>
