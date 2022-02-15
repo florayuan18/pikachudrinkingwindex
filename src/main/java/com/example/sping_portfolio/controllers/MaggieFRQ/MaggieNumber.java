@@ -18,7 +18,7 @@ public class MaggieNumber {
     public MaggieNumber() {
         squirrels = new ArrayList<Integer>();
         // initializes a random number between 3 and 36, ie. the number of squirrels in class
-        randomNumber = (int)(Math.random() * 33) + 3;
+        randomNumber = (int)(Math.random() * 34) + 3;
     }
 
     // It contains a getter for the Random Number
@@ -28,11 +28,9 @@ public class MaggieNumber {
 
     // It contains a getter for Index, or the order it was initialized
     public int getIndex(){
-        for (int i = 0; i < 11; i++){
-            squirrels.add(getRandomNumber());
-            index = i;
-        }
-        return index;
+        index = 0;
+        squirrels.add(getRandomNumber());
+        return index++;
     }
 
     public ArrayList<Integer> getSquirrels(){
@@ -42,13 +40,14 @@ public class MaggieNumber {
     // Write a tester method
     public static void main(String[] args) {
         MaggieNumber sqnumber = new MaggieNumber();
-        // Create an ArrayList of Type Number, my ArrayList is called squirrels
+        // Create an ArrayList of Type Number
+        ArrayList<Integer> thesquirrels = new ArrayList<Integer>();
         // Initialize 10 squirrels of class type Number
-        sqnumber.getRandomNumber();
-        sqnumber.getIndex();
-        System.out.println(sqnumber.getSquirrels());
         // Insert Number instance into ArrayList Squirrel in least to greatest order by random number, mine required nested loops
-
+        int r = sqnumber.getIndex();
+        for (r = 0; r < 11; r++){
+            System.out.println(sqnumber.getSquirrels());
+        }
 
         // Print a formatted message with number of Squirrels and Index by which they were created, use enhanced for loop
 
