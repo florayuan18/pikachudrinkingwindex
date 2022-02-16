@@ -6,92 +6,74 @@
 
 <head><div layout:fragment="metadata" th:remove="tag">
     <title>About Us</title>
-    <script src="/static/vanta/three.r119.min.js" th:src="@{/vanta/three.r119.min.js}"></script>
-    <script src="/static/vanta/vanta.net.min.js" th:src="@{/vanta/vanta.net.min.js}"></script>
-    <script>
-        VANTA.NET({
-            el: "html",
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200.00,
-            minWidth: 200.00,
-            scale: 1.00,
-            scaleMobile: 1.00,
-            color: 0x3fb3ff,
-            backgroundColor: 0x151e3c
-        })
-    </script>
     <style>
-        html, body{
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            font-family: 'Montserrat', sans-serif;
-        }
-        .block {
-            font-family: 'Montserrat', sans-serif;
-            display: inline-block;
-            width: 20%;
-            height: 65px;
-            border: 2px solid white;
-            background-color: Transparent;
-            color: white;
-            padding: 14px 28px;
-            font-size: 20px;
-            cursor: pointer;
-            text-align: center;
-            margin: 10px;
-            position: relative;
-            top: 50%;
-            left: 49.2%;
-            -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-        }
-        .block:hover {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #05c4c4;
-            border: 2px solid #05c4c4;
-            color: black;
-            width: 30%;
-            transition: all .4s cubic-bezier(0.65, 0, 0.076, 1);
-        }
-        .pageTitle{
-            font-family: 'Montserrat', sans-serif;
-            color: white;
-            text-align: center;
-            margin: 20px;
+        body {
+            background-color: #F3EBF6;
+            font-family: 'Ubuntu', sans-serif;
         }
 
+        .main {
+            background-color: #FFFFFF;
+            text-align:center;
+            width: 400px;
+            height: auto;
+            margin: 7em auto;
+            border-radius: 1.5em;
+            box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+        }
+
+        .sign {
+            padding-top: 40px;
+            font-weight: bold;
+            font-size: 23px;
+        }
+
+        .submit {
+            cursor: pointer;
+            border-radius: 5em;
+            background: var(--primary);
+            border: 0;
+            padding-left: 40px;
+            padding-right: 40px;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            margin: 3%;
+            font-size: 13px;
+            box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-size: 14px;
+        }
+
+        @media (max-width: 1200px) {
+            .main {
+                border-radius: 0px;
+            }
     </style>
-</div></head>
-<!-- layout::fragment="content" is heart of ThymeLeaf layout -->
-<body><div layout:fragment="content" th:remove="tag">
-    <!-- Start of body content specific to page -->
-    <div class="contact">
-        <h1 class="pageTitle">About Us</h1>
-        <button type="button" class="block titlehead" onclick="transitionToPage('/AboutUs/aboutcrystal')">
-            Crystal
-        </button>
-        <br>
-        <button type="button" class="block titlehead" onclick="transitionToPage('/AboutUs/aboutflora')">
-            Flora
-        </button>
-        <br>
-        <button type="button" class="block titlehead" onclick="transitionToPage('/AboutUs/aboutcalvin')">
-            Calvin
-        </button>
-        <br>
-        <button type="button" class="block titlehead" onclick="transitionToPage('/AboutUs/aboutkira2')">
-            Kira
-        </button>
-        <br>
-        <button type="button" class="block titlehead " onclick="transitionToPage('/AboutUs/aboutmaggie')">
-            Maggie
-        </button>
+</div>
+</head>
+
+<body style = "background-color:#2b425b; margin:auto;">
+<div layout:fragment="content" th:remove="tag">
+
+    <div class="main" style="text-align: center;">
+        <p class="titlehead sign">About Us</p>
+        <a class="bodytext">Learn more about the creators!</a>
+        <div style="margin:20px; padding-bottom:40px; max-width: 400px;">
+            <div class="bodytext submit" onclick='location.href="/AboutUs/aboutcalvin"'>Calvin</div>
+            <div class="bodytext submit" onclick='location.href="/AboutUs/aboutcrystal"'>Crystal</div>
+            <div class="bodytext submit" onclick='location.href="/AboutUs/aboutflora"'>Flora</div>
+            <div class="bodytext submit" onclick='location.href="/AboutUs/aboutkira2"'>Kira</div>
+            <div class="bodytext submit" onclick='location.href="/AboutUs/aboutmaggie"'>Maggie</div>
+        </div>
+
     </div>
-    <!-- End of body content specific to page -->
-</div></body>
+
+
+</div>
+</body>
 
 </html>

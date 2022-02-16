@@ -2,7 +2,6 @@ package com.example.sping_portfolio;
 
 import com.example.sping_portfolio.SQL.*;
 import com.example.sping_portfolio.controllers.MaggieFRQ.*;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,20 +10,12 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.json.simple.parser.ParseException;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import java.util.HashMap;
-
 import java.io.IOException;
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
 import javax.validation.Valid;
 import java.util.List;
 import java.util.ArrayList;
-import com.example.sping_portfolio.controllers.KiraLightSequence;
 // Built using article: https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/mvc.html
 // or similar: https://asbnotebook.com/2020/04/11/spring-boot-thymeleaf-form-validation-example/
 
@@ -36,18 +27,18 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
     @Autowired
     private PersonSqlRepository repository;
 
-    @GetMapping("/Database/person")
+    @GetMapping("/person")
     public String person(Model model) {
         List<Person> list = repository.listAll();
         model.addAttribute("list", list);
-        return "Database/person";
+        return "/person";
     }
 
     /*  The HTML template Forms and PersonForm attributes are bound
         @return - template for person form
         @param - Person Class
     */
-    @GetMapping("/Database/personcreate")
+    @GetMapping("/personcreate")
     public String personAdd(Person person) {
         return "Database/personcreate";
     }
@@ -56,15 +47,15 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
     @param - Person object with @Valid
     @param - BindingResult object
      */
-    @PostMapping("/Database/personcreate")
+    @PostMapping("/personcreate")
     public String personSave(@Valid Person person, BindingResult bindingResult) {
         // Validation of Decorated PersonForm attributes
         if (bindingResult.hasErrors()) {
-            return "Database/personcreate";
+            return "/personcreate";
         }
         repository.save(person);
         // Redirect to next step
-        return "redirect:/Database/person";
+        return "redirect:/person";
     }
 
 
@@ -218,27 +209,27 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
     }
 
 
-    @GetMapping("/Database/personupdate/{id}")
+    @GetMapping("/personupdate/{id}")
     public String personUpdate(@PathVariable("id") int id, Model model) {
         model.addAttribute("person", repository.get(id));
-        return "Database/personupdate";
+        return "/personupdate";
     }
 
-    @PostMapping("/Database/personupdate")
+    @PostMapping("/personupdate")
     public String personUpdateSave(@Valid Person person, BindingResult bindingResult) {
         // Validation of Decorated PersonForm attributes
         if (bindingResult.hasErrors()) {
-            return "Database/personupdate";
+            return "/personupdate";
         }
         repository.save(person);
         // Redirect to next step
-        return "redirect:/Database/person";
+        return "redirect:/person";
     }
 
-    @GetMapping("/Database/persondelete/{id}")
+    @GetMapping("/persondelete/{id}")
     public String personDelete(@PathVariable("id") long id) {
         repository.delete(id);
-        return "redirect:/Database/person";
+        return "redirect:/person";
     }
 
     /*

@@ -27,9 +27,9 @@ public class MaggiePasswordGenerator {
 
     //password generating method
     public String pwGen(){
-        String pwd= this.prefix+".";
-            for(int i=1;i<=this.length;i++){
-                pwd+=random.nextInt(10);
+        String pwd = this.prefix + ".";
+            for(int i=1; i<=this.length; i++){
+                pwd += random.nextInt(10);
             }
             passwordsGenerated+=1;
             return pwd;
