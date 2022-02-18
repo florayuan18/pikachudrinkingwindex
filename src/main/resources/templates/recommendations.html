@@ -50,6 +50,7 @@
             .main {
                 border-radius: 0px;
             }
+        }
     </style>
 </div>
 </head>
@@ -60,7 +61,7 @@
     <div class="main" style="text-align: center; padding-left:30px;">
         <p class="titlehead sign">Recommendations</p>
             <a class="bodytext">Click on a genre!</a>
-            <div style="display:flex; flex-wrap:wrap; justify-content: center; margin:20px; padding-bottom:40px; max-width: 600px;">
+        <div style="display:flex; flex-wrap:wrap; justify-content: center; margin:20px; padding-bottom:40px; max-width: 600px;">
             <div class="bodytext submit" onclick='location.href="#"'>Action</div>
             <div class="bodytext submit" onclick='location.href="#"'>Indie</div>
             <div class="bodytext submit" onclick='location.href="#"'>Adventure</div>
@@ -81,12 +82,37 @@
             <div class="bodytext submit" onclick='location.href="#"'>Educational</div>
             <div class="bodytext submit" onclick='location.href="#"'>Card</div>
         </div>
-
     </div>
 
 
+    <div class="row justify-content-md-center flex-container" style="padding:10px; width:1000px;" >
+        <table class="table">
+            <tr th:each="value: ${gameList}">
+                <div>
+                    <div class="card" style="width:300px; margin:10px;">
+                        <img th:src="${value[2]}" class="card-img-top" style="height:200px;">
+                        <div class="card-body">
+                            <p class="card-text titlehead" th:text="${value[0]}"></p>
+                            <a class="bodytext" style="text-align:left">Rating:</a>
+                            <a class="card-text bodytext" th:text="${value[3]}"></a></br>
+                            <a style="text-align:left" class="bodytext">Playtime (in hours): </a>
+                            <a class="card-text bodytext" th:text="${value[4]}" ></a></br>
+                            <h6 class="card-text" th:text="${value[1]}"></h6>
+                        </div>
+
+                        <script>
+                            ScrollReveal().reveal('.card', {
+                                interval: 16,
+                                reset: true,
+                                useDelay: 'onload'
+                            })
+                        </script>
+                    </div>
+                </div>
+            </tr>
+        </table>
+    </div>
+
 </div>
 </body>
-
-
 </html>

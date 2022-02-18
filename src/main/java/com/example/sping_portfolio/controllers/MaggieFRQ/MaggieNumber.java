@@ -46,6 +46,7 @@ public class MaggieNumber {
         // Insert Number instance into ArrayList Squirrel in least to greatest order by random number, mine required nested loops
         int r = sqnumber.getIndex();
         for (r = 0; r < 11; r++){
+            sqnumber.getIndex();
             System.out.println(sqnumber.getSquirrels());
         }
 

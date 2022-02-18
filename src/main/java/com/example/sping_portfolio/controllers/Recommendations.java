@@ -17,41 +17,17 @@ import java.net.http.HttpResponse;
 import java.util.ArrayList;
 import java.util.Comparator;
 
-/*
-class StrategyComparator implements Comparator<String[]> {
-    public int compare(String[] a, String[] b) {
-        if (Float.parseFloat(a[4]) < Float.parseFloat(b[4])) {
-            return 1;
-        } else if (Float.parseFloat(a[4]) > Float.parseFloat(b[4])) {
-            return -1;
-        }
-        return 0;
-    }
-}
-
-class HelloComparator implements Comparator<String[]> {
-    public int compare(String[] a, String[] b) {
-        if (Float.parseFloat(a[4]) < Float.parseFloat(b[4])) {
-            return 1;
-        } else if (Float.parseFloat(a[4]) > Float.parseFloat(b[4])) {
-            return -1;
-        }
-        return 0;
-    }
-}
- */
-
 @Controller  // HTTP requests are handled as a controller, using the @Controller annotation
 public class Recommendations {
     @GetMapping("/recommendations")
     // CONTROLLER handles GET request for /greeting, maps it to greeting() and does variable bindings
-    public String RawgAPI(@RequestParam(name="rpgSearch", required=false, defaultValue= "false") boolean rpgSort,
+    public String RawgAPI(@RequestParam(name="action", required=false, defaultValue= "false") boolean action,
                           @RequestParam(name="horrorSort", required=false, defaultValue= "false") boolean horrorSort,
                           @RequestParam(name="strategySort", required=false, defaultValue= "false") boolean strategySort,
                           Model model) throws IOException, InterruptedException, ParseException, JSONException {
 
             String KEY = "42771867b81b456496770e0c1c15d4f2";
-            String url = "https://api.rawg.io/api/games?key=" + KEY + "&GetGameDetailsBySlug?slug=rpg";
+            String url = "https://api.rawg.io/api/games?key=" + KEY + "&search" + action;
 
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(url))
@@ -62,8 +38,8 @@ public class Recommendations {
             HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
             System.out.println(response.body());
 
-            // JSONArray gameList = new JSONObject(response.body()).getJSONArray("results");
-            // System.out.println(gameList.length());
+            JSONArray gameList = new JSONObject(response.body()).getJSONArray("results");
+            System.out.println(gameList.length());
 
             return "/recommendations"; // returns HTML VIEW (greeting)
     }
