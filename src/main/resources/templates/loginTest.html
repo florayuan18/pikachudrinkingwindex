@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Get the Value of Text Input Field in JavaScript</title>
+</head>
+<body>
+<input type="text" placeholder="Username" id="userName"></br>
+<input type="text" placeholder="Password" id="userPassword"></br>
+<button type="button" onclick="getInputValue();">Get Value</button>
+
+<script>
+  var jsonInfo = `[
+    {
+      "first_name": "Flora",
+      "last_name": "Yuan",
+      "user_name": "flora9",
+      "password": "1234",
+      "games": ["Harry Potter", "Hermione Granger", "Ron Weasley"]
+    },
+    {
+      "first_name": "Carrie",
+      "last_name": "Zhang",
+      "user_name": "carrie.beauty",
+      "password": "5678",
+      "games": ["game1", "game2", "game3"]
+    },
+    {
+      "first_name": "Bryne",
+      "last_name": "Jin",
+      "user_name": "jin890",
+      "password": "1111",
+      "games": ["AAA1", "BBB2", "CCC3"]
+    }
+]`;
+  var allUsers = JSON.parse(jsonInfo);
+ // alert();
+
+  function getInputValue(){
+    // Selecting the input element and get its value
+    var userName = document.getElementById("userName").value;
+    var userPassword = document.getElementById("userPassword").value;
+
+    var bUserExists = new Boolean(false);
+    for (let i = 0; i < allUsers.length; i++) {
+      allUsers[i].user_name
+      if (userName === allUsers[i].user_name) {
+
+      }
+    }
+
+
+    // Displaying the value
+    // alert(userName);
+  }
+</script>
+</body>
+</html>
