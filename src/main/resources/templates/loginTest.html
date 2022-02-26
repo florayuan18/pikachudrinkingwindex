@@ -5,9 +5,9 @@
   <title>Get the Value of Text Input Field in JavaScript</title>
 </head>
 <body>
-<input type="text" placeholder="Username" id="userName"></br>
-<input type="text" placeholder="Password" id="userPassword"></br>
-<button type="button" onclick="getInputValue();">Get Value</button>
+<input type="text" placeholder="Username" id="userName"><br>
+<input type="text" placeholder="Password" id="userPassword"><br>
+<button type="button" onclick="getInputValue();">Sign In</button><br>
 
 <script>
   var jsonInfo = `[
@@ -41,14 +41,27 @@
     var userName = document.getElementById("userName").value;
     var userPassword = document.getElementById("userPassword").value;
 
+    //check whether user exists
     var bUserExists = new Boolean(false);
+    var existingUser;
     for (let i = 0; i < allUsers.length; i++) {
-      allUsers[i].user_name
       if (userName === allUsers[i].user_name) {
-
+        bUserExists = true;
+        existingUser = allUsers[i];
+        break;
       }
     }
 
+    if (bUserExists == false) {
+      alert("Username does not exist");
+    } else {
+        if (userPassword === existingUser.password) {
+          location.href = '/person';
+        }
+        else {
+          alert("Wrong password L");
+        }
+    }
 
     // Displaying the value
     // alert(userName);
