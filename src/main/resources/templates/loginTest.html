@@ -16,32 +16,38 @@
       "last_name": "Yuan",
       "user_name": "flora9",
       "password": "1234",
-      "games": ["Harry Potter", "Hermione Granger", "Ron Weasley"]
+      "games": [{"game_name": "AtomA", "game_rating": "1"},
+                {"game_name": "Ballistic Missiles", "game_rating": "11"},
+                {"game_name": "Gunner", "game_rating": "111"}]
     },
     {
       "first_name": "Bob",
       "last_name": "Builder",
       "user_name": "bobthebuilder",
       "password": "5678",
-      "games": ["game1", "game2", "game3"]
+      "games": [{"game_name": "Bullet Flux", "game_rating": "2"},
+                {"game_name": "Miracle Birdy", "game_rating": "22"},
+                {"game_name": "Monsieur", "game_rating": "222"}]
     },
     {
       "first_name": "Billy",
       "last_name": "Joe",
-      "user_name": "JoeMa123",
+      "user_name": "billyJoe",
       "password": "1111",
-      "games": ["AAA1", "BBB2", "CCC3"]
+      "games": [{"game_name": "Stella Starlight", "game_rating": "3"},
+                {"game_name": "Crimson", "game_rating": "33"},
+                {"game_name": "Critical Mas", "game_rating": "333"}]
     }
-]`;
+  ]`;
   var allUsers = JSON.parse(jsonInfo);
  // alert();
 
   function getInputValue(){
-    // Selecting the input element and get its value
+    // Select the input element and get its value
     var userName = document.getElementById("userName").value;
     var userPassword = document.getElementById("userPassword").value;
 
-    //check whether user exists
+    // Check if user exists
     var bUserExists = new Boolean(false);
     var existingUser;
     for (let i = 0; i < allUsers.length; i++) {
@@ -56,14 +62,15 @@
       alert("Username does not exist");
     } else {
         if (userPassword === existingUser.password) {
-          location.href = '/person';
+          sessionStorage.setItem('options', JSON.stringify(existingUser));
+          location.href = '/personTest';
         }
         else {
           alert("Wrong password L");
         }
     }
 
-    // Displaying the value
+    // Display the value
     // alert(userName);
   }
 </script>
