@@ -53,37 +53,45 @@
         }
     </style>
 </div>
+    <script language="JavaScript">
+    function buttonClick(str){
+        alert(str);
+        this.form.search.value = str;
+        this.form.submit();
+    }
+    </script>
 </head>
 
-<body style = "background-color:#2b425b; margin:auto;">
+<body style="background-color:#2b425b; margin:auto;">
 <div layout:fragment="content" th:remove="tag">
-
+<form action="/recommendations" name="searchform">
+    <input type="hidden" name="search">
+</form>
     <div class="main" style="text-align: center; padding-left:30px;">
         <p class="titlehead sign">Recommendations</p>
             <a class="bodytext">Click on a genre!</a>
-        <div style="display:flex; flex-wrap:wrap; justify-content: center; margin:20px; padding-bottom:40px; max-width: 600px;">
-            <div class="bodytext submit" onclick='location.href="#"'>Action</div>
-            <div class="bodytext submit" onclick='location.href="#"'>Indie</div>
-            <div class="bodytext submit" onclick='location.href="#"'>Adventure</div>
-            <div class="bodytext submit" onclick='location.href="#"'>RPG</div>
-            <div class="bodytext submit" onclick='location.href="#"'>Strategy</div>
-            <div class="bodytext submit" onclick='location.href="#"'>Shooter</div>
-            <div class="bodytext submit" onclick='location.href="#"'>Casual</div>
-            <div class="bodytext submit" onclick='location.href="#"'>Simulation</div>
-            <div class="bodytext submit" onclick='location.href="#"'>Puzzle</div>
-            <div class="bodytext submit" onclick='location.href="#"'>Arcade</div>
-            <div class="bodytext submit" onclick='location.href="#"'>Platformer</div>
-            <div class="bodytext submit" onclick='location.href="#"'>Racing</div>
-            <div class="bodytext submit" onclick='location.href="#"'>Massively Multiplayer</div>
-            <div class="bodytext submit" onclick='location.href="#"'>Sports</div>
-            <div class="bodytext submit" onclick='location.href="#"'>Fighting</div>
-            <div class="bodytext submit" onclick='location.href="#"'>Family</div>
-            <div class="bodytext submit" onclick='location.href="#"'>Board Games</div>
-            <div class="bodytext submit" onclick='location.href="#"'>Educational</div>
-            <div class="bodytext submit" onclick='location.href="#"'>Card</div>
+        <div style="display:flex; flex-wrap:wrap; justify-content:center; margin:20px; padding-bottom:40px; max-width: 600px;">
+            <div class="bodytext submit" onclick='searchform.search.value="Action"; searchform.submit();'>Action</div>
+            <div class="bodytext submit" onclick='searchform.search.value="Indie"; searchform.submit();'>Indie</div>
+            <div class="bodytext submit" onclick='searchform.search.value="Adventure"; searchform.submit();'>Adventure</div>
+            <div class="bodytext submit" onclick='searchform.search.value="RPG"; searchform.submit();'>RPG</div>
+            <div class="bodytext submit" onclick='searchform.search.value="Strategy"; searchform.submit();'>Strategy</div>
+            <div class="bodytext submit" onclick='searchform.search.value="Shooter"; searchform.submit();'>Shooter</div>
+            <div class="bodytext submit" onclick='searchform.search.value="Casual"; searchform.submit();'>Casual</div>
+            <div class="bodytext submit" onclick='searchform.search.value="Simulation"; searchform.submit();'>Simulation</div>
+            <div class="bodytext submit" onclick='searchform.search.value="Puzzle"; searchform.submit();'>Puzzle</div>
+            <div class="bodytext submit" onclick='searchform.search.value="Arcade"; searchform.submit();'>Arcade</div>
+            <div class="bodytext submit" onclick='searchform.search.value="Platformer"; searchform.submit();'>Platformer</div>
+            <div class="bodytext submit" onclick='searchform.search.value="Racing"; searchform.submit();'>Racing</div>
+            <div class="bodytext submit" onclick='searchform.search.value="Multiplayer"; searchform.submit();'>Massively Multiplayer</div>
+            <div class="bodytext submit" onclick='searchform.search.value="Sports"; searchform.submit();'>Sports</div>
+            <div class="bodytext submit" onclick='searchform.search.value="Fight"; searchform.submit();'>Fighting</div>
+            <div class="bodytext submit" onclick='searchform.search.value="Family"; searchform.submit();'>Family</div>
+            <div class="bodytext submit" onclick='searchform.search.value="Board"; searchform.submit();'>Board Games</div>
+            <div class="bodytext submit" onclick='searchform.search.value="Education"; searchform.submit();'>Educational</div>
+            <div class="bodytext submit" onclick='searchform.search.value="Card"; searchform.submit();'>Card</div>
         </div>
     </div>
-
 
     <div class="row justify-content-md-center flex-container" style="padding:10px; width:1000px;" >
         <table class="table">
@@ -99,20 +107,19 @@
                             <a class="card-text bodytext" th:text="${value[4]}" ></a></br>
                             <h6 class="card-text" th:text="${value[1]}"></h6>
                         </div>
-
                         <script>
                             ScrollReveal().reveal('.card', {
                                 interval: 16,
                                 reset: true,
                                 useDelay: 'onload'
                             })
+
                         </script>
                     </div>
                 </div>
             </tr>
         </table>
     </div>
-
 </div>
 </body>
 </html>
