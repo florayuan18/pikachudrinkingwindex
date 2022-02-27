@@ -1,16 +1,102 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Login</title>
-</head>
-<body>
-<input type="text" placeholder="Username" id="userName"><br>
-<input type="text" placeholder="Password" id="userPassword"><br>
-<button type="button" onclick="getInputValue();">Sign In</button><br>
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="utf-8">-->
+<!--    <title>Login</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<input type="text" placeholder="Username" id="userName"><br>-->
+<!--<input type="text" placeholder="Password" id="userPassword"><br>-->
+<!--<button type="button" onclick="getInputValue();">Sign In</button><br>-->
 
-<script>
-    var jsonInfo = `[
+<!--<script>-->
+<!--    var jsonInfo = `[-->
+<!--    {-->
+<!--      "first_name": "Flora",-->
+<!--      "last_name": "Yuan",-->
+<!--      "user_name": "flora9",-->
+<!--      "password": "1234",-->
+<!--      "games": [{"game_name": "AtomA", "game_rating": "1"},-->
+<!--                {"game_name": "Ballistic Missiles", "game_rating": "11"},-->
+<!--                {"game_name": "Gunner", "game_rating": "111"}]-->
+<!--    },-->
+<!--    {-->
+<!--      "first_name": "Bob",-->
+<!--      "last_name": "Builder",-->
+<!--      "user_name": "bobthebuilder",-->
+<!--      "password": "5678",-->
+<!--      "games": [{"game_name": "Bullet Flux", "game_rating": "2"},-->
+<!--                {"game_name": "Miracle Birdy", "game_rating": "22"},-->
+<!--                {"game_name": "Monsieur", "game_rating": "222"}]-->
+<!--    },-->
+<!--    {-->
+<!--      "first_name": "Billy",-->
+<!--      "last_name": "Joe",-->
+<!--      "user_name": "billyJoe",-->
+<!--      "password": "1111",-->
+<!--      "games": [{"game_name": "Stella Starlight", "game_rating": "3"},-->
+<!--                {"game_name": "Crimson", "game_rating": "33"},-->
+<!--                {"game_name": "Critical Mas", "game_rating": "333"}]-->
+<!--    }-->
+<!--  ]`;-->
+<!--    var allUsers = JSON.parse(jsonInfo);-->
+<!--    // alert();-->
+
+<!--    function getInputValue(){-->
+<!--        // Select the input element and get its value-->
+<!--        var userName = document.getElementById("userName").value;-->
+<!--        var userPassword = document.getElementById("userPassword").value;-->
+
+<!--        // Check if user exists-->
+<!--        var bUserExists = new Boolean(false);-->
+<!--        var existingUser;-->
+<!--        for (let i = 0; i < allUsers.length; i++) {-->
+<!--            if (userName === allUsers[i].user_name) {-->
+<!--                bUserExists = true;-->
+<!--                existingUser = allUsers[i];-->
+<!--                break;-->
+<!--            }-->
+<!--        }-->
+
+<!--        if (bUserExists == false) {-->
+<!--            alert("Username does not exist");-->
+<!--        } else {-->
+<!--            if (userPassword === existingUser.password) {-->
+<!--                sessionStorage.setItem('options', JSON.stringify(existingUser));-->
+<!--                location.href = '/personTest';-->
+<!--            }-->
+<!--            else {-->
+<!--                alert("Wrong password L");-->
+<!--            }-->
+<!--        }-->
+
+<!--        // Display the value-->
+<!--        // alert(userName);-->
+<!--    }-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
+
+<!-- This page is illustrative and contains ideas about HTML formatting -->
+<!DOCTYPE HTML>
+<!-- Signals to the Layout Dialect which layout should be used to decorate this View -->
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layout}" lang="en">
+
+<head><div layout:fragment="metadata" th:remove="tag">
+    <title>Login</title>
+</div>
+</head>
+
+<body style = "background-color:#2b425b; margin:auto;">
+<div layout:fragment="content" th:remove="tag">
+
+    <input type="text" placeholder="Username" id="userName"><br>
+    <input type="text" placeholder="Password" id="userPassword"><br>
+    <button type="button" onclick="getInputValue();">Sign In</button><br>
+
+    <script>
+        var jsonInfo = `[
     {
       "first_name": "Flora",
       "last_name": "Yuan",
@@ -39,40 +125,44 @@
                 {"game_name": "Critical Mas", "game_rating": "333"}]
     }
   ]`;
-    var allUsers = JSON.parse(jsonInfo);
-    // alert();
+        var allUsers = JSON.parse(jsonInfo);
+        // alert();
 
-    function getInputValue(){
-        // Select the input element and get its value
-        var userName = document.getElementById("userName").value;
-        var userPassword = document.getElementById("userPassword").value;
+        function getInputValue(){
+            // Select the input element and get its value
+            var userName = document.getElementById("userName").value;
+            var userPassword = document.getElementById("userPassword").value;
 
-        // Check if user exists
-        var bUserExists = new Boolean(false);
-        var existingUser;
-        for (let i = 0; i < allUsers.length; i++) {
-            if (userName === allUsers[i].user_name) {
-                bUserExists = true;
-                existingUser = allUsers[i];
-                break;
+            // Check if user exists
+            var bUserExists = new Boolean(false);
+            var existingUser;
+            for (let i = 0; i < allUsers.length; i++) {
+                if (userName === allUsers[i].user_name) {
+                    bUserExists = true;
+                    existingUser = allUsers[i];
+                    break;
+                }
             }
+
+            if (bUserExists == false) {
+                alert("Username does not exist");
+            } else {
+                if (userPassword === existingUser.password) {
+                    sessionStorage.setItem('options', JSON.stringify(existingUser));
+                    location.href = '/personTest';
+                }
+                else {
+                    alert("Wrong password L");
+                }
+            }
+
+            // Display the value
+            // alert(userName);
         }
+    </script>
 
-        if (bUserExists == false) {
-            alert("Username does not exist");
-        } else {
-            if (userPassword === existingUser.password) {
-                sessionStorage.setItem('options', JSON.stringify(existingUser));
-                location.href = '/personTest';
-            }
-            else {
-                alert("Wrong password L");
-            }
-        }
 
-        // Display the value
-        // alert(userName);
-    }
-</script>
+</div>
 </body>
+
 </html>

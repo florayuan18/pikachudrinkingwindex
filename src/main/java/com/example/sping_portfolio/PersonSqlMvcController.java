@@ -40,7 +40,7 @@ public class PersonSqlMvcController implements WebMvcConfigurer {
     */
     @GetMapping("/personcreate")
     public String personAdd(Person person) {
-        return "Database/personcreate";
+        return "/personcreate";
     }
 
     /* Gathers the attributes filled out in the form, tests for and retrieves validation error
