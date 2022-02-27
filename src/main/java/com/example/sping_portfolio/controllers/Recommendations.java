@@ -21,13 +21,11 @@ import java.util.Comparator;
 public class Recommendations {
     @GetMapping("/recommendations")
     // CONTROLLER handles GET request for /greeting, maps it to greeting() and does variable bindings
-    public String RawgAPI(@RequestParam(name="action", required=false, defaultValue= "false") boolean action,
-                          @RequestParam(name="horrorSort", required=false, defaultValue= "false") boolean horrorSort,
-                          @RequestParam(name="strategySort", required=false, defaultValue= "false") boolean strategySort,
+    public String RawgAPI(@RequestParam(name="search", required=false, defaultValue="") String search,
                           Model model) throws IOException, InterruptedException, ParseException, JSONException {
 
             String KEY = "42771867b81b456496770e0c1c15d4f2";
-            String url = "https://api.rawg.io/api/games?key=" + KEY + "&search" + action;
+            String url = "https://api.rawg.io/api/games?key=" + KEY + "&search=" + search;
 
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(url))
@@ -36,12 +34,20 @@ public class Recommendations {
                     .method("GET", HttpRequest.BodyPublishers.noBody())
                     .build();
             HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-            System.out.println(response.body());
+            //System.out.println(response.body());
 
             JSONArray gameList = new JSONObject(response.body()).getJSONArray("results");
             System.out.println(gameList.length());
 
-            return "/recommendations"; // returns HTML VIEW (greeting)
+            ArrayList<String[]> retArr = new ArrayList<>();
+            for (int i = 0; i < gameList.length(); i++) {
+                retArr.add(
+                        new String[] {gameList.getJSONObject(i).getString("name"), gameList.getJSONObject(i).getString("id"),gameList.getJSONObject(i).getString("background_image"), gameList.getJSONObject(i).getString("rating"), gameList.getJSONObject(i).getString("playtime")}
+                );
+            }
+        model.addAttribute("gameList", retArr);
+
+        return "/recommendations"; // returns HTML VIEW (greeting)
     }
 }
 
