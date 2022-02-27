@@ -4,6 +4,8 @@
     <title>...</title>
 </head>
 
+
+
 <body>
     <!-- Begin navigation fragments -->
     <nav class="navbar navbar-expand-lg dark-nav" th:fragment="header">
@@ -40,8 +42,18 @@
                     <a class="nav-link" href="/quiz">Quiz</a>
                 </li>
                 <li class="nav-item active">
+                    <a class="nav-link" href="/AsyncAPI/TopTwitchAPI">Twitch <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
                     <a class="nav-link" href="/aboutus">About Us <span class="sr-only">(current)</span></a>
                 </li>
+                <li class="nav-item active">
+                    <!--search bar html-->
+                    <div class="px-3">
+                        <input id="search" type="search" placeholder="Search" aria-label="Search">
+                    </div>
+                </li>
+
             </ul>
 
             <div class="custom-control custom-switch">
@@ -51,10 +63,42 @@
         </div>
 
         <script>
+            //Search Bar
+            const search = document.getElementById('search');
+            const google = 'https://www.google.com/search?q=site%3A+';
+            const site = 'http://umbrellabox.cf';
+
+            function submitted(event) {
+                if (event.key === 'Enter') {
+                    const reduction = 0.66;  // reduce by 66%
+                    const w = Math.trunc(window.innerWidth*reduction);
+                    const h = Math.trunc(window.outerHeight*reduction);
+                    const l = Math.trunc(window.top.screenX + ((window.innerWidth - w)/2));
+                    const t = Math.trunc(window.top.screenY + ((window.outerHeight - h)/2));
+                    const left = "left=" + l;
+                    const top = "top=" + t;
+                    const width = "width=" + w;
+                    const height = "height=" + h;
+                    const location = left + ", " + top + ", " + width + ", " + height
+
+                    // setup and display window
+                    event.preventDefault();
+                    const url = google
+                        + site
+                        + '+'
+                        + search.value;
+                    const win = window.open(url, "Umbrella Box Search", location);
+                    win.focus();
+                }
+            }
+            search.addEventListener('keypress', submitted);
+
+
             function setTheme(themeName) {
                 localStorage.setItem('theme', themeName);
                 document.documentElement.className = themeName;
             }
+
 
             // function to toggle between light and dark theme
             function toggleTheme() {

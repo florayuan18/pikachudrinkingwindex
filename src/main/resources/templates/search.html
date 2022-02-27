@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:herf="http://www.w3.org/1999/xhtml"
       layout:decorate="~{layout}" lang="en">
 
 
@@ -21,7 +22,9 @@
         }
 
     </style>
-</div></head>
+
+</div>
+</head>
 <body>
 <div layout:fragment="content" th:remove="tag">
     <div class="container">
@@ -48,10 +51,31 @@
     </div>
 
     <div class="row justify-content-md-center flex-container" style="padding:10px; width:1000px;" >
+
+        <script>
+            var id = 3498;
+            fetch("https://rawg-video-games-database.p.rapidapi.com/games/" + id, {
+                "method": "GET",
+                "headers": {
+                    "x-rapidapi-host": "rawg-video-games-database.p.rapidapi.com",
+                    "x-rapidapi-key": "e2ec6cd693msh31f1d4d692bd6b0p1dcb11jsn9ee520fd4398"
+                }
+            })
+                .then(response => {
+                    console.log(response);
+                })
+                .catch(err => {
+                    console.error(err);
+                });
+            function details(){
+                console.log(response);
+            }
+        </script>
         <table class="table">
             <tr th:each="value: ${gameList}">
-                <div>
-                    <div class="card" style="width:300px; margin:10px;">
+                <div >
+
+                    <div onclick="details()" id="getImage"; class="card" style="width:300px; margin:10px;">
                         <img th:src="${value[2]}" class="card-img-top" style="height:200px;">
                         <div class="card-body">
                             <p class="card-text titlehead" th:text="${value[0]}"></p>
@@ -59,7 +83,7 @@
                             <a class="card-text bodytext" th:text="${value[3]}"></a></br>
                             <a style="text-align:left" class="bodytext">Playtime (in hours): </a> 
                             <a class="card-text bodytext" th:text="${value[4]}" ></a></br>
-                            <h6 class="card-text" th:text="${value[1]}"></h6>
+                            <a class="card-text bodytext" th:text="${value[1]}" ></a></br>
                         </div>
 
                         <script>

@@ -80,15 +80,16 @@ public class LightSequence
 //lets me run the code and calls the methods
     public static void main(String [] args)
     {
-        LightSequence gradShow = new LightSequence("0101 0101 0101");
-        gradShow.changeSequence("0011 0011 0011");
-        gradShow.insertSegment("1111 1111", 4);
-        gradShow.insertSegment("gay", 4);
-        gradShow.display();
-        gradShow.removeSegment("gay");
-        gradShow.display();
-        gradShow.display();
-
-        gradShow.distCalc(1,7);
+//        LightSequence gradShow = new LightSequence("0101 0101 0101");
+//        gradShow.changeSequence("0011 0011 0011");
+//        gradShow.insertSegment("1111 1111", 4);
+//        gradShow.insertSegment("gay", 4);
+//        gradShow.display();
+//        gradShow.removeSegment("gay");
+//        gradShow.display();
+//        gradShow.display();
+//
+//        gradShow.distCalc(1,7);
+        
     }
 }

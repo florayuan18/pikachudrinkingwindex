@@ -48,16 +48,23 @@ class PlayTimeComparator implements Comparator<String[]> {
 }
 @Controller
 public class SearchCTRL {
+
     @GetMapping("/search")
-    public String RawgAPI(@RequestParam(name="search", required=true, defaultValue= "") String search,
+    public String RawgAPI(@RequestParam(name="search", required=false, defaultValue= "") String search,
                           @RequestParam(name="sortby_rating", required=false, defaultValue= "false") boolean sortby_rating,
                           @RequestParam(name="sortby_PlayTime", required=false, defaultValue= "false") boolean sortby_PlayTime,
+                          @RequestParam(name="id", required=false, defaultValue= "0") String id,
 
                           Model model) throws IOException, InterruptedException, ParseException, JSONException {
 
 
         String KEY = "42771867b81b456496770e0c1c15d4f2";
-        String url = "https://api.rawg.io/api/games?key=" + KEY + "&search=" + search;
+        String url = "https://api.rawg.io/api/games?" + "&search=" + search.replace(" ", "-") + "&key=" + KEY;
+//        if (!(id.equals("0"))){
+//            url = "https://api.rawg.io/api/games?" + "&id=" + id + "&key=" + KEY;
+//        }
+//https://api.rawg.io/api/games?id=3498&key=42771867b81b456496770e0c1c15d4f2
+
 
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(url))
@@ -66,19 +73,17 @@ public class SearchCTRL {
                 .method("GET", HttpRequest.BodyPublishers.noBody())
                 .build();
         HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
-//
-//        System.out.println(response.body());
 
         JSONArray gameList = new JSONObject(response.body()).getJSONArray("results");
 
-//        System.out.println(gameList.length());
 
         ArrayList<String[]> retArr = new ArrayList<>();
-
+        ArrayList<String[]> links = new ArrayList<>();
         for (int i = 0; i < gameList.length(); i++) {
             retArr.add(
-                new String[] {gameList.getJSONObject(i).getString("name"), gameList.getJSONObject(i).getString("id"),gameList.getJSONObject(i).getString("background_image"), gameList.getJSONObject(i).getString("rating"), gameList.getJSONObject(i).getString("playtime")}
+                new String[] {gameList.getJSONObject(i).getString("name"), "http://localhost:8080/id?id=" + gameList.getJSONObject(i).getString("id"),gameList.getJSONObject(i).getString("background_image"), gameList.getJSONObject(i).getString("rating"), gameList.getJSONObject(i).getString("playtime"),gameList.getJSONObject(i).getString("id")}
             );
+
         }
 
         if (sortby_rating){
@@ -88,7 +93,6 @@ public class SearchCTRL {
             retArr.sort(new PlayTimeComparator());
         }
 
-        //JSONObject gameList = new JSONObject("{'test':1}").getJSONArray("results").getJSONObject(0);
 
         model.addAttribute("gameList", retArr);
         return "/search";
