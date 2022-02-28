@@ -1,0 +1,227 @@
+<!DOCTYPE HTML>
+<!-- Signals to the Layout Dialect which layout should be used to decorate this View -->
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layout}" lang="en">
+
+<head>
+    <div layout:fragment="metadata" th:remove="tag">
+        <title>Top Twitch Games</title>
+    </div>
+</head>
+<style>
+    table, th, td {
+        border:1px solid black;
+    }
+</style>
+
+<body>
+<div layout:fragment="content" th:remove="tag" value="">
+    <h2>Twitch Game Popularity</h2>
+<form action="/AsyncAPI/TopTwitchAPI">
+    Search for a Game's Popularity! <input type="text" id="user_imp" value=""><br>
+    <input onclick="getData()" type="button" value="Search!"></input>
+    </form>
+    <table style="width:100%">
+        <p class="text-center" id="game0" ></p>
+        <tr>
+            <th>Month</th>
+            <th>Ranking</th>
+            <th>Hours Watched</th>
+        </tr>
+        <tr>
+            <td id="month0"></td>
+            <td id="rank0"></td>
+            <td id="hrw0"></td>
+        </tr>
+        <tr>
+            <td id="month1"></td>
+            <td id="rank1"></td>
+            <td id="hrw1"></td>
+        </tr>
+        <tr>
+            <td id="month2"></td>
+            <td id="rank2"></td>
+            <td id="hrw2"></td>
+        </tr>
+        <tr>
+            <td id="month3"></td>
+            <td id="rank3"></td>
+            <td id="hrw3"></td>
+        </tr>
+        <tr>
+            <td id="month4"></td>
+            <td id="rank4"></td>
+            <td id="hrw4"></td>
+        </tr>
+        <tr>
+            <td id="month5"></td>
+            <td id="rank5"></td>
+            <td id="hrw5"></td>
+        </tr>
+        <tr>
+            <td id="month6"></td>
+            <td id="rank6"></td>
+            <td id="hrw6"></td>
+        </tr>
+        <tr>
+            <td id="month7"></td>
+            <td id="rank7"></td>
+            <td id="hrw7"></td>
+        </tr>
+        <tr>
+            <td id="month8"></td>
+            <td id="rank8"></td>
+            <td id="hrw8"></td>
+        </tr>
+        <tr>
+            <td id="month9"></td>
+            <td id="rank9"></td>
+            <td id="hrw9"></td>
+        </tr>
+        <tr>
+            <td id="month10"></td>
+            <td id="rank10"></td>
+            <td id="hrw10"></td>
+        </tr>
+        <tr>
+            <td id="month11"></td>
+            <td id="rank11"></td>
+            <td id="hrw11"></td>
+        </tr>
+    </table>
+
+
+
+<script>
+    async function getData() {
+
+        var user_imp_d = document.getElementById('user_imp').value;
+        console.log(typeof user_imp_d);
+        console.log(user_imp_d);
+
+        if (user_imp_d === '') {
+            console.log("no imput so LOL");
+            user_imp_d = "League of Legends";
+        }
+        let re_sp = / /gi;
+        let req_game = user_imp_d.replace(re_sp, "%20");
+        const link = "https://twitch-game-popularity.p.rapidapi.com/game?name=" + req_game + "&year=2020&month=08";
+        console.log(link);
+
+        const response = await fetch(link, {
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-host": "twitch-game-popularity.p.rapidapi.com",
+                "x-rapidapi-key": "e2ec6cd693msh31f1d4d692bd6b0p1dcb11jsn9ee520fd4398"
+            }
+        })
+
+        const top_games = await response.json();
+        console.log("top games loading");
+        return top_games;
+    }
+
+    document.addEventListener("DOMContentLoaded", async () => {
+
+        try {
+            console.log("Content Loaded");
+            top_games = await getData();
+
+            // console.log(top_games);
+            const top_game_list = top_games;
+
+            const game0 = top_game_list[0].Game;
+            const rank0 = top_game_list[0].Rank;
+            const month0 = top_game_list[0].Month;
+            const hrw0 = top_game_list[0].Hours_watched;
+            const rank1 = top_game_list[1].Rank;
+            const month1 = top_game_list[1].Month;
+            const hrw1 = top_game_list[1].Hours_watched;
+            const rank2 = top_game_list[2].Rank;
+            const month2 = top_game_list[2].Month;
+            const hrw2 = top_game_list[1].Hours_watched;
+            const rank3 = top_game_list[3].Rank;
+            const month3 = top_game_list[3].Month;
+            const hrw3 = top_game_list[3].Hours_watched;
+            const rank4 = top_game_list[4].Rank;
+            const month4 = top_game_list[4].Month;
+            const hrw4 = top_game_list[4].Hours_watched;
+            const rank5 = top_game_list[5].Rank;
+            const month5 = top_game_list[5].Month;
+            const hrw5 = top_game_list[5].Hours_watched;
+            const rank6 = top_game_list[6].Rank;
+            const month6 = top_game_list[6].Month;
+            const hrw6 = top_game_list[6].Hours_watched;
+            const rank7 = top_game_list[7].Rank;
+            const month7 = top_game_list[7].Month;
+            const hrw7 = top_game_list[7].Hours_watched;
+            const rank8 = top_game_list[8].Rank;
+            const month8 = top_game_list[8].Month;
+            const hrw8 = top_game_list[8].Hours_watched;
+            const rank9 = top_game_list[9].Rank;
+            const month9 = top_game_list[9].Month;
+            const hrw9 = top_game_list[9].Hours_watched;
+            const rank10 = top_game_list[10].Rank;
+            const month10 = top_game_list[10].Month;
+            const hrw10 = top_game_list[10].Hours_watched;
+            const rank11 = top_game_list[11].Rank;
+            const month11 = top_game_list[11].Month;
+            const hrw11 = top_game_list[11].Hours_watched;
+
+            document.getElementById("game0").innerHTML = game0;
+            document.getElementById("rank0").innerHTML = rank0;
+            document.getElementById("month0").innerHTML = month0;
+            document.getElementById("hrw0").innerHTML = hrw0;
+            document.getElementById("rank1").innerHTML = rank1;
+            document.getElementById("month1").innerHTML = month1;
+            document.getElementById("hrw1").innerHTML = hrw1;
+            document.getElementById("rank2").innerHTML = rank2;
+            document.getElementById("month2").innerHTML = month2;
+            document.getElementById("hrw2").innerHTML = hrw2;
+            document.getElementById("rank3").innerHTML = rank3;
+            document.getElementById("month3").innerHTML = month3;
+            document.getElementById("hrw3").innerHTML = hrw3;
+            document.getElementById("rank4").innerHTML = rank4;
+            document.getElementById("month4").innerHTML = month4;
+            document.getElementById("hrw4").innerHTML = hrw4;
+            document.getElementById("rank5").innerHTML = rank5;
+            document.getElementById("month5").innerHTML = month5;
+            document.getElementById("hrw5").innerHTML = hrw5;
+            document.getElementById("rank6").innerHTML = rank6;
+            document.getElementById("month6").innerHTML = month6;
+            document.getElementById("hrw6").innerHTML = hrw6;
+            document.getElementById("rank7").innerHTML = rank7;
+            document.getElementById("month7").innerHTML = month7;
+            document.getElementById("hrw7").innerHTML = hrw7;
+            document.getElementById("rank8").innerHTML = rank8;
+            document.getElementById("month8").innerHTML = month8;
+            document.getElementById("hrw8").innerHTML = hrw8;
+            document.getElementById("rank9").innerHTML = rank9;
+            document.getElementById("month9").innerHTML = month9;
+            document.getElementById("hrw9").innerHTML = hrw9;
+            document.getElementById("rank10").innerHTML = rank10;
+            document.getElementById("month10").innerHTML = month10;
+            document.getElementById("hrw10").innerHTML = hrw10;
+            document.getElementById("rank11").innerHTML = rank11;
+            document.getElementById("month11").innerHTML = month11;
+            document.getElementById("hrw11").innerHTML = hrw11;
+
+            console.log('done');
+            return;
+
+
+        }
+        catch (e) {
+            console.log("Error!");
+            console.log(e);
+            return;
+        }
+
+
+
+
+    });
+</script>
+</div>
+</body>
+</html>

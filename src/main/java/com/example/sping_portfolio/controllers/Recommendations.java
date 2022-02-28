@@ -25,7 +25,7 @@ public class Recommendations {
                           Model model) throws IOException, InterruptedException, ParseException, JSONException {
 
             String KEY = "42771867b81b456496770e0c1c15d4f2";
-            String url = "https://api.rawg.io/api/games?key=" + KEY + "&search=" + search;
+            String url = "https://api.rawg.io/api/games?key=" + KEY + "&genres=" + search;
 
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(url))
