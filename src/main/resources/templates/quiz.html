@@ -7,39 +7,69 @@
 </div>
 
     <style>
-        body{
-            font-size: 20px;
-            font-family: sans-serif;
-            color: #333;
-        }
         .question{
-            font-weight: 600;
+            font-weight: bold;
         }
-        .answers {
-            margin-bottom: 20px;
+        body {
+            background-color: #F3EBF6;
+            font-family: 'Ubuntu', sans-serif;
         }
-        .answers label{
-            display: block;
+
+        .main {
+            background-color: #FFFFFF;
+            text-align:center;
+            width: 700px;
+            height: auto;
+            margin: 7em auto;
+            border-radius: 1.5em;
+            box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
         }
-        #submit{
-            font-family: sans-serif;
-            font-size: 20px;
-            background-color: #279;
-            color: #fff;
-            border: 0px;
-            border-radius: 3px;
-            padding: 20px;
+
+        .sign {
+            padding-top: 40px;
+            font-weight: bold;
+            font-size: 23px;
+        }
+
+        button {
             cursor: pointer;
-            margin-bottom: 20px;
+            border-radius: 5em;
+            background: var(--primary);
+            border: 0;
+            padding-left: 40px;
+            padding-right: 40px;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            margin: 1%;
+            font-size: 13px;
+            box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
         }
-        #submit:hover{
-            background-color: #38a;
+
+        a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-size: 14px;
+        }
+
+        @media (max-width: 1200px) {
+            .main {
+                border-radius: 0px;
+            }
         }
     </style>
 </head>
 
-<body style = "background-color:#2b425b; margin:auto;">
-<script>
+<body style = "background-color:#2b425b; margin:auto;" onload="buildQuiz()">
+<div layout:fragment="content" th:remove="tag">
+
+    <div class="main" style="text-align: center; padding:40px; background-color:white; border-radius: 1.5em; margin:0 auto; max-width:700px; margin-top:50px; box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);">
+        <p class="titlehead sign">Character Line Quiz</p></br>
+    <div class="bodytext" style="text-align:left;" id="quiz"></div>
+    <button id="submit">Submit Quiz</button>
+    <div class="bodytext" id="results"></div>
+    </div>
+
+    <script type="text/javascript" th:inline="javascript">
         function buildQuiz(){
             // variable to store the HTML output
             const output = [];
@@ -57,17 +87,16 @@
                         // ...add an HTML radio button
                         answers.push(
                             `<label>
-              <input type="radio" name="question${questionNumber}" value="${letter}">
-              ${letter} :
+              <input type="radio" name="question${questionNumber}" value="${currentQuestion.answers[letter]}">
               ${currentQuestion.answers[letter]}
-            </label>`
+            </label></br>`
                         );
                     }
 
                     // add this question and its answers to the output
                     output.push(
-                        `<div class="question"> ${currentQuestion.question} </div>
-          <div class="answers"> ${answers.join('')} </div>`
+                        `<div class="question" style="font-weight: bolder;"> ${currentQuestion.question} </div>
+          <div class="answers"> ${answers.join('')} </div></br></br>`
                     );
                 }
             );
@@ -114,50 +143,16 @@
         const quizContainer = document.getElementById('quiz');
         const resultsContainer = document.getElementById('results');
         const submitButton = document.getElementById('submit');
-        const myQuestions = [
-            {
-                question: "Who invented JavaScript?",
-                answers: {
-                    a: "Douglas Crockford",
-                    b: "Sheryl Sandberg",
-                    c: "Brendan Eich"
-                },
-                correctAnswer: "c"
-            },
-            {
-                question: "Which one of these is a JavaScript package manager?",
-                answers: {
-                    a: "Node.js",
-                    b: "TypeScript",
-                    c: "npm"
-                },
-                correctAnswer: "c"
-            },
-            {
-                question: "Which tool can you use to ensure code quality?",
-                answers: {
-                    a: "Angular",
-                    b: "jQuery",
-                    c: "RequireJS",
-                    d: "ESLint"
-                },
-                correctAnswer: "d"
-            }
-        ];
+        const temp = [[${json}]];
+        const myQuestions = JSON.parse(temp);
+        console.log(myQuestions);
 
         // Kick things off
         buildQuiz();
 
         // Event listeners
         submitButton.addEventListener('click', showResults);
-</script>
-
-
-<div layout:fragment="content" th:remove="tag">
-
-    <div id="quiz"></div>
-    <button id="submit">Submit Quiz</button>
-    <div id="results"></div>
+    </script>
 
 </div>
 </body>
